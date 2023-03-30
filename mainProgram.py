@@ -1,5 +1,8 @@
 import discord
 import os
+import token as tk
+
+token = tk.token()
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -25,10 +28,7 @@ async def on_message(message):
 # Main program
 def main():
     print("--main program--")
-    print(os.getenv('token'))
- 
-    #client.run(token)
-
+    client.run(token)
 
 
 # Defining main program

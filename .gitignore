@@ -1,2 +1,5 @@
 __pycache__
 .venv
+token.txt
+test.py
+token.py
