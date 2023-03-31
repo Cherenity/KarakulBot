@@ -1,7 +1,9 @@
 import discord
 import random
 import requests
-apiKey = 'd69a63c25402479d87c5db5f42bcd666'
+import token2
+
+apiKey = token2.apiKey()
 
 def newsMethod():
     try:
