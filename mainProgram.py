@@ -75,3 +75,4 @@ if __name__ == "__main__":
 
   # female, divine, blue
   # https://ffxiv.eorzeacollection.com/glamours?filter%5Bclassification%5D=4&filter%5Bgender%5D=female&filter%5Bcolor%5D=42
+  #Hello
