@@ -5,11 +5,13 @@ import requests
 import random
 from bs4 import BeautifulSoup
 import messageMethods as mm
+from PIL import Image
 
 token = tk.token()
 
 intents = discord.Intents.default()
 intents.message_content = True
+
 
 # Connection to the discord:
 client = discord.Client(intents=intents)
@@ -19,6 +21,8 @@ client = discord.Client(intents=intents)
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
+#Url:s for on_message(message) events
+url1 = 'https://ffxiv.eorzeacollection.com/glamours'
 
 @client.event
 async def on_message(message):
@@ -32,9 +36,13 @@ async def on_message(message):
         embed = mm.newsMethod()
         await message.channel.send(embed=embed)
 
-    if message.content.startswith('!_glamour'):
-        url = 'https://ffxiv.eorzeacollection.com/glamours'
-        response = requests.get(url)
+    if message.content.lower().startswith('!glamour'):
+        variable = message.content.lower()[1:]
+        print(variable)
+        
+        newUrl = f"{url1}?page={mm.pageNumbers(url1)}"
+
+        response = requests.get(newUrl)
         soup = BeautifulSoup(response.text, 'html.parser')
 
         img_tags = soup.find_all('img')
@@ -45,34 +53,20 @@ async def on_message(message):
 
         random_img = random.choice(img_list)
         await message.channel.send(random_img)
-                    
+
+    if message.content.startswith('!karakulBot'):
+                # Get the path to the image
+        image_path = r'D:\codeProjects\KarakulBot\rsz_1karakul.png'
+        # Open the image using PIL
+        image = Image.open(image_path)
+        await message.channel.send('Hello! I am a karakul Bot. ')
+        await message.channel.send(file=discord.File(image_path))
+    
+
 def main():
     print("--main program--")
     client.run(token)
 
-
 # Defining main program
 if __name__ == "__main__":
     main()
-
-    # classification
-    # ?filter%5Bclassification%5D=4
-    # 1=cool, 2=sdasd. 3=cute
-
-    # https://ffxiv.eorzeacollection.com/glamours?filter%5Bclassification%5D=4
-
-   # https://ffxiv.eorzeacollection.com/glamours?filter%5Bclassification%5D=1&filter%5Bgender%5D=female
-   # gende female, male, any --> &filter%5Bgender%5D=[ADD HERE]
-
-   # color: 
-
-    # https://ffxiv.eorzeacollection.com/glamours?
-  # &filter%5Bcolor%5D=46
-
-  # https://ffxiv.eorzeacollection.com/glamours?&filter%5Bcolor%5D=46
-
-  # 46 = Pink, 42 = Blue
-
-  # female, divine, blue
-  # https://ffxiv.eorzeacollection.com/glamours?filter%5Bclassification%5D=4&filter%5Bgender%5D=female&filter%5Bcolor%5D=42
-  #Hello hello

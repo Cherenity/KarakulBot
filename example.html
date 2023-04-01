@@ -1,0 +1,3118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ce2c30">
+
+        <title>Glamour Collection | Eorzea Collection</title>
+        <meta name="description" content="Eorzea Collection is a Final Fantasy XIV glamour catalogue where you can share your personal glamours and browse through an extensive collection of looks for your character.">
+        <meta name="keywords" content="final fantasy xiv, ffxiv, glamour, eorzea, eorzea collection, catalogue" />
+
+                <meta property="og:title" content="Glamour Collection | Eorzea Collection"/>
+        <meta property="og:image" content="https://ffxiv.eorzeacollection.com/resources/social/fb-share-new.png"/>
+        <meta property="og:description" content="Eorzea Collection is where you can share your personal glamours and browse through an extensive collection of looks for your Final Fantasy XIV character."/>
+        <meta property="og:url" content="https://ffxiv.eorzeacollection.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name " content="Eorzea Collection" />
+
+        
+                                                    <script async src='https://www.googletagmanager.com/gtag/js?id=G-SBJVS260JF'></script>
+
+                                <style>
+                    #countdown,
+                    #newCount {
+                        width: 32px;
+                        height: 32px;
+                        position: absolute;
+                        top: -40px;
+                        right: 0;
+                        border-radius: 50%;
+                        background-color: #808080;
+                        color: #FFFFFF;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 1;
+                    }
+
+                    #pw-close-btn {
+                        display: none !important;
+                    }
+                </style>
+
+                <script>
+                    window.ramp = window.ramp || {};
+                    window.ramp.que = window.ramp.que || [];
+                    window.ramp.onPlayerReady = pwAdsOnlyCloseBtn;
+
+                    function pwAdsOnlyCloseBtn() {
+                        function createCloseButton() {
+                            //Check if the button is already on the page.
+                            var button = document.getElementById('countdown');
+                            if (button) {
+                                button.remove();
+                            }
+
+                            //Create the close button.
+                            var element = document.getElementById('tyche_trendi_video_container');
+                            var countdown = document.createElement('div');
+                            countdown.id = 'countdown';
+                            element.appendChild(countdown);
+
+                            //Start ad skip timer
+                            var elementBtn = document.getElementById('countdown')
+                            var timeleft = 5;
+                            var skidAdTimer = setInterval(function () {
+                                if (timeleft <= 0) {
+                                    elementBtn.innerHTML = '<svg width="32" height="32">   <circle cx="16" cy="16" r="16" fill="grey"></circle>   <line x1="11" y1="11" x2="21" y2="21" style="stroke:rgb(255,255,255);stroke-width:3"></line>   <line x1="21" y1="11" x2="11" y2="21" style="stroke:rgb(255,255,255);stroke-width:3"></line>   </svg>';
+                                    elementBtn.style.cursor = 'pointer';
+                                    closeVideoMethod();
+                                    clearInterval(skidAdTimer);
+
+                                } else {
+                                    elementBtn.innerHTML = timeleft;
+                                }
+                                timeleft -= 1;
+                            }, 1000);
+
+
+                            function closeVideoMethod() {
+                                elementBtn.addEventListener('click', function () {
+                                    Bolt.removeVideo('tyche_trendi_video', true)
+                                    element.style.display = 'none';
+                                    elementBtn.remove()
+                                })
+                            }
+                        }
+                        createCloseButton()
+                    }
+                </script>
+                <script async src="//cdn.intergient.com/1024881/74047/ramp_config.js"></script>
+                <script>
+                    window._pwGA4PageviewId = ''.concat(Date.now());
+                    window.dataLayer = window.dataLayer || [];
+                    window.gtag = window.gtag || function () {
+                        dataLayer.push(arguments);
+                    };
+                    gtag('js', new Date());
+                    gtag('config', 'G-SBJVS260JF', { 'send_page_view': false });
+                    gtag(
+                        'event',
+                        'ramp_js',
+                        {
+                            'send_to': 'G-SBJVS260JF',
+                            'pageview_id': window._pwGA4PageviewId
+                        }
+                    );
+                </script>
+                    
+        <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/resources/favicon/site.webmanifest">
+        <link rel="mask-icon" href="/resources/favicon/safari-pinned-tab.svg" color="#ce2c30">
+        <link rel="shortcut icon" href="/resources/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#27282c">
+        <meta name="msapplication-config" content="/resources/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+
+                <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,300i,400,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600" rel="stylesheet">
+
+        <link rel="preconnect" href="https://img.finalfantasyxiv.com">
+        <link rel="preconnect" href="https://glamours.eorzeacollection.com">
+
+        <link rel="stylesheet" id="app-css" href="/build/js/eorzea-collection.9f0deb47.css" type="text/css" media="all">
+
+            </head>
+    <body id="top"  >
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-4CX97EWB0R"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-4CX97EWB0R');
+        </script>
+
+        <main id="js-app">
+            <div>
+                    
+        
+<ec-header inline-template>
+    <header class="l-header" :class="{ 'l-header-open': open, 'u-fixed' : fixed }">
+        <div class="l-header-wrapper">
+            <a class="l-header-burger-wrapper" @click="toggleHeader">
+                <span v-if="!open" class="l-header-burger">
+                    <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="459px" height="459px" viewBox="0 0 459 459" style="enable-background:new 0 0 459 459;" xml:space="preserve">
+<g>
+	<g id="menu">
+		<path fill="#FFFFFF" d="M0,382.5h459v-51H0V382.5z M0,255h459v-51H0V255z M0,76.5v51h459v-51H0z"/>
+	</g>
+</g>
+</svg>
+
+                </span>
+                <span class="l-header-burger l-header-burger-close">
+                    <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="95.939px" height="95.939px" viewBox="0 0 95.939 95.939" style="enable-background:new 0 0 95.939 95.939;"
+	 xml:space="preserve">
+<g>
+	<path fill="#CE2C30" d="M62.819,47.97l32.533-32.534c0.781-0.781,0.781-2.047,0-2.828L83.333,0.586C82.958,0.211,82.448,0,81.919,0
+		c-0.53,0-1.039,0.211-1.414,0.586L47.97,33.121L15.435,0.586c-0.75-0.75-2.078-0.75-2.828,0L0.587,12.608
+		c-0.781,0.781-0.781,2.047,0,2.828L33.121,47.97L0.587,80.504c-0.781,0.781-0.781,2.047,0,2.828l12.02,12.021
+		c0.375,0.375,0.884,0.586,1.414,0.586c0.53,0,1.039-0.211,1.414-0.586L47.97,62.818l32.535,32.535
+		c0.375,0.375,0.884,0.586,1.414,0.586c0.529,0,1.039-0.211,1.414-0.586l12.02-12.021c0.781-0.781,0.781-2.048,0-2.828L62.819,47.97
+		z"/>
+</g>
+</svg>
+
+                </span>
+            </a>
+
+            <a class="l-header-icon-wrapper" href="/">
+                <img class="l-header-icon" src="/resources/ec-icon.svg" alt="EC"/>
+            </a>
+
+            <nav class="l-header-menu">
+                <a class="l-header-menu-item-link u-home-link" href="/">
+                    <div class="l-header-menu-item"><span>Home</span></div>
+                </a>
+
+                <div class="l-header-menu-item u-second-link">
+                    <a class="l-header-menu-item-link" href="/gearsets"><span>Gearsets</span></a>
+
+                    <div class="l-header-menu-submenu">
+                        <a class="l-header-menu-submenu-item"
+                           href="/gearsets/women">Female</a>
+                        <a class="l-header-menu-submenu-item" href="/gearsets">Male</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/gearsets/tanks">Tanks</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/gearsets/healers">Healers</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/gearsets/melee">Melee</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/gearsets/ranged">Ranged</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/gearsets/casters">Casters</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/gearsets/craft">Crafters</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/gearsets/gather">Gatherers</a>
+                                            </div>
+                </div>
+
+                <div class="l-header-menu-item">
+                    <a class="l-header-menu-item-link" href="/glamours"><span>Glamours</span></a>
+
+                    <div class="l-header-menu-submenu">
+                        <a class="l-header-menu-submenu-item u-glamour-submit" href="/glamour/submit">Submit
+                            glamour</a>
+                        <a class="l-header-menu-submenu-item" href="/glamours">Latest</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/women">Female</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/men">Male</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/loved">Most Loved</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/novice">Low Level</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/throwback">Throwback</a>
+                    </div>
+                </div>
+                <div class="l-header-menu-item u-mobile-and-desktop-l-only-inline">
+                    <span>By Role</span>
+
+                    <div class="l-header-menu-submenu">
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/tanks">Tanks</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/healers">Healers</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/melee">Melee</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/ranged">Ranged</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/casters">Casters</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/craft">Crafters</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/gather">Gatherers</a>
+                    </div>
+                </div>
+                <div class="l-header-menu-item u-mobile-and-desktop-l-only-inline">
+                    <span>By Race</span>
+
+                    <div class="l-header-menu-submenu">
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/hyur">Hyur</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/highlander">Highlander</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/elezen">Elezen</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/miqote">Miqo'te</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/lalafell">Lalafell</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/roegadyn">Roegadyn</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/aura">Au Ra</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/viera">Viera</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/glamours/hrothgar">Hrothgar</a>
+                    </div>
+                </div>
+
+                <div class="l-header-menu-item">
+                    <span>Collections</span>
+
+                    <div class="l-header-menu-submenu">
+                                                                        <a class="l-header-menu-submenu-item" href="/fashion-accessories">Fashion
+                            Accessories</a>
+                        <a class="l-header-menu-submenu-item" href="/dyes">Dyes Preview</a>
+                                            </div>
+                </div>
+
+                <div class="l-header-menu-item">
+                    <span>Trends</span>
+
+                    <div class="l-header-menu-submenu">
+                                                <a class="l-header-menu-submenu-item"
+                           href="/news/lookbook">Lookbooks</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/news/challenge">Challenges</a>
+                    </div>
+                </div>
+
+                <div class="l-header-menu-item">
+                    <a class="l-header-menu-item-link" href="/news"><span>Content</span></a>
+
+                    <div class="l-header-menu-submenu">
+                        <a class="l-header-menu-submenu-item" href="/news">News and Articles</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/news/interview">Interviews</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/news/glamour-sunday">Glamour Sunday</a>
+                        <a class="l-header-menu-submenu-item"
+                           href="/news/wheres-alpha">Where's Alpha?</a>
+                    </div>
+                </div>
+
+                <div class="l-header-menu-item">
+                    <a class="l-header-menu-item-link" href="/about"><span>About</span></a>
+
+                    <div class="l-header-menu-submenu">
+                        <a class="l-header-menu-submenu-item" href="/about">About EC</a>
+                        <a class="l-header-menu-submenu-item" href="/about/contributors">Contributors</a>
+                        <a class="l-header-menu-submenu-item" href="/about/partners">Partners</a>
+                        <a class="l-header-menu-submenu-item" href="/about/rules-and-guidelines">Rules and Guidelines</a>
+                        <a class="l-header-menu-submenu-item" href="/about/dev-tracker">Dev Tracker</a>
+                    </div>
+                </div>
+
+                
+                                    <a class="l-header-menu-item-link u-submit-menu" href="/glamour/submit">
+                        <div class="l-header-menu-item"><span>Submit glamour</span></div>
+                    </a>
+                
+                
+                            </nav>
+
+            <div class="l-header-menu-item">
+                <a class="l-header-login-wrapper" href="/login">
+                                        <img class="l-header-login u-inset" src="/resources/characters/no-avatar.png" alt="Login"/>
+                </a>
+
+                            </div>
+        </div>
+    </header>
+</ec-header>
+
+<theme-button inline-template></theme-button>
+
+    <section class="l-block u-container b-title">
+        <h2 class="b-title-text"><b class="b-title-text-bold">Glamour</b> Collection</h2>
+    </section>
+
+    <glamour-filter inline-template>
+    <form name="filter" method="get" id="filter_form">
+
+    <section class="l-section" style="min-height: 0; padding-bottom: 0">
+        <div class="s-filter-glamours-top">
+            <div class="l-box s-filter-glamours-top-box">
+                <div class="s-filter-glamours-top-filter">
+                    <h3 class="s-filter-glamours-top-filter-title">Order by</h3>
+
+                    <div class="s-filter-glamours-top-filter-box">
+                        <select id="filter_orderBy" name="filter[orderBy]" onchange="this.form.submit()"><option value="date" selected="selected">Newest</option><option value="loves">Loves</option></select>
+                    </div>
+                </div>
+
+                <div class="s-filter-glamours-top-filter">
+                    <h3 class="s-filter-glamours-top-filter-title">Date Submitted</h3>
+
+                    <div class="s-filter-glamours-top-filter-box">
+                        <select id="filter_datePeriod" name="filter[datePeriod]" onchange="this.form.submit()"><option value="any" selected="selected">All-time</option><option value="past-year">Last Year</option><option value="this-year">This Year</option><option value="past-month">Last Month</option><option value="this-month">This Month</option><option value="past-week">Last Week</option><option value="this-week">This Week</option><option value="yesterday">Yesterday</option><option value="today">Today</option></select>
+                    </div>
+                </div>
+
+                <div class="s-filter-glamours-top-filter">
+                    <h3 class="s-filter-glamours-top-filter-title">Gender</h3>
+
+                    <div class="s-filter-glamours-top-filter-box">
+                        <select id="filter_gender" name="filter[gender]" onchange="this.form.submit()"><option value="any" selected="selected">All genders</option><option value="male">Male</option><option value="female">Female</option></select>
+                    </div>
+                </div>
+
+                <div class="s-filter-glamours-top-filter u-desktop-only "
+                     onclick="document.getElementById('js-search-toggle').classList.toggle('s-filter-glamours-search-toggle-open');this.classList.toggle('u-toggle-open');">
+                    <h3 class="b-heading u-no-top-margin s-filter-glamours-top-filter-toggle">Search</h3>
+                </div>
+
+                <div class="s-filter-glamours-top-filter u-desktop-only "
+                     onclick="document.getElementById('js-tags-toggle').classList.toggle('s-filter-glamours-tags-toggle-open');this.classList.toggle('u-toggle-open');">
+                    <h3 class="b-heading u-no-top-margin s-filter-glamours-top-filter-toggle">Tags</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="s-filter-glamours-search-box">
+            <div class="c-button s-filter-glamours-search-toggle " id="js-search-toggle"
+                 onclick="this.classList.toggle('s-filter-glamours-search-toggle-open');">Search
+            </div>
+
+            <div class="l-box s-filter-glamours-search">
+                <h3 class="b-heading u-no-top-margin">Search</h3>
+
+                <div class="s-filter-glamours-search-filter">
+                    <div class="s-filter-glamours-search-filter-box">
+                        <select id="filter_server" name="filter[server]" onchange="this.form.submit()"><option value="any" selected="selected">All servers</option><optgroup label="Elemental">
+                <option value="aegis">Aegis</option><option value="atomos">Atomos</option><option value="carbuncle">Carbuncle</option><option value="garuda">Garuda</option><option value="gungnir">Gungnir</option><option value="kujata">Kujata</option><option value="tonberry">Tonberry</option><option value="typhon">Typhon</option></optgroup><optgroup label="Gaia">
+                <option value="alexander">Alexander</option><option value="bahamut">Bahamut</option><option value="durandal">Durandal</option><option value="fenrir">Fenrir</option><option value="ifrit">Ifrit</option><option value="ridill">Ridill</option><option value="tiamat">Tiamat</option><option value="ultima">Ultima</option></optgroup><optgroup label="Mana">
+                <option value="anima">Anima</option><option value="asura">Asura</option><option value="chocobo">Chocobo</option><option value="hades">Hades</option><option value="ixion">Ixion</option><option value="masamune">Masamune</option><option value="pandaemonium">Pandaemonium</option><option value="titan">Titan</option></optgroup><optgroup label="Meteor">
+                <option value="belias">Belias</option><option value="mandragora">Mandragora</option><option value="ramuh">Ramuh</option><option value="shinryu">Shinryu</option><option value="unicorn">Unicorn</option><option value="valefor">Valefor</option><option value="yojimbo">Yojimbo</option><option value="zeromus">Zeromus</option></optgroup><optgroup label="Aether">
+                <option value="adamantoise">Adamantoise</option><option value="cactuar">Cactuar</option><option value="faerie">Faerie</option><option value="gilgamesh">Gilgamesh</option><option value="jenova">Jenova</option><option value="midgardsormr">Midgardsormr</option><option value="sargatanas">Sargatanas</option><option value="siren">Siren</option></optgroup><optgroup label="Primal">
+                <option value="behemoth">Behemoth</option><option value="excalibur">Excalibur</option><option value="exodus">Exodus</option><option value="famfrit">Famfrit</option><option value="hyperion">Hyperion</option><option value="lamia">Lamia</option><option value="leviathan">Leviathan</option><option value="ultros">Ultros</option></optgroup><optgroup label="Crystal">
+                <option value="balmung">Balmung</option><option value="brynhildr">Brynhildr</option><option value="coeurl">Coeurl</option><option value="diabolos">Diabolos</option><option value="goblin">Goblin</option><option value="malboro">Malboro</option><option value="mateus">Mateus</option><option value="zalera">Zalera</option></optgroup><optgroup label="Dynamis">
+                <option value="halicarnassus">Halicarnassus</option><option value="maduin">Maduin</option><option value="marilith">Marilith</option><option value="seraph">Seraph</option></optgroup><optgroup label="Chaos">
+                <option value="cerberus">Cerberus</option><option value="louisoix">Louisoix</option><option value="moogle">Moogle</option><option value="omega">Omega</option><option value="phantom">Phantom</option><option value="ragnarok">Ragnarok</option><option value="sagittarius">Sagittarius</option><option value="spriggan">Spriggan</option></optgroup><optgroup label="Light">
+                <option value="alpha">Alpha</option><option value="lich">Lich</option><option value="odin">Odin</option><option value="phoenix">Phoenix</option><option value="raiden">Raiden</option><option value="shiva">Shiva</option><option value="twintania">Twintania</option><option value="zodiark">Zodiark</option></optgroup><optgroup label="Materia">
+                <option value="bismarck">Bismarck</option><option value="ravana">Ravana</option><option value="sephirot">Sephirot</option><option value="sophia">Sophia</option><option value="zurvan">Zurvan</option></optgroup></select>
+                    </div>
+                </div>
+
+                <div class="s-filter-glamours-search-filter">
+                    <input type="text" id="filter_glamour_search" name="search" ref="search" placeholder="Search by title" maxlength="100"
+                           class="s-filter-glamours-search-input" value="">
+                    <img class="s-filter-glamours-search-icon" src="/resources/icons/icon-search.svg" onclick="document.getElementById('filter_form').submit()">
+                </div>
+
+                <div class="s-filter-glamours-search-filter">
+                    <input type="text" id="filter_glamour_author" name="author" ref="searchAuthor" placeholder="Search by player" maxlength="100"
+                           class="s-filter-glamours-search-input u-author" value="">
+                    <img class="s-filter-glamours-search-icon" src="/resources/icons/icon-search.svg" onclick="document.getElementById('filter_form').submit()">
+                </div>
+            </div>
+        </div>
+
+        <div class="s-filter-glamours-tags-box">
+            <div class="c-button s-filter-glamours-tags-toggle " id="js-tags-toggle"
+                 onclick="this.classList.toggle('s-filter-glamours-tags-toggle-open');">TAGS
+            </div>
+
+            <div class="l-box s-filter-glamours-tags">
+                <h3 class="b-heading u-no-top-margin">Filter by Tag</h3>
+
+                <div class="s-filter-glamours-tags-filter">
+                    <div class="s-filter-glamours-tags-filter-box">
+                        <select id="filter_classification" name="filter[classification]" onchange="this.form.submit()"><option value="">Any Classification</option><option value="1">Athletic</option><option value="2">Cool</option><option value="3">Cute</option><option value="4">Divine</option><option value="5">Elegant</option><option value="6">Fashionable</option><option value="7">Glamorous</option><option value="11">Heroic</option><option value="8">Sexy</option><option value="13">Strong</option><option value="9">Sweet</option><option value="12">Villainous</option><option value="10">Youthful</option></select>
+                    </div>
+                </div>
+
+                <div class="s-filter-glamours-tags-filter">
+                    <div class="s-filter-glamours-tags-filter-box">
+                        <select id="filter_style" name="filter[style]" onchange="this.form.submit()"><option value="">Any Style</option><option value="80">Bohemian</option><option value="81">Casual</option><option value="82">Chic</option><option value="83">Cosplay</option><option value="92">Eastern</option><option value="84">Fantasy</option><option value="85">Formal</option><option value="95">Futuristic</option><option value="86">Goth</option><option value="93">Grunge</option><option value="87">Medieval</option><option value="88">Modern</option><option value="96">Retro</option><option value="89">Steampunk</option><option value="94">Tribal</option><option value="90">Vacation</option><option value="91">Vintage</option></select>
+                    </div>
+                </div>
+
+                <div class="s-filter-glamours-tags-filter">
+                    <div class="s-filter-glamours-tags-filter-box">
+                        <select id="filter_theme" name="filter[theme]" onchange="this.form.submit()"><option value="">Any Theme</option><option value="32">Academic</option><option value="101">Adventuring</option><option value="35">Autumn</option><option value="20">Battle</option><option value="22">Crafter</option><option value="106">Cyber</option><option value="104">Desert</option><option value="99">Eternal Bonding</option><option value="30">Final Fantasy</option><option value="23">Gatherer</option><option value="24">Housing</option><option value="21">Idle</option><option value="102">Military</option><option value="105">Nature</option><option value="31">Ninja</option><option value="26">Party</option><option value="27">Pirate</option><option value="28">Royalty</option><option value="25">Seasonal Event</option><option value="100">Special Occasions</option><option value="97">Sports</option><option value="34">Spring</option><option value="33">Summer</option><option value="103">Swimwear</option><option value="36">Winter</option></select>
+                    </div>
+                </div>
+
+                <div class="s-filter-glamours-tags-filter">
+                    <div class="s-filter-glamours-tags-filter-box">
+                        <select id="filter_color" name="filter[color]" onchange="this.form.submit()"><option value="">Any Color</option><option value="40">Beige</option><option value="41">Black</option><option value="42">Blue</option><option value="43">Brown</option><option value="53">Gold</option><option value="51">Green</option><option value="44">Grey</option><option value="63">Metallic</option><option value="62">Monochromatic</option><option value="45">Orange</option><option value="64">Pastel</option><option value="46">Pink</option><option value="47">Purple</option><option value="48">Red</option><option value="52">Silver</option><option value="49">White</option><option value="50">Yellow</option></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="l-section l-section-double u-responsive">
+        <div class="l-section-double-side s-filter-glamours">
+            <div class="c-button s-filter-glamours-toggle"
+                    onclick="this.classList.toggle('s-filter-glamours-toggle-open');">FILTER
+            </div>
+
+            <div class="s-filter-glamours-form b-info-box">
+                <div class="s-filter-glamours-filter">
+                    <h3 class="s-filter-gearset-label s-filter-gearset-label-first">Races</h3>
+                    <div class="c-set-fitting-group">
+                                                    <div class="c-icon-grid">
+                                <icon-button ref="raceIconButtonHyur" inline-template>
+                                    <div ref="check" :class="{ 'u-open': isChecked }">
+                                        <input type="checkbox" id="filter_race_0" name="filter[race][]" value="hyur" />
+
+                                        <img src="/resources/icons/races/race-hyur.png"
+                                             alt="HYUR" title="Hyur" @click="toggleButton">
+                                    </div>
+                                </icon-button>
+                            </div>
+
+                                                                                <div class="c-icon-grid">
+                                <icon-button ref="raceIconButtonHighlander" inline-template>
+                                    <div ref="check" :class="{ 'u-open': isChecked }">
+                                        <input type="checkbox" id="filter_race_1" name="filter[race][]" value="highlander" />
+
+                                        <img src="/resources/icons/races/race-highlander.png"
+                                             alt="HIGHLANDER" title="Highlander" @click="toggleButton">
+                                    </div>
+                                </icon-button>
+                            </div>
+
+                                                                                <div class="c-icon-grid">
+                                <icon-button ref="raceIconButtonElezen" inline-template>
+                                    <div ref="check" :class="{ 'u-open': isChecked }">
+                                        <input type="checkbox" id="filter_race_2" name="filter[race][]" value="elezen" />
+
+                                        <img src="/resources/icons/races/race-elezen.png"
+                                             alt="ELEZEN" title="Elezen" @click="toggleButton">
+                                    </div>
+                                </icon-button>
+                            </div>
+
+                                                                                <div class="c-icon-grid">
+                                <icon-button ref="raceIconButtonMiqote" inline-template>
+                                    <div ref="check" :class="{ 'u-open': isChecked }">
+                                        <input type="checkbox" id="filter_race_3" name="filter[race][]" value="miqote" />
+
+                                        <img src="/resources/icons/races/race-miqote.png"
+                                             alt="MIQOTE" title="Miqo&#039;te" @click="toggleButton">
+                                    </div>
+                                </icon-button>
+                            </div>
+
+                                                                                <div class="c-icon-grid">
+                                <icon-button ref="raceIconButtonLalafell" inline-template>
+                                    <div ref="check" :class="{ 'u-open': isChecked }">
+                                        <input type="checkbox" id="filter_race_4" name="filter[race][]" value="lalafell" />
+
+                                        <img src="/resources/icons/races/race-lalafell.png"
+                                             alt="LALAFELL" title="Lalafell" @click="toggleButton">
+                                    </div>
+                                </icon-button>
+                            </div>
+
+                                                                                <div class="c-icon-grid">
+                                <icon-button ref="raceIconButtonRoegadyn" inline-template>
+                                    <div ref="check" :class="{ 'u-open': isChecked }">
+                                        <input type="checkbox" id="filter_race_5" name="filter[race][]" value="roegadyn" />
+
+                                        <img src="/resources/icons/races/race-roegadyn.png"
+                                             alt="ROEGADYN" title="Roegadyn" @click="toggleButton">
+                                    </div>
+                                </icon-button>
+                            </div>
+
+                                                            </div>
+                                <div class="c-set-fitting-group">
+                                                                                <div class="c-icon-grid">
+                                <icon-button ref="raceIconButtonAura" inline-template>
+                                    <div ref="check" :class="{ 'u-open': isChecked }">
+                                        <input type="checkbox" id="filter_race_6" name="filter[race][]" value="aura" />
+
+                                        <img src="/resources/icons/races/race-aura.png"
+                                             alt="AURA" title="Au Ra" @click="toggleButton">
+                                    </div>
+                                </icon-button>
+                            </div>
+
+                                                                                <div class="c-icon-grid">
+                                <icon-button ref="raceIconButtonViera" inline-template>
+                                    <div ref="check" :class="{ 'u-open': isChecked }">
+                                        <input type="checkbox" id="filter_race_7" name="filter[race][]" value="viera" />
+
+                                        <img src="/resources/icons/races/race-viera.png"
+                                             alt="VIERA" title="Viera" @click="toggleButton">
+                                    </div>
+                                </icon-button>
+                            </div>
+
+                                                                                <div class="c-icon-grid">
+                                <icon-button ref="raceIconButtonHrothgar" inline-template>
+                                    <div ref="check" :class="{ 'u-open': isChecked }">
+                                        <input type="checkbox" id="filter_race_8" name="filter[race][]" value="hrothgar" />
+
+                                        <img src="/resources/icons/races/race-hrothgar.png"
+                                             alt="HROTHGAR" title="Hrothgar" @click="toggleButton">
+                                    </div>
+                                </icon-button>
+                            </div>
+
+                                                                        </div>
+                </div>
+
+                <div class="s-filter-glamours-filter">
+                    <h3 class="s-filter-gearset-label">Equippable By</h3>
+                    <div class="c-set-fitting-group">
+                                            <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonPld" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_0" name="filter[job][]" value="pld" />
+
+                                    <img src="/resources/icons/jobs/job-pld.png" alt="PLD" title="Paladin" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonWar" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_1" name="filter[job][]" value="war" />
+
+                                    <img src="/resources/icons/jobs/job-war.png" alt="WAR" title="Warrior" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonDrk" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_2" name="filter[job][]" value="drk" />
+
+                                    <img src="/resources/icons/jobs/job-drk.png" alt="DRK" title="Dark Knight" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonGnb" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_3" name="filter[job][]" value="gnb" />
+
+                                    <img src="/resources/icons/jobs/job-gnb.png" alt="GNB" title="Gunbreaker" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonWhm" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_4" name="filter[job][]" value="whm" />
+
+                                    <img src="/resources/icons/jobs/job-whm.png" alt="WHM" title="White Mage" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonSch" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_5" name="filter[job][]" value="sch" />
+
+                                    <img src="/resources/icons/jobs/job-sch.png" alt="SCH" title="Scholar" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonAst" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_6" name="filter[job][]" value="ast" />
+
+                                    <img src="/resources/icons/jobs/job-ast.png" alt="AST" title="Astrologian" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonSge" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_7" name="filter[job][]" value="sge" />
+
+                                    <img src="/resources/icons/jobs/job-sge.png" alt="SGE" title="Sage" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                    </div>
+                            <div class="c-set-fitting-group">
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonMnk" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_8" name="filter[job][]" value="mnk" />
+
+                                    <img src="/resources/icons/jobs/job-mnk.png" alt="MNK" title="Monk" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonDrg" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_9" name="filter[job][]" value="drg" />
+
+                                    <img src="/resources/icons/jobs/job-drg.png" alt="DRG" title="Dragoon" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonNin" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_10" name="filter[job][]" value="nin" />
+
+                                    <img src="/resources/icons/jobs/job-nin.png" alt="NIN" title="Ninja" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonSam" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_11" name="filter[job][]" value="sam" />
+
+                                    <img src="/resources/icons/jobs/job-sam.png" alt="SAM" title="Samurai" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonRpr" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_12" name="filter[job][]" value="rpr" />
+
+                                    <img src="/resources/icons/jobs/job-rpr.png" alt="RPR" title="Reaper" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonBrd" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_13" name="filter[job][]" value="brd" />
+
+                                    <img src="/resources/icons/jobs/job-brd.png" alt="BRD" title="Bard" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonMch" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_14" name="filter[job][]" value="mch" />
+
+                                    <img src="/resources/icons/jobs/job-mch.png" alt="MCH" title="Machinist" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonDnc" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_15" name="filter[job][]" value="dnc" />
+
+                                    <img src="/resources/icons/jobs/job-dnc.png" alt="DNC" title="Dancer" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                    </div>
+                            <div class="c-set-fitting-group">
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonBlm" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_16" name="filter[job][]" value="blm" />
+
+                                    <img src="/resources/icons/jobs/job-blm.png" alt="BLM" title="Black Mage" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonSmn" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_17" name="filter[job][]" value="smn" />
+
+                                    <img src="/resources/icons/jobs/job-smn.png" alt="SMN" title="Summoner" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonRdm" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_18" name="filter[job][]" value="rdm" />
+
+                                    <img src="/resources/icons/jobs/job-rdm.png" alt="RDM" title="Red Mage" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonBlu" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_19" name="filter[job][]" value="blu" />
+
+                                    <img src="/resources/icons/jobs/job-blu.png" alt="BLU" title="Blue Mage" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                    </div>
+                            <div class="c-set-fitting-group">
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonCrp" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_20" name="filter[job][]" value="crp" />
+
+                                    <img src="/resources/icons/jobs/job-crp.png" alt="CRP" title="Carpenter" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonBsm" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_21" name="filter[job][]" value="bsm" />
+
+                                    <img src="/resources/icons/jobs/job-bsm.png" alt="BSM" title="Blacksmith" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonArm" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_22" name="filter[job][]" value="arm" />
+
+                                    <img src="/resources/icons/jobs/job-arm.png" alt="ARM" title="Armorer" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonGsm" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_23" name="filter[job][]" value="gsm" />
+
+                                    <img src="/resources/icons/jobs/job-gsm.png" alt="GSM" title="Goldsmith" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonLtw" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_24" name="filter[job][]" value="ltw" />
+
+                                    <img src="/resources/icons/jobs/job-ltw.png" alt="LTW" title="Leatherworker" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonWvr" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_25" name="filter[job][]" value="wvr" />
+
+                                    <img src="/resources/icons/jobs/job-wvr.png" alt="WVR" title="Weaver" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonAlc" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_26" name="filter[job][]" value="alc" />
+
+                                    <img src="/resources/icons/jobs/job-alc.png" alt="ALC" title="Alchemist" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonCul" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_27" name="filter[job][]" value="cul" />
+
+                                    <img src="/resources/icons/jobs/job-cul.png" alt="CUL" title="Culinarian" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                    </div>
+                            <div class="c-set-fitting-group">
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonMin" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_28" name="filter[job][]" value="min" />
+
+                                    <img src="/resources/icons/jobs/job-min.png" alt="MIN" title="Miner" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonBtn" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_29" name="filter[job][]" value="btn" />
+
+                                    <img src="/resources/icons/jobs/job-btn.png" alt="BTN" title="Botanist" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                    <div class="c-icon-grid">
+                            <icon-button ref="jobIconButtonFsh" inline-template>
+                                <div ref="check" :class="{ 'u-open': isChecked }">
+                                    <input type="checkbox" id="filter_job_30" name="filter[job][]" value="fsh" />
+
+                                    <img src="/resources/icons/jobs/job-fsh.png" alt="FSH" title="Fisher" @click="toggleButton">
+                                </div>
+                            </icon-button>
+                        </div>
+
+                                                                </div>
+
+                    <div class="s-filter-glamours-filter-option s-filter-glamours-filter-option-restrict-job">
+                        <input type="checkbox" id="filter_restrictJob" name="filter[restrictJob]" value="1" />
+                        <label for="filter_restrictJob">Show only glamours for selected jobs</label>
+                    </div>
+
+                    <div class="s-filter-glamours-filter-option s-filter-glamours-filter-option-restrict-job">
+                        <input type="checkbox" id="filter_restrictRole" name="filter[restrictRole]" value="1" />
+                        <label for="filter_restrictRole">Show only glamours for the roles</label>
+                    </div>
+
+                    <div class="s-filter-glamours-filter-option s-filter-glamours-filter-option-restrict-job">
+                        <input type="checkbox" id="filter_hideAllClasses" name="filter[hideAllClasses]" value="1" />
+                        <label for="filter_hideAllClasses">Hide glamours equipable by all jobs</label>
+                    </div>
+                </div>
+
+                <div class="s-filter-glamours-filter">
+                    <h3 class="s-filter-gearset-label">Level Range</h3>
+
+                    <div class="s-filter-glamours-filter-option">
+                        <input type="number" id="filter_minimumLvl" name="filter[minimumLvl]" min="1" max="90" value="1" /> - <input type="number" id="filter_maximumLvl" name="filter[maximumLvl]" min="1" max="90" value="90" />
+                    </div>
+                </div>
+
+                <div class="s-filter-glamours-filter">
+                    <h3 class="s-filter-gearset-label">Using</h3>
+
+                    <div class="s-filter-glamours-gear-piece">
+                        <div class="s-filter-glamours-gear-piece-icon c-gear-slot c-gear-slot-head">
+                            <img id="js-gear-slot-icon-head" class="c-gear-slot-item" src="">
+                            <img class="c-gear-slot-frame" src="/resources/icons/slots/reflection_frame.png">
+                        </div>
+                        <div class="s-filter-glamours-gear-piece-item">
+                            <gear-piece-select ref="gearSelectHead" v-model="headPiece"  slot-icon="head" slot="head" placeholder="Any head"></gear-piece-select>
+                            <input type="hidden" id="filter_headPiece" name="filter[headPiece]" v-model="headPiece" />
+                        </div>
+                    </div>
+
+                    <div class="s-filter-glamours-gear-piece">
+                        <div class="s-filter-glamours-gear-piece-icon c-gear-slot c-gear-slot-body">
+                            <img id="js-gear-slot-icon-body" class="c-gear-slot-item" src="">
+                            <img class="c-gear-slot-frame" src="/resources/icons/slots/reflection_frame.png">
+                        </div>
+                        <div class="s-filter-glamours-gear-piece-item">
+                            <gear-piece-select ref="gearSelectBody" v-model="bodyPiece"  slot-icon="body" slot="body" placeholder="Any body"></gear-piece-select>
+                            <input type="hidden" id="filter_bodyPiece" name="filter[bodyPiece]" v-model="bodyPiece" />
+                        </div>
+                    </div>
+
+                    <div class="s-filter-glamours-gear-piece">
+                        <div class="s-filter-glamours-gear-piece-icon c-gear-slot c-gear-slot-hands">
+                            <img id="js-gear-slot-icon-hands" class="c-gear-slot-item" src="">
+                            <img class="c-gear-slot-frame" src="/resources/icons/slots/reflection_frame.png">
+                        </div>
+                        <div class="s-filter-glamours-gear-piece-item">
+                            <gear-piece-select ref="gearSelectHands" v-model="handsPiece"  slot-icon="hands" slot="hands" placeholder="Any hands"></gear-piece-select>
+                            <input type="hidden" id="filter_handsPiece" name="filter[handsPiece]" v-model="handsPiece" />
+                        </div>
+                    </div>
+
+                    <div class="s-filter-glamours-gear-piece">
+                        <div class="s-filter-glamours-gear-piece-icon c-gear-slot c-gear-slot-legs">
+                            <img id="js-gear-slot-icon-legs" class="c-gear-slot-item" src="">
+                            <img class="c-gear-slot-frame" src="/resources/icons/slots/reflection_frame.png">
+                        </div>
+                        <div class="s-filter-glamours-gear-piece-item">
+                            <gear-piece-select ref="gearSelectLegs" v-model="legsPiece"  slot-icon="legs" slot="legs" placeholder="Any legs"></gear-piece-select>
+                            <input type="hidden" id="filter_legsPiece" name="filter[legsPiece]" v-model="legsPiece" />
+                        </div>
+                    </div>
+
+                    <div class="s-filter-glamours-gear-piece u-with-margin">
+                        <div class="s-filter-glamours-gear-piece-icon c-gear-slot c-gear-slot-feet">
+                            <img id="js-gear-slot-icon-feet" class="c-gear-slot-item" src="">
+                            <img class="c-gear-slot-frame" src="/resources/icons/slots/reflection_frame.png">
+                        </div>
+                        <div class="s-filter-glamours-gear-piece-item">
+                            <gear-piece-select ref="gearSelectFeet" v-model="feetPiece"  slot-icon="feet" slot="feet" placeholder="Any feet"></gear-piece-select>
+                            <input type="hidden" id="filter_feetPiece" name="filter[feetPiece]" v-model="feetPiece" />
+                        </div>
+                    </div>
+
+                    <div class="s-filter-glamours-gear-piece">
+                        <div class="s-filter-glamours-gear-piece-icon c-gear-slot c-gear-slot-weapon">
+                            <img id="js-gear-slot-icon-weapon" class="c-gear-slot-item" src="">
+                            <img class="c-gear-slot-frame" src="/resources/icons/slots/reflection_frame.png">
+                        </div>
+                        <div class="s-filter-glamours-gear-piece-item">
+                            <gear-piece-select ref="gearSelectWeapon" v-model="weaponPiece"  slot-icon="weapon" slot="weapon" placeholder="Any main hand"></gear-piece-select>
+                            <input type="hidden" id="filter_weaponPiece" name="filter[weaponPiece]" v-model="weaponPiece" />
+                        </div>
+                    </div>
+
+                    <div class="s-filter-glamours-gear-piece u-with-margin">
+                        <div class="s-filter-glamours-gear-piece-icon c-gear-slot c-gear-slot-offhand">
+                            <img id="js-gear-slot-icon-offhand" class="c-gear-slot-item" src="">
+                            <img class="c-gear-slot-frame" src="/resources/icons/slots/reflection_frame.png">
+                        </div>
+                        <div class="s-filter-glamours-gear-piece-item">
+                            <gear-piece-select ref="gearSelectOffhand" v-model="offhandPiece"  slot-icon="offhand" slot="offhand" placeholder="Any offhand"></gear-piece-select>
+                            <input type="hidden" id="filter_offhandPiece" name="filter[offhandPiece]" v-model="offhandPiece" />
+                        </div>
+                    </div>
+
+                    <div class="s-filter-glamours-gear-piece">
+                        <div class="s-filter-glamours-gear-piece-icon c-gear-slot c-gear-slot-earrings">
+                            <img id="js-gear-slot-icon-earrings" class="c-gear-slot-item" src="">
+                            <img class="c-gear-slot-frame" src="/resources/icons/slots/reflection_frame.png">
+                        </div>
+                        <div class="s-filter-glamours-gear-piece-item">
+                            <gear-piece-select ref="gearSelectEarrings" v-model="earringsPiece"  slot-icon="earrings" slot="earrings" placeholder="Any earrings"></gear-piece-select>
+                            <input type="hidden" id="filter_earringsPiece" name="filter[earringsPiece]" v-model="earringsPiece" />
+                        </div>
+                    </div>
+
+                    <div class="s-filter-glamours-gear-piece">
+                        <div class="s-filter-glamours-gear-piece-icon c-gear-slot c-gear-slot-necklace">
+                            <img id="js-gear-slot-icon-necklace" class="c-gear-slot-item" src="">
+                            <img class="c-gear-slot-frame" src="/resources/icons/slots/reflection_frame.png">
+                        </div>
+                        <div class="s-filter-glamours-gear-piece-item">
+                            <gear-piece-select ref="gearSelectNecklace" v-model="necklacePiece"  slot-icon="necklace" slot="necklace" placeholder="Any necklace"></gear-piece-select>
+                            <input type="hidden" id="filter_necklacePiece" name="filter[necklacePiece]" v-model="necklacePiece" />
+                        </div>
+                    </div>
+
+                    <div class="s-filter-glamours-gear-piece">
+                        <div class="s-filter-glamours-gear-piece-icon c-gear-slot c-gear-slot-bracelets">
+                            <img id="js-gear-slot-icon-bracelets" class="c-gear-slot-item" src="">
+                            <img class="c-gear-slot-frame" src="/resources/icons/slots/reflection_frame.png">
+                        </div>
+                        <div class="s-filter-glamours-gear-piece-item">
+                            <gear-piece-select ref="gearSelectBracelets" v-model="braceletsPiece"  slot-icon="bracelets" slot="bracelets" placeholder="Any bracelets"></gear-piece-select>
+                            <input type="hidden" id="filter_braceletsPiece" name="filter[braceletsPiece]" v-model="braceletsPiece" />
+                        </div>
+                    </div>
+
+                    <div class="s-filter-glamours-gear-piece u-with-margin">
+                        <div class="s-filter-glamours-gear-piece-icon c-gear-slot c-gear-slot-ring">
+                            <img id="js-gear-slot-icon-ring" class="c-gear-slot-item" src="">
+                            <img class="c-gear-slot-frame" src="/resources/icons/slots/reflection_frame.png">
+                        </div>
+                        <div class="s-filter-glamours-gear-piece-item">
+                            <gear-piece-select ref="gearSelectRing" v-model="ringPiece"  slot-icon="ring" slot="ring" placeholder="Any ring"></gear-piece-select>
+                            <input type="hidden" id="filter_ringPiece" name="filter[ringPiece]" v-model="ringPiece" />
+                        </div>
+                    </div>
+
+                    <div class="s-filter-glamours-gear-piece">
+                        <div class="s-filter-glamours-gear-piece-icon c-gear-slot c-gear-slot-fashion">
+                            <img id="js-gear-slot-icon-fashion" class="c-gear-slot-item" src="">
+                            <img class="c-gear-slot-frame" src="/resources/icons/slots/reflection_frame.png">
+                        </div>
+                        <div class="s-filter-glamours-gear-piece-item">
+                            <gear-piece-select ref="gearSelectFashion" v-model="fashionPiece"  slot-icon="fashion" slot="fashion" placeholder="Any fashion accessory"></gear-piece-select>
+                            <input type="hidden" id="filter_fashionPiece" name="filter[fashionPiece]" v-model="fashionPiece" />
+                        </div>
+                    </div>
+
+                    <div class="s-filter-glamours-filter-option s-filter-glamours-filter-option-restrict-job">
+                        <input type="checkbox" id="filter_excludeMogstation" name="filter[excludeMogstation]" value="1" />
+                        <label for="filter_excludeMogstation">Exclude mogstation items</label>
+                    </div>
+
+                    <div class="s-filter-glamours-filter-option s-filter-glamours-filter-option-restrict-job">
+                        <input type="checkbox" id="filter_excludeSeasonal" name="filter[excludeSeasonal]" value="1" />
+                        <label for="filter_excludeSeasonal">Exclude seasonal items</label>
+                    </div>
+
+                    <div><button type="reset" id="filter_reset" name="filter[reset]" class="s-filter-glamours-reset c-button" @click="resetFilters">Reset filters</button></div>
+                    <div><button type="submit" id="filter_save" name="filter[save]" class="s-filter-glamours-submit c-button c-button-primary">Apply filters</button></div>
+                </div>
+
+                <input type="hidden" id="filter_glamour_page" name="page" value="1">
+            </div>
+
+                                            <div>
+                        <div class="c-publicity">
+        <div class="c-publicity-disclaimer">Advertisement</div>
+        <div class="c-publicity-background u-mrec">
+            <!--  [Desktop/Tablet]med_rect_btf -->
+            <div data-pw-desk="med_rect_btf" id="pwDeskMedRectBtf1"></div>
+            <script type="text/javascript">
+                window.ramp.que.push(function () {
+                    window.ramp.addTag("pwDeskMedRectBtf1");
+                })
+            </script>
+            <!--  [Mobile]med_rect_btf -->
+            <div data-pw-mobi="med_rect_btf" id="pwMobiMedRectBtf1"></div>
+            <script type="text/javascript">
+                window.ramp.que.push(function () {
+                    window.ramp.addTag("pwMobiMedRectBtf1");
+                })
+            </script>
+        </div>
+
+        <div class="c-publicity-disclaimer u-lower">Become a patron to remove ads</div>
+    </div>
+
+                </div>
+                    </div>
+
+        <div class="l-section-double-main s-browse-glamours">
+            <div class="c-glamour-grid">
+                                                <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>1</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215054" class="c-glamour-grid-item-icons-counter c-label">0</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+            <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-mch.png" alt="MCH" title="Machinist">    
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215054/ada-wong-re4-remake-2023-version">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Ada Wong (RE4 Remake 2023 Version)</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Calm Envy</b> «Gungnir»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215054/cover-0-1680345420.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215054/ada-wong-re4-remake-2023-version-0-1680345420.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>1</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215053" class="c-glamour-grid-item-icons-counter c-label">3</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215053/fiddlesticks">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Fiddlesticks</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Oni May</b> «Raiden»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215053/cover-0-1680344515.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215053/fiddlesticks-0-1680344515.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>60</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215052" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-nin.png" alt="NIN" title="Ninja">        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215052/captain">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Captain</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Iggy Goldberg</b> «Adamantoise»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215052/cover-0-1680345939.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>70</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215051" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                        <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-drk.png" alt="DRK" title="Dark Knight">    
+                    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215051/samurai-knight">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Samurai knight</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Dronex Kimura</b> «Lich»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215051/cover-0-1680342806.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>70</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215050" class="c-glamour-grid-item-icons-counter c-label">0</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+            <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-smn.png" alt="SMN" title="Summoner">        
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215050/bahamut-at-home">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Bahamut at Home</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Ciqeqe Ciqe</b> «Spriggan»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215050/cover-0-1680342736.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>90</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215048" class="c-glamour-grid-item-icons-counter c-label">0</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-ast.png" alt="AST" title="Astrologian">    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215048/she-came-from-the-desert">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">She came from the desert...</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Elanne Nolani</b> «Shiva»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215048/cover-0-1680341794.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>1</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215047" class="c-glamour-grid-item-icons-counter c-label">0</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215047/on-air">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">On Air</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Caithi Sith</b> «Phoenix»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215047/cover-0-1680341151.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215047/on-air-2-1680341151.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>1</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215046" class="c-glamour-grid-item-icons-counter c-label">0</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215046/sweet-service">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Sweet service</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Natsu Racoon</b> «Lich»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215046/cover-0-1680340308.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215046/sweet-service-0-1680340308.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>90</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215045" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+    <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/role-healer.png" alt="Healers" title="Healers">                
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215045/chic-mage">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Chic Mage</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Natsu Racoon</b> «Lich»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215045/cover-0-1680339385.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215045/chic-mage-0-1680339385.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>90</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215044" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-rpr.png" alt="RPR" title="Reaper">
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215044/stormy-phantom">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Stormy Phantom</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Ororo Mun&#039;roe</b> «Diabolos»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215044/cover-0-1680335441.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215044/stormy-phantom-0-1680335441.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>90</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215043" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                        <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-drk.png" alt="DRK" title="Dark Knight">    
+                    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215043/shadow-crusader">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Shadow Crusader</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Drogyn Vortus</b> «Behemoth»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215043/cover-0-1680334867.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>78</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215042" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-gnb.png" alt="GNB" title="Gunbreaker">
+                    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215042/gunbreak-ur-ass">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Gunbreak Ur Ass</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Bulnik Sutisna</b> «Tonberry»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215042/cover-0-1680334763.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215042/gunbreak-ur-ass-0-1680334763.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>1</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215041" class="c-glamour-grid-item-icons-counter c-label">3</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215041/rogue">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Rogue</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Claire Morrigan</b> «Tonberry»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215041/cover-0-1680333817.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>85</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215040" class="c-glamour-grid-item-icons-counter c-label">0</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+    <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/role-healer.png" alt="Healers" title="Healers">                
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215040/the-green-enchantress">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">The Green Enchantress</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Queen Yharnam</b> «Seraph»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215040/cover-0-1680333244.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>50</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215039" class="c-glamour-grid-item-icons-counter c-label">3</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+        <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-brd.png" alt="BRD" title="Bard">        
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215039/onion-knight-bowman">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Onion Knight Bowman</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Shallot Liltian</b> «Famfrit»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215039/cover-0-1680329944.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215039/onion-knight-bowman-0-1680329944.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>90</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215038" class="c-glamour-grid-item-icons-counter c-label">4</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+        <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-mnk.png" alt="MNK" title="Monk">            <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-sam.png" alt="SAM" title="Samurai">    
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215038/elegant-emeralds">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Elegant Emeralds</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Jessica Rosehaven</b> «Adamantoise»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215038/cover-0-1680327716.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>80</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215037" class="c-glamour-grid-item-icons-counter c-label">7</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+    <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/role-healer.png" alt="Healers" title="Healers">                
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215037/genshin-impact-klee">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Genshin Impact- Klee</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Anya Maeve</b> «Malboro»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215037/cover-0-1680325420.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215037/genshin-impact-klee-0-1680325420.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>90</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215036" class="c-glamour-grid-item-icons-counter c-label">4</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+        <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-mnk.png" alt="MNK" title="Monk">            <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-sam.png" alt="SAM" title="Samurai">    
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215036/no-title-for-now">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">No Title (For Now)</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Red Boar</b> «Mateus»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215036/cover-0-1680322243.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215036/no-title-for-now-0-1680322243.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>90</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215035" class="c-glamour-grid-item-icons-counter c-label">4</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+    <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/role-healer.png" alt="Healers" title="Healers">                
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215035/healing-in-style">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Healing in style</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Cellandria Starfall</b> «Malboro»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215035/cover-0-1680321307.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>1</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215033" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+        <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-blm.png" alt="BLM" title="Black Mage">            
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215033/bad-omen-seer">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Bad Omen Seer</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Eleiannra Ereshkigal</b> «Diabolos»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215033/cover-0-1680320067.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215033/bad-omen-seer-0-1680320067.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>1</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215032" class="c-glamour-grid-item-icons-counter c-label">0</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215032/comfy-lizard-20">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Comfy Lizard 2.0</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Nomie Nomz</b> «Coeurl»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215032/cover-0-1680320059.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>90</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215031" class="c-glamour-grid-item-icons-counter c-label">5</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-nin.png" alt="NIN" title="Ninja">        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215031/no-title-for-now">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">No Title (For Now)</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Red Boar</b> «Mateus»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215031/cover-0-1680319943.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215031/no-title-for-now-0-1680319943.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>90</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215030" class="c-glamour-grid-item-icons-counter c-label">11</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+    <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/role-ranged.png" alt="Ranged" title="Ranged DPS">            
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215030/blood-violet-outrider">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Blood Violet Outrider</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Tessa Tara</b> «Excalibur»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215030/cover-0-1680319755.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215030/blood-violet-outrider-3-1680319755.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>1</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215029" class="c-glamour-grid-item-icons-counter c-label">3</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215029/wine-and-white-silk">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Wine and White Silk</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Ume Ritsuso</b> «Goblin»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215029/cover-0-1680319738.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215029/wine-and-white-silk-1-1680319738.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>50</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215028" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+            <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-smn.png" alt="SMN" title="Summoner">        
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215028/cyborg-necromancer">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Cyborg Necromancer</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Eleiannra Ereshkigal</b> «Diabolos»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215028/cover-0-1680318894.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215028/cyborg-necromancer-0-1680318894.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>59</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215027" class="c-glamour-grid-item-icons-counter c-label">0</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+    <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/role-caster.png" alt="Caster" title="Caster DPS">                
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215027/modern-sharlayan-educand">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Modern Sharlayan Educand</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Lancelot Blanc</b> «Unicorn»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215027/cover-0-1680318680.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>1</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215026" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215026/comfy-lizard">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Comfy Lizard</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Nomie Nomz</b> «Coeurl»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215026/cover-0-1680318499.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>90</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215025" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+    <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/role-caster.png" alt="Caster" title="Caster DPS">                
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215025/fae-scholar">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Fae Scholar</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Cocoabutter Kisses</b> «Midgardsormr»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215025/cover-0-1680317458.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215025/fae-scholar-0-1680317458.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>80</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215024" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+    <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/role-caster.png" alt="Caster" title="Caster DPS">                
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215024/gothic-lizard">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Gothic Lizard</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Tiamat Wyrmsong</b> «Spriggan»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215024/cover-0-1680317127.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215024/gothic-lizard-0-1680317002.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>69</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215023" class="c-glamour-grid-item-icons-counter c-label">2</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+    <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/role-ranged.png" alt="Ranged" title="Ranged DPS">            
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215023/gold-rimmed-bard">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Gold Rimmed Bard</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Emerald Noble</b> «Jenova»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215023/cover-0-1680316073.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215023/gold-rimmed-bard-0-1680316046.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>60</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215022" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+    <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/role-ranged.png" alt="Ranged" title="Ranged DPS">            
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215022/untitled-dancer-glam">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Untitled dancer glam</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Lemon Rooni</b> «Goblin»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215022/cover-0-1680315650.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215022/untitled-dancer-glam-0-1680315650.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>70</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215021" class="c-glamour-grid-item-icons-counter c-label">4</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+    <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/role-caster.png" alt="Caster" title="Caster DPS">                
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215021/gun-mage">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Gun Mage</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Schan Starfall</b> «Moogle»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215021/cover-0-1680315035.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215021/gun-mage-0-1680315035.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>88</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215020" class="c-glamour-grid-item-icons-counter c-label">1</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-gnb.png" alt="GNB" title="Gunbreaker">
+                    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215020/stormbreaker">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Stormbreaker</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Ziera Inle</b> «Maduin»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215020/cover-0-1680314858.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>60</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215019" class="c-glamour-grid-item-icons-counter c-label">6</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+    <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/role-ranged.png" alt="Ranged" title="Ranged DPS">            
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215019/the-last-unicorn">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">The Last Unicorn</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Esra Rose</b> «Zalera»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215019/cover-0-1680314604.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215019/the-last-unicorn-2-1680314604.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>90</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215018" class="c-glamour-grid-item-icons-counter c-label">2</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        <img class="c-set-fitting-icon u-on-image" src="/resources/icons/jobs/job-rpr.png" alt="RPR" title="Reaper">
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215018/voidbound-reaper">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Voidbound Reaper</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Lee Gahyeon</b> «Jenova»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215018/cover-0-1680313248.png" loading="lazy">
+
+    
+            </a>
+        </article>
+            <article class="c-glamour-grid-item ">
+            <div class="c-glamour-grid-item-icons u-top">
+                <div class="c-label" style="margin: 3px 0 0; vertical-align: middle;">
+                    <b>1</b>
+                    <img class="b-info-box-category-icon" src="/resources/icons/ffxiv/lv.svg" style="width: 10px;">
+                </div>
+                <span id="js-glamour-likes-215017" class="c-glamour-grid-item-icons-counter c-label">9</span>
+                                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-heart.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to love</div>
+                    </div>
+                    <div class="c-tooltip">
+                        <a href="/login">
+                            <div class="c-reaction"><img class="c-reaction-icon c-reaction-icon-disabled" src="/resources/icons/icon-glow-star.png"></div>
+                        </a>
+                        <div class="c-tooltip-text">you need to be logged in to save as favorite</div>
+                    </div>
+                            </div>
+
+            <div class="c-glamour-grid-item-icons u-bottom" style="display: flex; flex-wrap: wrap;flex-direction: column;">
+                                                                            
+                    
+        
+                        
+                
+                    
+                                    
+                
+                            </div>
+
+            <a class="c-glamour-grid-item-link"
+               href="/glamour/215017/nagxian-ranger">
+                <div class="c-glamour-grid-item-content">
+                    <h3 class="c-glamour-grid-item-content-title">Nagxian Ranger</h3>
+                    <div class="c-glamour-grid-item-content-divider"></div>
+                    <h4 class="c-glamour-grid-item-content-author"><b>Lilith Hortensia</b> «Tonberry»</h4>
+                </div>
+
+                    
+    
+        
+            
+                                
+    <img class="c-glamour-grid-item-image u-inset" src="https://glamours.eorzeacollection.com/215017/cover-0-1680313038.png" loading="lazy">
+
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover">
+            <div class="c-glamour-grid-item-image u-inset u-toggle-hover" style="background-image: url('https://glamours.eorzeacollection.com/215017/nagxian-ranger-0-1680313038.png')"></div>
+        </div>
+    
+            </a>
+        </article>
+    
+                            </div>
+
+                                                <div class="c-publicity">
+        <div class="c-publicity-disclaimer">Advertisement</div>
+        <div class="c-publicity-background u-leaderboard">
+            <!--  [Desktop/Tablet]leaderboard_atf -->
+            <div data-pw-desk="leaderboard_btf" id="pwDeskLbBtf1"></div>
+            <script type="text/javascript">
+                window.ramp.que.push(function () {
+                    window.ramp.addTag("pwDeskLbBtf1");
+                })
+            </script>
+            <!--  [Mobile]leaderboard_atf -->
+            <div data-pw-mobi="leaderboard_btf" id="pwMobiLbBtf1"></div>
+            <script type="text/javascript">
+                window.ramp.que.push(function () {
+                    window.ramp.addTag("pwMobiLbBtf1");
+                })
+            </script>
+        </div>
+
+        <div class="c-publicity-disclaimer u-lower">Become a patron to remove ads</div>
+    </div>
+
+            
+                            <section class="l-section">
+                    <div class="l-section-pagination">
+                        <h3 class="l-section-label l-section-pagination-title">Page 1
+                            of 5291</h3>
+
+                        <div class="l-section-pagination-pages">
+                            
+                                                        
+                                                        
+                                                                
+                                
+                                                            
+                                                            <button class="c-button l-section-pagination-page l-section-pagination-page-active"
+                                        onclick="ec.goToPage(1);">
+                                    1
+                                </button>
+                                                            <button class="c-button l-section-pagination-page "
+                                        onclick="ec.goToPage(2);">
+                                    2
+                                </button>
+                                                            <button class="c-button l-section-pagination-page "
+                                        onclick="ec.goToPage(3);">
+                                    3
+                                </button>
+                                                            <button class="c-button l-section-pagination-page "
+                                        onclick="ec.goToPage(4);">
+                                    4
+                                </button>
+                                                            <button class="c-button l-section-pagination-page "
+                                        onclick="ec.goToPage(5);">
+                                    5
+                                </button>
+                                                            <button class="c-button l-section-pagination-page "
+                                        onclick="ec.goToPage(6);">
+                                    6
+                                </button>
+                                                            <button class="c-button l-section-pagination-page "
+                                        onclick="ec.goToPage(7);">
+                                    7
+                                </button>
+                                                            <button class="c-button l-section-pagination-page "
+                                        onclick="ec.goToPage(8);">
+                                    8
+                                </button>
+                                                            <button class="c-button l-section-pagination-page "
+                                        onclick="ec.goToPage(9);">
+                                    9
+                                </button>
+                                                    </div>
+                    </div>
+                </section>
+                    </div>
+    </section>
+
+    </form>
+    </glamour-filter>
+            </div>
+        </main>
+
+                    <footer class="l-footer">
+                <div class="l-footer-wrapper">
+                    <a href="#top" class="l-footer-back-to-top" onclick="window.scrollTo(0,0)">
+                        <img class="l-footer-back-to-top-icon" src="/resources/icons/icon-arrow-up.svg" alt="back to top">
+                        <span class="l-footer-back-to-top-text">TOP</span>
+                    </a>
+                    <div class="l-footer-message-wrapper">
+                        <div class="l-footer-social-media">
+                            <a href="https://www.facebook.com/ffxiveorzeacollection" target="_blank">
+                                <img class="l-footer-social-media-icon" src="/resources/social/logos/facebook.svg" alt="facebook">
+                            </a>
+                            <a href="https://twitter.com/eorzeacollect" target="_blank">
+                                <img class="l-footer-social-media-icon" src="/resources/social/logos/twitter.svg" alt="twitter">
+                            </a>
+                            <a href="https://www.instagram.com/eorzea.collection/" target="_blank">
+                                <img class="l-footer-social-media-icon" src="/resources/social/logos/instagram.svg" alt="instagram">
+                            </a>
+                            <a href="https://www.reddit.com/r/EorzeaCollection/" target="_blank">
+                                <img class="l-footer-social-media-icon" src="/resources/social/logos/reddit.svg" alt="reddit">
+                            </a>
+                            <a href="https://discord.gg/tBry3Az" target="_blank">
+                                <img class="l-footer-social-media-icon" src="/resources/social/logos/discord.svg" alt="discord" style="width: 24px">
+                            </a>
+                            <a href="https://www.patreon.com/bePatron?u=18806141" target="_blank">
+                                <img class="l-footer-social-media-icon" src="/resources/social/logos/patreon.svg" alt="patreon">
+                            </a>
+
+                            <a href="https://eorzeacollect.redbubble.com" target="_blank">
+                                <img class="l-footer-social-media-icon" src="/resources/social/logos/redbubble.svg" alt="redbubble">
+                            </a>
+                        </div>
+                        <div class="l-footer-divider"></div>
+                        <div class="l-footer-message">
+                            thank you<br>
+                            <b>for being</b>
+                            <span class="l-footer-message-bold">glamourous</span>
+                        </div>
+                    </div>
+                    <a href="/">
+                        <img class="l-footer-logo" src="/resources/logo-horizontal-colored.svg" alt="Eorzea Collection"/>
+                    </a>
+                    <div class="l-footer-copyright">
+                        <div>Eorzea Collection © 2016-2023. FINAL FANTASY XIV © 2010-2023 SQUARE ENIX CO., LTD. All Rights Reserved.</div><br>
+                        <span data-ccpa-link="1"></span>
+                        <a href="/privacy-policy">
+                            Privacy Policy
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        
+        <script src="/build/js/eorzea-collection.09519e51.js"></script>
+
+                    <script async src="//cdn.intergient.com/ramp_core.js"></script>
+        
+            <script src="/build/js/browse.5182cc87.js"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vb26e4fa9e5134444860be286fd8771851679335129114" integrity="sha512-M3hN/6cva/SjwrOtyXeUa5IuCT0sedyfT+jK/OV+s+D0RnzrTfwjwJHhd+wYfMm9HJSrZ1IKksOdddLuN6KOzw==" data-cf-beacon='{"rayId":"7b1069a43fc90a1f","version":"2023.3.0","r":1,"b":1,"token":"c5220d29cecc48ce998390fe70509a03","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
