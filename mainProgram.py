@@ -39,9 +39,17 @@ async def on_message(message):
     if message.content.lower().startswith('!glamour'):
         variable = message.content.lower()[1:]
         print(variable)
-        
+
         newUrl = f"{url1}?page={mm.pageNumbers(url1)}"
 
+        if mm.checkColor(variable) != 0:
+            color = mm.checkColor(variable)
+            print(color)
+            newUrl = f"{url1}?&filter%5Bcolor%5D={color}"
+            newUrl = f'{newUrl}&page={mm.pageNumbers(newUrl)}'
+            
+            
+         
         response = requests.get(newUrl)
         soup = BeautifulSoup(response.text, 'html.parser')
 

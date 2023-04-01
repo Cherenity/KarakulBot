@@ -38,7 +38,7 @@ def newsMethod():
 def pageNumbers(urlParameter):
     # URL to scrape
     url =  urlParameter
-    
+
     # return value if reading URL gives an error
     rvalue = 500
 
@@ -68,4 +68,29 @@ def pageNumbers(urlParameter):
     except Exception as e:
         print("An error occurred:", e)
         return random.randint(1, rvalue)
+
+def checkColor(word):    
+    # All the colors in color dictionary:    
+    colorsDictionary = {"beige":40,"black":41, "blue": 42, "brown":43, "grey":44,
+                            "orange":45, "pink": 46, "purple":47, "red": 48, "white": 49, 
+                            "yellow": 50, "green": 51, "silver": 52, "gold":53, "metallic": 63, 
+                            "pastel": 64, "monochromatic": 62}
+    # Initializing a new empy dictionary
+    newDictionary = {}
+
+    #lower casing word parameter
+    word = word.lower()
+    for key in colorsDictionary:
+        if key in word:
+            newDictionary[key] = colorsDictionary[key]
+    
+    if len(newDictionary) == 1:
+        newList = list(newDictionary.items())
+        value = newList[0][1]
+        return value
+    
+    else: 
+        return 0    
+
+
 
