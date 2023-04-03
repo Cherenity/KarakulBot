@@ -28,7 +28,16 @@ async def on_message(message):
         return
 
     if message.content.startswith('!hello'):
-        await message.channel.send('Hello!')
+        image = Image.open("karakul.png")
+        image = image.resize((100, 100))
+        image.save("resized_image.png")
+        
+        embed = discord.Embed(title="Hello!", description="I am karakul bot!", color=0xFFFFFF)
+        file = discord.File("resized_image.png", filename="resized_image.png")
+        embed.set_image(url="attachment://resized_image.png")
+         
+        await message.channel.send(file=file, embed=embed)
+
 
     if message.content.lower().startswith('!news'):
         embed = mm.newsMethod()
@@ -79,7 +88,33 @@ async def on_message(message):
 
         random_img = random.choice(img_list)
 
-        await message.channel.send(random_img)
+        glamourNro = random_img.split("/")[-2]
+        link = f"https://ffxiv.eorzeacollection.com/glamour/{glamourNro}"
+
+        # Gets a title from link and stores it to title variable
+        response = requests.get(link)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        title = soup.find('title').text
+        title = title.split('|')[0].strip()
+
+        # Create a new embed message and set its title, description, and image
+        embed = discord.Embed(title=title, url=link)
+        embed.set_image(url=random_img)
+        # embed.add_field(name="", value=f'[{title}]({link})', inline=False)
+        embed.set_footer(text='*＊✿❀ Glamour idea for you!❀✿＊*')
+        embed.color = discord.Color.dark_blue()
+
+        # Send the embed message to your Discord channel
+        await message.channel.send(embed=embed)
+
+        # await message.channel.send(f"<{link}>")
+        # await message.channel.send(random_img)
+
+        
+        
+        # 160294
+        #https://ffxiv.eorzeacollection.com/glamour/
+
 
     if message.content.startswith('!karakulBot'):
                 # Get the path to the image
