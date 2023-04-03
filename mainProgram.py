@@ -21,8 +21,6 @@ client = discord.Client(intents=intents)
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
-#Url:s for on_message(message) events
-url1 = 'https://ffxiv.eorzeacollection.com/glamours'
 
 @client.event
 async def on_message(message):
@@ -36,21 +34,41 @@ async def on_message(message):
         embed = mm.newsMethod()
         await message.channel.send(embed=embed)
 
-    if message.content.lower().startswith('!glamour'):
-        variable = message.content.lower()[1:]
-        print(variable)
+    if message.content.lower().startswith('!glamour'): 
+        
+        #Url for Eorzean Collection glamours page
+        url1 = 'https://ffxiv.eorzeacollection.com/glamours'
+        # Saves user input to variable
+        variable = message.content.lower()[8:]
+        variable = variable.strip()
+        print(f"mo{variable}")
 
-        newUrl = f"{url1}?page={mm.pageNumbers(url1)}"
+        # pageNumbers method checks how many pages of glamours
+        # and returns a random page number 
+        url1 = f"{url1}?page={mm.pageNumbers(url1)}"
 
-        if mm.checkColor(variable) != 0:
-            color = mm.checkColor(variable)
-            print(color)
-            newUrl = f"{url1}?&filter%5Bcolor%5D={color}"
-            newUrl = f'{newUrl}&page={mm.pageNumbers(newUrl)}'
-            
-            
-         
-        response = requests.get(newUrl)
+        if not variable:
+            print("IS EMPTY")       
+        else:
+            # modifys url by color
+            url1 += mm.checkColor(variable)
+            # modifys url by gender
+            url1 += mm.checkGender(variable)
+            # modifys url by classification
+            url1 += mm.checkClassification(variable)
+
+        print(url1)
+        # if mm.checkColor(variable) != 0:
+        #     color = mm.checkColor(variable)
+        #     print(color)
+        #     url1 = f"{url1}?&filter%5Bcolor%5D={color}"
+        #     url1 = f'{url1}&page={mm.pageNumbers(url1)}'
+
+        # Edits the url according to the genre  
+        # url1 = f"{url1}{mm.checkGender(variable)}"
+        # print(url1)
+
+        response = requests.get(url1)
         soup = BeautifulSoup(response.text, 'html.parser')
 
         img_tags = soup.find_all('img')
@@ -60,6 +78,7 @@ async def on_message(message):
                 img_list.append(img['src'])
 
         random_img = random.choice(img_list)
+
         await message.channel.send(random_img)
 
     if message.content.startswith('!karakulBot'):

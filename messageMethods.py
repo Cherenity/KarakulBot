@@ -68,29 +68,62 @@ def pageNumbers(urlParameter):
     except Exception as e:
         print("An error occurred:", e)
         return random.randint(1, rvalue)
+    
+def checkSpaces(Test_string):
+    return Test_string.count(" ")
 
 def checkColor(word):    
-    # All the colors in color dictionary:    
+    # Color options added to colorsDictionary   
     colorsDictionary = {"beige":40,"black":41, "blue": 42, "brown":43, "grey":44,
                             "orange":45, "pink": 46, "purple":47, "red": 48, "white": 49, 
                             "yellow": 50, "green": 51, "silver": 52, "gold":53, "metallic": 63, 
                             "pastel": 64, "monochromatic": 62}
+    
+    words = word.split(" ")
     # Initializing a new empy dictionary
     newDictionary = {}
 
-    #lower casing word parameter
-    word = word.lower()
-    for key in colorsDictionary:
-        if key in word:
-            newDictionary[key] = colorsDictionary[key]
+    for word in words:
+        if word in colorsDictionary:
+            newDictionary[word] = colorsDictionary[word]
     
     if len(newDictionary) == 1:
         newList = list(newDictionary.items())
         value = newList[0][1]
-        return value
+        newValue = f"&filter%5Bcolor%5D={value}"
+        return newValue
+    else:
+        return ""
+
+def checkGender(word):
+    if 'female' in word:
+        print('female')
+        return '&filter%5Bgender%5D=female'
+    elif 'male' in word:
+        print('male')
+        return '&filter%5Bgender%5D=male'
+    else:
+        print('any')
+        return '&filter%5Bgender%5D=any'
+
+def checkClassification(word):    
+    # Color options added to colorsDictionary   
+    colorsDictionary = {"athletic":1,"cool":2, "cute": 3, "divine": 4, "elegant": 5, 
+                        "fashionable" : 6, "glamorous" : 7, "sexy": 8, "sweet": 9,
+                        "youthful": 10, "heroic": 11, "villainous": 12, "strong": 13}
+
+    words = word.split(" ")
+    # Initializing a new empy dictionary
+    newDictionary = {}
+
+    for word in words:
+        if word in colorsDictionary:
+            newDictionary[word] = colorsDictionary[word]
     
-    else: 
-        return 0    
-
-
-
+    if len(newDictionary) == 1:
+        newList = list(newDictionary.items())
+        value = newList[0][1]
+        newValue = f"&filter%5Bclassification%5D={value}"
+        return newValue
+    else:
+        return ""
