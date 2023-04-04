@@ -127,3 +127,26 @@ def checkClassification(word):
         return newValue
     else:
         return ""
+
+# &filter%5Brace%5D%5B%5D=hyur
+
+def checkRace(word): 
+    # Color options added to colorsDictionar
+    list = ["hyur", "elezen", "highlander", "miqote", "lalafell", 
+            "roegadyn", "aura", "viera", "hrothgar"] 
+    
+    words = word.split(" ")
+    # Initializing a new empy dictionary
+    
+    nword = ""
+
+    for word in words:
+        if word in list:
+            nword = word
+            break
+
+    return f"&filter%5Brace%5D%5B%5D={nword}"
+
+    
+    
+    
