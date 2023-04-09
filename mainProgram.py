@@ -25,12 +25,50 @@ async def on_message(message):
     
     if message.author == client.user:
         return
-    
-    if message.content.lower().startswith('!glamourhelp'):
-        text = "Help option is currently in maintanance!"
-        await message.channel.send(text)
+
+    if message.content.lower().startswith('!glamour help specify'):
+        help_commands = '''
+!glamour **[specify]**
+
+**color:** beige,black, blue, brown, grey, orange, 
+pink, purple, white, yellow, green, silver, gold
+metallic, pastel, monochromatic
+
+**gender:** female, male, any
+
+**classification:** athletic, cool, cute, divine, elegant, 
+fashionable, glamorous, sexy, sweet, youthful, heroic,
+villainous, strong
+
+**race:** hyur, elezen, highlander, miqote, lalafell, 
+roegadyn, aura, viera, hrothgar
+
+**job:** pld, war, drk, gnb, rdm, whm, ast, sch, sge, 
+mnk, drg, rpr, nin, sam, blm, smn, brd, dnc,
+mch, blu      
+        '''
+
+        await message.channel.send(help_commands)
         return
 
+    if message.content.lower().startswith('!glamour help'):
+        # text = "__!glamour command help:__"
+        # await message.channel.send(text)
+        help_commands ='''
+
+**!glamour** command returns a random glamour 
+from *Eorzian Glamour Collection*.
+
+You can specify color, gender, classification, race and
+job in the command. 
+*for example: !glamour white female divine lalafell brd*
+
+More information about available commands
+write !glamour help specify
+'''     
+        await message.channel.send(help_commands)       
+        return
+    
     if message.content.startswith('!check'):
         msg = await message.channel.send('React with an emoji!')
         reaction, user = await client.wait_for('reaction_add', check=lambda reaction, user: user == message.author)
@@ -41,7 +79,6 @@ async def on_message(message):
             await message.channel.send(f'{user} reacted with 👎!')
         else:
             await message.channel.send(f'{user} reacted with {emoji}!')
-
 
     if message.content.startswith('!hello'):
         image = Image.open("karakul.png")
@@ -67,8 +104,6 @@ async def on_message(message):
         variable = variable.strip()
         print(f"Variable is {variable}")
 
-        url1 = f"{url1}?page={mm.pageNumbers(url1)}"
-
         if not variable:
             print("Variable is empty")       
         else:
@@ -78,12 +113,15 @@ async def on_message(message):
             url1 += mm.checkGender(variable)
             # modifys url by classification
             url1 += mm.checkClassification(variable)
-            # modifys url by gender
+            # modifys url by race
             url1 += mm.checkRace(variable)
-
+            # modifys url by job
+            url1 += mm.checkJob(variable)
+        
         # pageNumbers method checks how many pages of glamours
         # and returns a random page number 
-        
+        url1 = f"{url1}?page={mm.pageNumbers(url1)}"
+       
         print(url1)
 
         response = requests.get(url1)
@@ -95,39 +133,43 @@ async def on_message(message):
             if img['src'].startswith('https'):
                 img_list.append(img['src'])
 
-        random_img = random.choice(img_list)
+        # Check if img_list is not empty
+        if img_list:
+            random_img = random.choice(img_list)
 
-        glamourNro = random_img.split("/")[-2]
-        link = f"https://ffxiv.eorzeacollection.com/glamour/{glamourNro}"
+            glamourNro = random_img.split("/")[-2]
+            link = f"https://ffxiv.eorzeacollection.com/glamour/{glamourNro}"
 
-        # Gets a title from link and stores it to title variable
-        response = requests.get(link)
-        soup = BeautifulSoup(response.content, 'html.parser')
-        title = soup.find('title').text
-        title = title.split('|')[0].strip()
+            # Gets a title from link and stores it to title variable
+            response = requests.get(link)
+            soup = BeautifulSoup(response.content, 'html.parser')
+            title = soup.find('title').text
+            title = title.split('|')[0].strip()
 
-        tags = ""
-        for tag in soup.find_all('div', {'class': 'c-tag-cloud'}):
-            tags = tag.text
-        
-        tags = tags.replace("\n", " ")
-        tags = tags.strip()
-        print(tags)
-        # Create a new embed message and set its title, description, and image
-        embed = discord.Embed(title=title, url=link)
-        embed.set_image(url=random_img)
-        # embed.add_field(name="", value=f'[{title}]({link})', inline=False)
-        embed.set_footer(text=f'Tags: {tags} ❀*~')
-        embed.color = discord.Color.dark_blue()
+            tags = ""
+            for tag in soup.find_all('div', {'class': 'c-tag-cloud'}):
+                tags = tag.text
+            
+            tags = tags.replace("\n", " ")
+            tags = tags.strip()
+            print(tags)
+            # Create a new embed message and set its title, description, and image
+            embed = discord.Embed(title=title, url=link)
+            embed.set_image(url=random_img)
+            # embed.add_field(name="", value=f'[{title}]({link})', inline=False)
+            embed.set_footer(text=f'Tags: {tags} ❀*~')
+            embed.color = discord.Color.dark_blue()
 
-        # Send the embed message to your Discord channel
-        await message.channel.send(embed=embed)
+            # Send the embed message to your Discord channel
+            await message.channel.send(embed=embed)
 
-        # await message.channel.send(f"<{link}>")
-        # await message.channel.send(random_img)
-
-        
-        
+            # await message.channel.send(f"<{link}>")
+            # await message.channel.send(random_img)
+        else:
+            image_path = r'D:\codeProjects\KarakulBot\cuteSheep.png'
+            await message.channel.send(f'No images found. \nHere is a cute **sheep** for you!')
+            await message.channel.send(file=discord.File(image_path))
+       
         # 160294
         #https://ffxiv.eorzeacollection.com/glamour/
 

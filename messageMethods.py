@@ -128,8 +128,6 @@ def checkClassification(word):
     else:
         return ""
 
-# &filter%5Brace%5D%5B%5D=hyur
-
 def checkRace(word): 
     # Color options added to colorsDictionar
     list = ["hyur", "elezen", "highlander", "miqote", "lalafell", 
@@ -146,6 +144,22 @@ def checkRace(word):
             break
 
     return f"&filter%5Brace%5D%5B%5D={nword}"
+
+def checkJob(word): 
+    # Color options added to colorsDictionar
+    list = [""]
+    words = word.split(" ")
+    list = ["pld","war","drk", "gnb", "rdm", "whm", "ast", "sch", "sge", 
+            "mnk", "drg", "rpr", "nin", "sam", "blm", "smn", "brd",  "dnc",
+            "mch", "blu"]  
+    nword = ""
+
+    for word in words:
+        if word in list:
+            nword = word
+            break
+
+    return f"&filter%5Bjob%5D%5B%5D={nword}&filter%5BrestrictJob%5D=1"
 
     
     
