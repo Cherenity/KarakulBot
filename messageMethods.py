@@ -158,8 +158,11 @@ def checkJob(word):
         if word in list:
             nword = word
             break
-
-    return f"&filter%5Bjob%5D%5B%5D={nword}&filter%5BrestrictJob%5D=1"
+    
+    if word not in nword:
+        return nword
+    else:
+        return f"&filter%5Bjob%5D%5B%5D={nword}&filter%5BrestrictJob%5D=1"
 
     
     

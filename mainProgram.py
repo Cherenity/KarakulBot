@@ -98,7 +98,7 @@ write !glamour help specify
     if message.content.lower().startswith('!glamour'): 
         
         #Url for Eorzean Collection glamours page
-        url1 = 'https://ffxiv.eorzeacollection.com/glamours'
+        url1 = 'https://ffxiv.eorzeacollection.com/glamours?'
         # Saves user input to variable
         variable = message.content.lower()[8:]
         variable = variable.strip()
@@ -180,6 +180,16 @@ write !glamour help specify
         image = Image.open(image_path)
         await message.channel.send('Hello! I am a karakul Bot. ')
         await message.channel.send(file=discord.File(image_path))
+
+    if message.content.startswith('!fflogs'):
+        variable = message.content.lower()[7:]
+
+        variable = variable.strip()
+        print(f"Variable is {variable}")
+
+        if not variable:
+            print("Variable is empty")       
+
 
 def main():
     print(emoji.emojize(":smiling_face_with_heart-eyes:"))
