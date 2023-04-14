@@ -1,0 +1,2222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async>
+(function() {
+  var host = 'fflogs.com';
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://quantcast.mgr.consensu.org'
+    .concat('/choice/', 'KvP_65z5XueLh', '/', host, '/choice.js')
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            event.source.postMessage(returnMsg, '*');
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  }
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+	<meta charset="utf-8">
+	<meta name="csrf-token" content="7oPlik4dTlkcLofdtuiSrVphKTdGQR6428IirySr">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+	<title>
+Chere Nityu - Phoenix - FF Logs
+</title>
+			<title>FF Logs - Combat Analysis for FF</title>
+	
+                            <link rel="alternate" hreflang="de" href="https://de.fflogs.com/character/eu/phoenix/chere%20nityu" />
+                    <link rel="alternate" hreflang="en" href="https://www.fflogs.com/character/eu/phoenix/chere%20nityu" />
+                    <link rel="alternate" hreflang="fr" href="https://fr.fflogs.com/character/eu/phoenix/chere%20nityu" />
+                    <link rel="alternate" hreflang="ja" href="https://ja.fflogs.com/character/eu/phoenix/chere%20nityu" />
+                    <link rel="alternate" hreflang="ko" href="https://ko.fflogs.com/character/eu/phoenix/chere%20nityu" />
+                    <link rel="alternate" hreflang="zh" href="https://cn.fflogs.com/character/eu/phoenix/chere%20nityu" />
+                <link rel="alternate" hreflang="x-default" href="https://www.fflogs.com/character/eu/phoenix/chere%20nityu" />
+    
+	<link type="text/css" href="https://assets.rpglogs.com/css/global.16a991535617b557.css" rel="stylesheet" />
+	<link type="text/css" href="https://assets.rpglogs.com/css/global-ff.bc469dbcdce634e2.css" rel="stylesheet" />
+	<link type="text/css" href="https://assets.rpglogs.com/css/app.0898560b0077bd6e.css" rel="stylesheet" />
+	<link type="text/css" href="https://assets.rpglogs.com/libs/material-design-iconic-font@2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link type="text/css" href="https://assets.rpglogs.com/libs/jquery-ui.css" rel="stylesheet" />
+
+	<link href="https://assets.rpglogs.com/libs/malihu-custom-scrollbar-plugin@3.1.6/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" href="https://assets.rpglogs.com/img/ff/favicon.png" />
+
+	    <link rel="stylesheet" type="text/css" href="https://assets.rpglogs.com/libs/tooltips/css/tipped/tipped.css" />
+<style>
+
+
+#right-vertical-banner { width:300px; margin: 14px 10px 0 0; }
+.has-gear-and-portrait #right-vertical-banner { display:none; }
+
+body { background-color:black; }
+
+#character-contents-box {
+	max-width:1800px; display:flex; flex:1; align-items:stretch; margin:-11px auto 0 auto;
+}
+
+#zones-menubar { border-top:none!important }
+
+.same-slot { border-top: 1px solid black; margin-top:-1px; }
+
+
+#character-gear-spec { display:flex; border:1px solid #555555; margin-left:15px; margin-right:15px; margin-top:-1px; background-color:rgba(32,16,32, 0.7); padding:3px; align-items:center; }
+.gear-spec { flex:1 }
+#gear-box-external-links { display:flex; }
+.external-icon { display:block; width:18px; height:18px; margin: 0 4px; }
+	
+#character-stream-and-portrait { position:sticky; top:68px; margin: 15px 15px 15px 0; width:270px; min-width:270px; height:70vh; display:flex; flex-direction:column; align-items:stretch;  }
+
+#character-stream { margin-bottom:15px; width:268px; height:150px; display:block; border:1px solid #555555; position:relative; display:flex; }
+#character-stream-thumbnail { width:268px; height:150px; display:block }
+#character-stream-caption { position:absolute; left:0; bottom:0; right:0; background-color:rgba(0,0,0,0.6); text-align:center; padding:3px; }
+
+#character-stream-overlay { position:absolute;left:0;top:0;right:0;bottom:0; color:transparent; display:flex; justify-content:center; align-items:center }
+#character-stream-overlay:hover { cursor: pointer; background-color:rgb(0,0,0,0.4);outline:2px solid #c0c0c0; font-size:72px; color:#c0c0c0; }
+
+#character-stream-viewer-count { position:absolute;left:5px; top:5px; border:1px solid #a0a0a0; padding:5px 10px; background-color:rgba(0,0,0,0.6);  }
+#character-stream-viewer-count::before { content: "\2022"; color: #f33 }
+
+#character-stream-box { margin: 15px 15px 0 15px; border:1px solid #555555; height:70vh; display:flex;flex-direction:column; align-items:stretch; display:none }
+#character-stream-box-contents { flex:1; display:flex; flex-direction:column; align-items:stretch; }
+#character-stream-box-contents > iframe { display:block; flex:1 }
+
+#stream-title-and-close { display:flex; justify-content:space-between; align-items:center; }
+.zmdi-close { font-size:16px; font-weight:bold; cursor:pointer; margin:0 5px }
+
+.all-stars-strip-break { flex-basis: 100%; height: 0; }
+
+#character-tall-portrait { 
+	flex:1; 
+	background-repeat:no-repeat; 
+	background-position:center 10%; 
+	background-size:auto 100%;
+	border:1px solid #555555;
+	text-align:center;
+	position:relative;
+}
+
+@media (max-width:1300px) {
+	#character-stream-and-portrait { display:none; }
+}
+ 
+
+#gear-and-portrait-toggler { line-height:12px; font-size:18px; cursor:pointer; position:relative; top:2px; margin-left:10px }
+
+.stale { background-color:#200020 !important; -webkit-filter:none!important; filter:none!important; }
+#stale-notifier { padding:15px; }
+
+@media (max-width:400px) {
+	.expansion-bar-icon { width:18px !important; height:18px !important; }
+	.difficulty-tab, .size-tab, .dps-type-tab, .partition-tab, .partition-extra-tab { font-size:10px; }
+}
+
+@media (max-width:600px) {
+	#filter-compare-selection-container { display: none }
+}
+
+
+@media (max-width:1000px) {
+	.zone-select-and-table-container { border-right:none !important; border-bottom:1px solid #555555; width:auto !important; }
+	.raids-and-zones-container { flex-direction:column-reverse; }
+	.all-stars-strip-break { display:none }
+	.raids-table-and-ad-container { width:auto !important; min-height:70px; }
+	.zones-menubar { border-top: 1px solid #555555 !important; }
+}
+
+ .zone-menu-icon { width:20px; height:20px; border:1px solid #555555; margin-right:8px; vertical-align:-6px; --size:20; }
+ 
+#expansions-menubar { margin-top:-1px; margin-left:15px;margin-right:15px; display:flex; justify-content:space-between }
+#ff-options { display:flex; justify-content: space-between }
+
+.box-caption, .raid-type-caption {
+	font-weight:bold !important; padding:5px 10px 5px 10px !important; border:none !important; border-bottom:1px solid #555555 !important; background: none!important; background-color: #201020 !important;
+}
+
+.not-locked-message { display:none; font-size:10px; color:#a0a0a0 !important; white-space:nowrap; margin-left:10px; }
+
+@media(min-width: 768px) {
+    .not-locked .not-locked-message { display:block; }
+}
+
+@media (max-width:1200px) {
+	#right-vertical-banner { display:none !important; }
+}
+
+ul.raid-type-caption > li > a:hover, .raid-type-caption > li > a.highlighted { outline:1px solid #555555; }
+.raid-type-caption  > li > a { padding:0 25px 0 15px !important; }
+
+ul.raid-type-caption  > li a { color:white!important; }
+ul.raid-type-caption  > li  a:hover, .raid-type-caption > li a.highlighted { background-color: #402040 !important; color:white!important; }
+ul.raid-type-caption  > li ul { font-weight: normal; }
+ul.raid-type-caption  #rankings-header-text { font-size:14px!important; }
+
+.social-icon { width:20px; height:20px; margin:3px; display:block; }
+#social-box { position:absolute; bottom:0; left:0; right:0; display:flex; flex-direction: column; align-items:center; background: rgba(0,0,0,0.7); border-top:1px solid #555555; }
+.social-item { display:flex; align-items:center; font-size:11px; margin:2px 4px; color:white!important }
+
+.menu-boss-icon, .menu-actor-icon, .menu-faction-icon { width:20px; height:20px; border:1px solid #555555; margin-right:8px; vertical-align:-6px; --size:20; }
+
+#raids-box-ad { width:400px; margin-left:-1px; padding-left:3px; padding-right:3px; position:relative;z-index:0 }
+	
+.unkilled { -webkit-filter: grayscale(100%) brightness(50%); filter: grayscale(100%) brightness(75%) }
+
+#expansions-menubar > div > a:hover, #expansions-left-bar > div > a:hover { background-color:#201020 !important; color:white!important; border:1px solid #a0a0a0 !important; z-index:1; }
+
+.private-tab { display:block; border:1px solid transparent; border-left:1px solid #555555; color:#808080 !important; padding:2px!important; cursor:pointer; margin-top:-1px !important; margin-bottom: -1px !important; }
+
+.private-tab.selected { z-index:1; position:relative; background-color:#201020; color:white!important; border:1px solid #a0a0a0 }
+.expansion-bar-icon { width:23px; height:23px; display:block; --size:23; }
+
+.boss-icon { width:24px; height:24px; border:1px solid #555555; margin-right:3px; vertical-align:-9px }
+
+.raid-type-box { display:flex; flex-direction:column; border:1px solid #555555; margin: 15px; background-color:black; }
+
+.raid-type-contents { min-height:70px; display:flex; flex-direction:column; align-items: stretch; position:relative; justify-content:center; }
+.raid-type-zone-strip { display:flex; align-items:center; justify-content:space-between; flex-wrap: wrap; align-content:center;}
+.raids-and-zones-container { display:flex; align-items:stretch; flex:1; }
+
+.zone-table-container {  display:flex; justify-content:center; align-items:stretch; flex:1; flex-direction:column; }
+.zone-table-and-loading-container { display:flex; position:relative; justify-content:center; align-items:stretch; flex:1; flex-direction:column; min-height:70px; }
+
+.zone-select-and-table-container { display:flex; align-items:stretch; flex-direction:column; border-right:1px solid #555555; width:0; flex:1 }
+.has-boss .zone-select-and-table-container { border-right:none; }
+
+:not(.has-boss).has-gear-and-portrait .detailed-graph { display:none }
+
+.raids-table-and-ad-container { width: 450px; position:relative; display:flex; flex-direction:column; align-items:center; background-color:black } 
+.raids-table-container { display:flex; justify-content:center; margin: 5px 0; flex-direction:column; }
+
+.zone-icon-container { border:1px solid #555555; margin-right:-1px; position:relative; }
+
+.top-zone-info-box { display:flex; flex-direction:column; margin:-1px; align-self:stretch }
+.top-zone-info-box > .header-zone-name { font-size:13px; padding:4px; }
+
+.zone-all-star-box { border:1px solid #555555; display:flex; flex-direction:column; align-items:stretch; margin:4px 8px; font-size:13px }
+.zone-all-star-rank-position { border-top:1px solid #555555; margin-top:-1px; padding:3px; text-align:center; font-size:16px }
+.zone-img { display:block; width:52px; height:52px; }
+.zone-all-star-info { display:flex; flex-direction:column; align-items:center; text-align:center; flex:1; justify-content:center; margin:4px 0 }
+.zone-all-star-icon { width:26px; height:26px; border:1px solid #555555; --size:26; margin:2px }
+.zone-all-star-icon-and-points { display:flex; position:relative; width:120px; }
+.zone-all-star-name { font-weight:bold; font-size:12px; text-align:center; background-color:#201020; border:1px solid #555555; padding:2px 10px; margin:-1px; max-width:100px; overflow:hidden;text-overflow:ellipsis }
+
+.zone-progress { position:relative; }
+.zone-bar-rank { font-weight:bold; font-size:12px; }
+.zone-bar-big-rank { font-weight:bold; font-size:18px;; }
+.zone-progress, .zone-all-star-partition { margin-top:-1px; position:relative; white-space:nowrap; text-align:center; font-size:12px; padding:4px 6px; margin:-1px; background-color:rgba(0,0,0,0.6); border:1px solid #555555; }
+.all-stars-caption { font-size:18px; text-align:center; margin:0 10px }
+.all-stars-strip { display:flex; justify-content:center; flex-wrap:wrap; }
+
+.mode-strip { display:flex; justify-content:center; }
+.mode-tab { border:1px solid #555555; margin:5px; padding:5px; text-align:center; align-items:center; justify-content:center; width:150px; cursor:pointer }
+.mode-tab.selected { position:relative; border:1px solid #a0a0a0; background-color:#201020 }
+
+.raid-type-caption.sm::after, #expansions-menubar.sm::after { content:none; }
+
+.dps-type-tab { border:1px solid #555555 !important; color:#808080 !important; margin: -1px !important; cursor:pointer; }
+.partition-tab, .partition-extra-tab {  border:1px solid #555555 !important; color:#808080 !important; margin-left:-1px; margin-bottom:-1px; margin-top:-1px; cursor:pointer; }
+
+.difficulty-tab, .size-tab { display:block; border:1px solid #555555; color:#808080 !important; margin: -1px -1px -1px 0; padding:3px; cursor:pointer; font-weight:bold }
+.difficulty-tab:first-child { margin-left: -1px }
+.difficulty-tab.selected, .dps-type-tab.selected, .size-tab.selected, .partition-tab.selected, .partition-extra-tab.selected { z-index:1; position:relative; background-color:#201020; color:white!important; border:1px solid #a0a0a0 !important }
+.difficulty-tab, .dps-type-tab, .size-tab, .partition-tab, .partition-extra-tab { padding: 5px 6px; }
+.difficulty-bar { display:flex; justify-content:space-between; border-bottom:1px solid #555555; }
+.difficulty-tabs, .dps-type-tabs, .size-tabs, .expansion-options-tabs, .partition-extra-tabs, .partition-tabs { display:flex; }
+.expansion-options-tabs { float:right }
+.dps-type-tab.selected { z-index: 1; }
+.dps-type-tabs, .partition-extra-tabs { width:0; flex:1; }
+.dps-type-tabs { justify-content: flex-end; }
+
+#expansions-left-bar { display:flex; }
+
+.metrics-menubar { padding-left:5px!important; }
+
+.zones-menubar { border:none; border-bottom:1px solid #555555 !important; }
+
+.graph-loading { text-align:center; position:absolute; left:0; top:0; right:0; bottom:0; background-color:rgba(0,0,0,0.5); z-index:0; display:flex; justify-content:center; align-items:center }
+.zone-loading { margin-top:-1px; margin-right:-1px; border-right:1px solid #555555; border-top: 1px solid #555555; }
+
+.stats { padding:0 0 5px 0; text-align:center; font-size:18px; display:flex; justify-content: space-between; align-items:center; }
+#top-box {  border-bottom: 1px solid #555555; display:flex; align-items:stretch; flex-direction:column; justify-content:center; padding-bottom:8px; min-width:300px; }
+#character-contents-box:not(.has-boss).has-gear-and-portrait #top-box { flex: 1 }
+#character-contents-box:not(.has-boss).has-gear-and-portrait .stats > div { width: 0; flex:1 }
+#character-contents-box:not(.has-boss):not(.has-gear-and-portrait) .stats, #character-contents-box:not(.has-boss):not(.has-gear-and-portrait) .asp-list { margin-left:15px; margin-right:15px; flex-direction:column; align-items:center; }
+
+.asp-list { display:flex; justify-content:center; flex-wrap:wrap; }
+
+.centered-icon { width:20px; height:20px; float:right; margin-right:5px; opacity:0.8 }
+.median-and-all-star td { white-space:nowrap }
+.has-boss .best-perf-avg { flex:1; width:0;  }
+.best-perf-avg { margin-left:10px; }
+.has-boss .median-perf-avg { flex:1; width:0; }
+.best-perf-avg-caption { margin-top:15px; margin-bottom:10px; font-weight:bold; text-transform: uppercase; text-align:center; font-size:18px; color:#d0d0d0; }
+
+.median-and-all-star { font-size: 13px; border-spacing:5px 0; margin:auto; }
+
+.rank-percent { text-align:right; font-weight: bold; font-size:14px; width:35px; min-width:35px }
+.boss-hist-cell, .hist-cell { width:60px; min-width:60px; }
+th, td { white-space: nowrap }
+.main-table-name { line-height: 26px; vertical-align:middle }
+
+.tiny-icon, .partner-icon { width:18px !important; height:18px !important; border:1px solid #555555; margin:0 2px; vertical-align:-6px;--size:18 !important; }
+.partner-icon { margin-right:4px !important }
+
+.rank-per-second {  text-align:right; font-size:14px; width:100px; max-width:100px; }
+
+.wrong-spec-icon { --size:12; width:12px; height:12px; margin-right:5px; margin-top:2px; border:1px solid #555555; position:absolute; left:0;  -webkit-filter:grayscale(25%) brightness(70%) ; filter: grayscale(25%) brightness(70%) ; }
+.hist-cell { position:relative; }
+.privacy-best { width:24px; height:24px; overflow:hidden; border-radius:5px 5px; padding:2px; border:1px solid #a0a0a0; vertical-align: -4px; }
+
+.table-icon { width:40px; height:40px; border:1px solid #555555; }
+.zone-boss-cell { font-size:14px; font-weight:bold }
+.counter { color: #ff8 }
+.all-stars-rank { font-weight: bold; }
+.boss-table td { vertical-align:middle; text-overflow:ellipsis; padding:6px !important; }
+td.all-star-points { text-align:right; font-size:14px; width:60px; min-width:60px }
+td.kills-cell { width:35px; min-width:35px; }
+
+.top-box-asp { margin:5px; }
+
+.error-box { text-align:center }
+
+.fastest-kill-row { font-size:11px; }
+
+.character-table-link { color:inherit!important }
+
+.detailed-graph { width: 0; flex: 2; height:340px }
+.has-boss #top-box { flex-direction:row; padding-bottom:0 }
+.has-boss .stats { padding-top:0; border-left:1px solid #555555; flex-direction:column; justify-content:center; min-width:300px; }
+.has-boss .best-perf-avg { width:auto; flex:0; margin-top:15px }
+
+.compact.has-boss #gear-and-talents-boxes { display:none }
+
+.compact #gear-and-talents-boxes { margin-top:15px; margin-left:0; width:0; flex:1 }
+.compact #gear-and-talents-boxes { width:400px; }
+
+.compact #logs-box { width:0; flex:1.75; }
+.compact .gear-img-cell img { width:24px; height:24px; }
+.compact .gear-name-cell { display:flex; justify-content:space-between; flex:1; align-items:center; }
+
+.compact #zone-select-and-table-container { border-right:none; border-bottom:1px solid #555555; width:auto; }
+.compact .raids-and-zones-container { flex-direction:column; }
+	
+#logs-and-gear-container { display:flex; flex-direction: column; flex:1; align-items:stretch; min-width:0; }
+.compact #logs-and-gear-container { flex-direction:row; }
+
+.compact .gear-row { align-items:center; }
+.compact .boss-table td { padding: 2px 6px !important; }
+
+.compact #raids-table-and-ad-container { width:auto; min-height:70px }
+
+.compact .gear-ilvl-cell { margin-right:5px }
+
+.compact #powers-box { flex-direction:column; }
+
+.compact #character-stream-box { flex:1; }
+
+ #footer-box { margin:15px; border:1px solid #555555; }
+ 
+@media (max-width:900px) {
+	#logs-and-gear-container { flex-direction:column !important; }
+	.compact #logs-box { width:auto !important; flex:none }
+	.compact #gear-and-talents-boxes { 
+		margin-left:15px; width:auto; 
+		margin-top:0; 
+	}
+}
+
+@media (max-width:600px) {
+	.verbose { display:none }
+}
+
+/*
+#character-contents-box.has-gear-and-portrait .verbose { display:none }
+	
+#character-contents-box:not(.has-boss).has-gear-and-portrait #logs-box { flex:1 !important }
+#character-contents-box:not(.has-boss).has-gear-and-portrait #gear-and-talents-boxes { flex:1.1 !important }
+*/
+
+</style>
+	<style>
+    @font-face {
+      font-family: 'ralewayregular';
+      src: url('https://assets.rpglogs.com/fonts/Raleway-Regular-webfont.eot');
+      src: url('https://assets.rpglogs.com/fonts/Raleway-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+      url('https://assets.rpglogs.com/fonts/Raleway-Regular-webfont.woff') format('woff'),
+      url('https://assets.rpglogs.com/fonts/Raleway-Regular-webfont.ttf') format('truetype'),
+      url('https://assets.rpglogs.com/fonts/Raleway-Regular-webfont.svg#ralewayregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+	/* Tighten up scrollers in reports pages */
+	.mCSB_inside > .mCSB_container { margin-right:20px !important }
+	.mCSB_inside > .mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden { margin-right:0 !important }
+	.search-white { color: white; font-size:22px; }
+	.searchbutton-mini-image { padding-left:7px; padding-top:3px; }
+	.compact-search-container { height:36px; display:flex; align-items:center; }
+	.search-compact { font-size:28px; margin-top:-3px; }
+	.zmdi-hc-spin { animation: zmdi-spin 2.5s infinite linear; }
+	.edge-hide { opacity: 0.01; }
+
+	#qc-cmp2-persistent-link { left:0; right:auto; font-size:10px; background-color:#300040 }
+	.logo-container { width:auto !important; }
+	</style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script>
+    window.googleAnalyticsViewModel = {"id":"UA-119038848-1","siteTitle":"FF Logs","isLoggedIn":false,"isSubscribed":false,"subscriptionStatus":0,"sendPageViewOnContentLoaded":true,"isAdBlocking":false};
+</script>
+<script src="https://assets.rpglogs.com/js/global/googleAnalytics.5e807d7d65f1c851.js"></script>
+
+    <!-- ads-script-tag -->
+    <!-- venatus-script-tag -->
+<script>
+    window.venatusAdsViewModel = {"siteId":"63dbc505b04ce3339b5c3295","sideRailAds":[{"id":"side-rail-atf","placement":"side_rail_atf","placementId":"63ee26cb9de8a93930474e09","fallbackImageUrl":"https:\/\/assets.rpglogs.com\/img\/ff\/fallback\/sidebar-wide.png?v=1"},{"id":"side-rail-btf","placement":"side_rail_btf","placementId":"63ee26ee7b6c4f748d309ee1","fallbackImageUrl":""}]};
+</script>
+<script src="https://assets.rpglogs.com/js/global/venatus.1983c27bc581f0f2.js" />
+
+    <script src="https://btloader.com/tag?o=5150306120761344&upapi=true" async></script>
+
+<script>
+    window.isAdBlockingCookieName = 'isAdBlocking';
+    </script>
+
+    <script src="https://assets.rpglogs.com/libs/jquery@3.2.0/jquery.min.js"></script>
+	<script src="https://assets.rpglogs.com/libs/jqueryui@1.12.1/jquery-ui.min.js"></script>
+	<script src="https://assets.rpglogs.com/libs/lazyload@2.0.0-beta.2/lazyload.min.js"></script>
+
+	<script>
+	jQuery.browser = {};
+(function () {
+    jQuery.browser.msie = false;
+    jQuery.browser.version = 0;
+    if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+    }
+})();
+
+	function edgeRevert() { $(".edge-hide").css('transform', ''); $(".edge-hide").removeClass('edge-hide'); }
+	function edgeZoom() { $(".edge-hide").css('transform', 'scale(2)'); setTimeout(edgeRevert, 50); }
+	function edgeSpriteFix(container) {
+		if (navigator.userAgent.indexOf("Edge") == -1)
+			return
+		var selector = (container ? container + ' ' : '') + ".sprite"
+		$(selector).addClass('edge-hide')
+		setTimeout(edgeZoom, 10)
+	}
+</script>
+
+		<script src="https://assets.rpglogs.com/js/lang/js-localization.464321360ac3bc9e.js"></script>
+	<script src="https://assets.rpglogs.com/js/lang/lang-en.56cad27def361b8a.js"></script>
+		<script>Lang.setLocale('en');</script>
+
+	<script src="https://assets.rpglogs.com/js/manifest.677a646975b79807.js"></script>
+	<script src="https://assets.rpglogs.com/js/vendor.9dcd7c3ee63b4c1d.js"></script>
+	<script src="https://assets.rpglogs.com/js/app.860fb3fb8317df9f.js"></script>
+
+	<script src="https://assets.rpglogs.com/libs/moment.js@2.24.0/moment-with-locales.min.js"></script>
+	<script src="https://assets.rpglogs.com/libs/moment-duration-format@2.2.2/moment-duration-format.min.js"></script>
+
+	<script type="text/javascript" src="https://assets.rpglogs.com/libs/malihu-custom-scrollbar-plugin-with-iframe-fix@3.1.6-rpg1/jquery.mCustomScrollbar.min.js"></script>
+
+	<script src="https://assets.rpglogs.com/js/global.3d77b826a435e01a.js"></script>
+
+	<script>
+	moment.locale("en");
+	</script>
+
+	<script type="text/javascript" src="https://assets.rpglogs.com/libs/jquery.ba-bbq@1.2.1/jquery.ba-bbq.min.js"></script>
+<script type="text/javascript" src="https://assets.rpglogs.com/libs/tooltips/js/tipped/tipped.js?v=2"></script>
+
+<script type="text/javascript" src="https://assets.rpglogs.com/libs/datatables@1.10.18/datatables.min.js"></script>
+
+<script src="https://assets.rpglogs.com/libs/highstock@1.3.7/highstock.js"></script>
+<script src="https://assets.rpglogs.com/libs/highcharts@3.0.7/highcharts-more.js"></script>
+<script src="https://assets.rpglogs.com/libs/highcharts/js/themes/custom.js"></script>
+<script>
+jQuery.fn.dataTableExt.oSort['inner-text-asc']  = function(a,b) {
+	var plainA = $.trim(a.replace(/(<([^>]+)>)/ig,""))
+	var plainB = $.trim(b.replace(/(<([^>]+)>)/ig,""))
+	if (plainA == plainB)
+		return 0
+	return plainA < plainB ? -1 : 1
+};
+
+jQuery.fn.dataTableExt.oSort['inner-text-desc'] = function(a,b) {
+	var plainA = $.trim(a.replace(/(<([^>]+)>)/ig,""))
+	var plainB = $.trim(b.replace(/(<([^>]+)>)/ig,""))
+	if (plainA == plainB)
+		return 0
+	return plainA < plainB ? 1 : -1
+};
+
+var dynamicAds = true;
+
+var characterID = 252256;
+
+$(function() {
+	$('.metrics-menubar').smartmenus({
+		showOnClick: true,
+		mainMenuSubOffsetX: -1,
+		mainMenuSubOffsetY: 2,
+		subMenusSubOffsetX: 10,
+		subMenusSubOffsetY: 0,
+		subMenusMaxWidth: "800px",
+		});
+		
+		
+	$('#expansions-menubar, .zones-menubar').smartmenus({
+		showOnClick: true,
+		mainMenuSubOffsetX: 0,
+		mainMenuSubOffsetY: 0,
+		subMenusSubOffsetX: 10,
+		subMenusSubOffsetY: 0,
+		subMenusMaxWidth: "800px",
+		});
+	
+	$('.zones-menubar,.metrics-menubar').on('beforefirstshow.smapi', function(e, menu) {  $(menu).find('.lazyload').lazyload() });
+});
+
+var currentExpansion = 4;
+
+var raidType = 3;
+
+var filterClass
+var filterSpec
+var filterMetricCompare
+var includePrivateLogs
+var filterByBracket
+
+var filterDPSType
+
+var filterPlayerMetric
+var defaultPlayerMetric = 'dps';
+
+var filterDifficulty
+var defaultDifficulty
+
+var filterSize
+var defaultSize
+
+var filterZone
+var filterBoss
+
+var difficulties = [];
+
+defaultDifficulty = 5000;
+let diff_5000 = { difficulty: 5000, sizes: [] };
+diff_5000.sizes.push(0);
+difficulties.push(diff_5000)
+let diff_101 = { difficulty: 101, sizes: [] };
+diff_101.sizes.push(8);
+difficulties.push(diff_101)
+let diff_100 = { difficulty: 100, sizes: [] };
+diff_100.sizes.push(8);
+difficulties.push(diff_100)
+
+var filterPartition
+var filterPartitionExtra = 0
+var defaultPartition = []
+var defaultZone = 49;
+
+
+var partitionFilterCount = 2;
+
+defaultPartition[49] = -1;
+defaultPartition[44] = -1;
+defaultPartition[53] = 1;
+defaultPartition[45] = -1;
+defaultPartition[43] = -1;
+defaultPartition[50] = -1;
+defaultPartition[42] = -1;
+defaultPartition[46] = 1;
+
+
+function loadViews(params)
+{
+	var oldFilterSpec = filterSpec
+    var oldFilterClass = filterClass
+
+	var oldFilterMetricCompare = filterMetricCompare
+	var oldIncludePrivateLogs = includePrivateLogs
+	var oldFilterByBracket = filterByBracket
+	
+	var oldFilterPlayerMetric = filterPlayerMetric
+	
+	var oldFilterDPSType = filterDPSType
+	
+	var oldFilterSize = filterSize
+	var oldFilterDifficulty = filterDifficulty
+	
+	var oldFilterBoss = filterBoss
+	var oldFilterPartition = filterPartition
+	var oldFilterZone = filterZone
+
+	var gearAndPortraitVisibility = typeof gearAndPortraitState !== 'undefined' ? gearAndPortraitState : 'visible';
+	
+	filterSpec = params.spec ? params.spec : "Any"
+    filterClass = params.class ? params.class : "Any"
+	filterMetricCompare = params.compare ? params.compare : "rankings"
+	includePrivateLogs = params.private ? parseInt(params.private) : 0
+	filterByBracket = params.bybracket ? parseInt(params.bybracket) : 0
+	
+	filterZone = params.zone ? params.zone : defaultZone;
+	defaultPlayerMetric = $("#zone-" + filterZone).attr("defaultmetric")
+	
+	filterPlayerMetric = params.metric ?  params.metric : defaultPlayerMetric
+	$("#filter-metric-text").html($("#metric-" + filterPlayerMetric + " > .metric-text").html())
+	
+	filterDifficulty = params.difficulty ?  parseInt(params.difficulty) : defaultDifficulty
+	if (oldFilterDifficulty !== filterDifficulty) {
+		//	selectDifficulty(filterDifficulty);
+		$("#filter-difficulty-text").html($("#difficulty-" + filterDifficulty).html())
+	}
+	
+	filterSize = params.size ?  parseInt(params.size) : defaultSizeForZone()
+	
+	if (oldFilterSize !== filterSize || oldFilterDifficulty !== filterDifficulty) {
+		updateSizeMenuIfNeeded()
+	//	updateSizeTabs()
+	}
+	
+	$("#filter-zone-text").html($("#zone-" + filterZone + " > .zone-text").html())
+	filterBoss = params.boss ? params.boss : 0;
+	filterPartition = parseInt(params.partition ? params.partition : defaultPartition[filterZone])
+	filterPartitionExtra = parseInt(partitionFilterCount == 0 ? 0 : (Math.abs(filterPartition) % partitionFilterCount == 0 ? partitionFilterCount - 1 : (Math.abs(filterPartition) % partitionFilterCount) - 1))
+	
+	$(".filter-boss-selection-container").hide()
+	$("#filter-boss-selection-container-" + filterZone).show()
+	$("#filter-boss-text-" + filterZone).html($("#boss-" + filterBoss + "-" + filterZone + " > .boss-text").html())
+			
+	filterDPSType = params.dpstype ? params.dpstype : "rdps"
+	
+	var classSpec = ""
+	if (filterSpec != "Any")
+		classSpec = specDisplay(filterSpec, filterClass)
+	else if (filterClass != "Any")
+        classSpec = pluralClassDisplay(filterClass)
+    else
+		classSpec = "All Jobs" 
+	
+	$("#filter-expansion-text").html($("#expansion-4").html())
+	
+	$("#filter-class-text").html(classSpec)
+	
+	$("#filter-compare-text").html($("#compare-" + filterMetricCompare).html())
+	
+	if (includePrivateLogs != oldIncludePrivateLogs) {
+		if (!includePrivateLogs)
+			$("#private-tab").removeClass('selected')
+		else
+			$("#private-tab").addClass('selected')
+	}
+	
+	if (filterByBracket != oldFilterByBracket) {
+		if (!filterByBracket)
+			$("#bracket-tab").removeClass('selected')
+		else
+			$("#bracket-tab").addClass('selected')
+	}
+	
+	if (filterMetricCompare != oldFilterMetricCompare) {
+		if (filterMetricCompare == "rankings")
+			$("#compare-tab").removeClass('selected')
+		else
+			$("#compare-tab").addClass('selected')
+	}
+
+	if (filterBoss != oldFilterBoss && (!oldFilterBoss || !filterBoss)) {
+		if (filterBoss) {
+			$("#raids-table-and-ad-container").hide()
+			$("#character-contents-box").addClass('has-boss')
+			
+			let rightBox = document.getElementById('character-stream-and-portrait');
+			if (rightBox)
+				rightBox.style.display = 'none'
+			
+			$("#gear-and-portrait-toggler").removeClass("zmdi-window-maximize")
+			$("#gear-and-portrait-toggler").addClass("zmdi-window-restore")
+		
+			if (dynamicAds && gearAndPortraitVisibility == "visible") {
+				$("#right-vertical-banner").show()
+			}
+		} else {
+			$("#raids-table-and-ad-container").show()
+			$("#character-contents-box").removeClass('has-boss')
+			if (gearAndPortraitVisibility == "visible") {
+				let rightBox = document.getElementById('character-stream-and-portrait');
+				if (rightBox)
+					rightBox.style.display = ''
+
+				if (dynamicAds) {
+					$("#right-vertical-banner").hide()
+				}
+				
+				$("#gear-and-portrait-toggler").removeClass("zmdi-window-restore")
+				$("#gear-and-portrait-toggler").addClass("zmdi-window-maximize")
+			} else {
+				$("#gear-and-portrait-toggler").removeClass("zmdi-window-maximize")
+				$("#gear-and-portrait-toggler").addClass("zmdi-window-restore")
+			}
+		}
+	}
+	
+	let needToLoadRaidsTable = filterClass != oldFilterClass || filterSpec != oldFilterSpec || filterDPSType != oldFilterDPSType || filterPlayerMetric != oldFilterPlayerMetric
+								|| filterDifficulty != oldFilterDifficulty || filterSize != oldFilterSize;
+
+	if (needToLoadRaidsTable) {
+		// Erase the cached data and put in our loading indicator.
+		var eleRaidsTableLoading = document.getElementById('raids-table-loading');
+		if (eleRaidsTableLoading) eleRaidsTableLoading.style.display = 'flex'
+		loadRaidsTable()
+		setTimeout(refreshMenus, 0)
+	}
+	
+	
+	let needToLoadZoneTable = filterMetricCompare != oldFilterMetricCompare || filterByBracket != oldFilterByBracket || includePrivateLogs != oldIncludePrivateLogs;
+	
+	if (needToLoadRaidsTable || needToLoadZoneTable || filterZone != oldFilterZone ||
+		filterPartition != oldFilterPartition || filterBoss != oldFilterBoss) {
+		var eleZoneTableLoading = document.getElementById('zone-table-loading')
+		if (eleZoneTableLoading) eleZoneTableLoading.style.display = 'flex'
+		loadZoneTable()
+		if (!needToLoadRaidsTable)
+			setTimeout(refreshMenus, 0)
+	}
+}
+
+function selectModeTab(mode)
+{
+	$(".mode-tab").removeClass("selected")
+	$("#" + mode + "-mode-tab").addClass("selected")
+	$(".zone-all-star-box." + (mode == "hard" ? "easy" : "hard")).hide()
+	$(".zone-all-star-box." + mode).show()
+}
+
+function raidsTableLoaded() {
+	return function(response, status, xhr) {
+		document.getElementById('raids-table-loading').style.display = 'none'
+		
+		
+		if (filterDifficulty == 5000) {
+			selectModeTab("hard")
+		}
+		if (status == "error") {
+			document.getElementById('raids-table-container').innerHTML = errorHTML
+
+		}
+	};
+}
+
+function refreshMenus()
+{
+	$('#expansions-menubar, .metrics-menubar, .zones-menubar').smartmenus('refresh');
+}
+
+var errorHTML = "Error: Unable to fetch data.";
+
+function loadRaidsTable()
+{
+	let metric = filterPlayerMetric == defaultPlayerMetric ? "default" : filterPlayerMetric
+	var loadString = '/character/rankings-raids/' + characterID + '/' + metric + '/' + currentExpansion + '/' + raidType + '/' + filterDifficulty + '/' + filterSize + '/' + filterSpec +  '/' + filterMetricCompare + '/' + filterByBracket + '/' + includePrivateLogs + "?dpstype=" + filterDPSType + '&class=' + filterClass
+	$("#raids-table-container").load(loadString, raidsTableLoaded())
+}	
+
+function zoneTableLoaded() {
+	return function(response, status, xhr) {
+		$("#zone-table-container").css('visibility', 'visible');
+	
+		document.getElementById('zone-table-loading').style.display = 'none'
+		
+		if (status == "error") {
+			document.getElementById('zone-table-container').innerHTML = errorHTML
+
+		}
+	};
+}
+function loadZoneTable()
+{	
+	$("#zone-table-container").css('visibility', 'hidden');
+	
+	var loadString = '/character/rankings-zone/' + characterID + '/' + filterPlayerMetric + '/' + raidType + '/' + filterZone + '/' + filterBoss  + '/' + filterDifficulty + '/' + filterSize + '/' + filterPartition + '/' + filterSpec +  '/' + filterMetricCompare + '/' + filterByBracket + '/' + includePrivateLogs + "?dpstype=" + filterDPSType + '&class=' + filterClass
+	$("#zone-table-container").load(loadString, zoneTableLoaded())
+}	
+
+$(window).bind('hashchange', function(e) {
+	var params = $.deparam.fragment()
+	loadViews(params)  
+    window.dispatchEvent(new Event('page-changed'));
+})
+
+function changeLink(link, params)
+{
+	var newURL = $.param.fragment(window.location.href, params, 2)
+	link.href = newURL
+	return true
+}
+
+function toggleCompareAgainst(link)
+{
+	var params = $.deparam.fragment()
+	if (filterMetricCompare != "rankings")
+		delete params.compare
+	else
+		params.compare = "parses"
+	return changeLink(link, params)
+}
+
+function pluralClassDisplay(className)
+{
+	if (className == "Global")
+		return "";
+	var ele = document.getElementById('class-' + className);
+	return ele ? ele.innerText : '';
+}
+
+function specDisplay(specName, className)
+{
+	/*if (className == "Global")
+		return document.getElementById('class-' + className + "-spec-" + specName).getAttribute("plural")*/
+	var ele = document.getElementById('class-' + className + "-spec-" + specName);
+	return ele ? ele.innerText : '';
+}
+
+function setClassAndSpec(className, spec, info, link)
+{
+	if (filterClass == className && filterSpec == spec)
+		return false
+	
+	var params = $.deparam.fragment()
+	
+	if (spec == "Any")
+		delete params.spec
+	else
+		params.spec = spec
+
+    if (className == "Any") {
+        delete params.spec
+        delete params.class
+    } else
+        params.class = className
+
+	return changeLink(link, params)
+}
+
+function togglePrivacy(link)
+{
+	var params = $.deparam.fragment()
+	
+	if (includePrivateLogs)
+		delete params.private
+	else
+		params.private = 1
+	
+	return changeLink(link, params)
+}
+
+function toggleByBracket(link)
+{
+	var params = $.deparam.fragment()
+	
+	if (filterByBracket)
+		delete params.bybracket
+	else
+		params.bybracket = 1
+	
+	return changeLink(link, params)
+}
+
+function showStream()
+{
+	document.getElementById('character-stream-box').style.display = 'flex';
+	document.getElementById('gear-and-talents-boxes').style.display = 'none';
+	document.getElementById('logs-box').style.display = 'none';
+	
+	document.getElementById('stream-player').src = streamURL
+	$("#character-stream").hide("slow")
+}
+
+function hideStream()
+{
+	document.getElementById('character-stream-box').style.display = 'none';
+	document.getElementById('stream-player').src = ''
+	$("#logs-box,#stats-box,#gear-box,#powers-box,#character-stream,#gear-and-talents-boxes").show("slow")
+}
+
+function setMetric(metric, link)
+{
+	if (filterPlayerMetric == metric)
+		return false
+		
+	var params = $.deparam.fragment()
+	
+	if (metric == defaultPlayerMetric)
+		delete params['metric']
+	else
+		params['metric'] = metric
+
+	return changeLink(link, params)
+}
+
+function setDPSType(dpsType, link)
+{
+	if (filterDPSType == dpsType)
+		return false
+		
+	var params = $.deparam.fragment()
+	
+	delete params.page
+	
+	if (dpsType == "rdps")
+		delete params.dpstype
+	else
+		params.dpstype = dpsType
+
+	return changeLink(link, params)
+}
+
+function setSize(size, link)
+{
+	if (filterSize == size)
+		return false
+	
+	var params = $.deparam.fragment()
+	
+	if (size == defaultSizeForZone())
+		delete params['size']
+	else
+		params['size'] = size
+	
+	return changeLink(link, params)
+}
+
+function setDifficulty(difficulty, link)
+{
+	if (filterDifficulty == difficulty)
+		return false
+	
+	var params = $.deparam.fragment()
+	
+	if (difficultyHasMultipleSizes(difficulty))
+		delete params['size']
+	
+	if (difficulty == defaultDifficulty)
+		delete params['difficulty']
+	else
+		params['difficulty'] = difficulty
+
+	return changeLink(link, params)
+}
+
+function difficultyHasMultipleSizes(difficulty)
+{
+	for (var i = 0; i < difficulties.length; ++i) {
+		if (difficulties[i].difficulty == difficulty)
+			return difficulties[i].sizes.length > 1;
+	}
+	return false;
+}
+
+function defaultSizeForZone()
+{
+	for (var i = 0; i < difficulties.length; ++i) {
+		if (difficulties[i].difficulty === filterDifficulty)
+			return difficulties[i].sizes.length > 1 ? 5000 : difficulties[i].sizes[0];
+	}
+	return 10;
+}
+
+function updateSizeMenuIfNeeded()
+{
+	for (var i = 0; i < difficulties.length; ++i) {
+		if (difficulties[i].difficulty === filterDifficulty) {
+			if (difficulties[i].sizes.length > 1) {
+				$("#filter-size-selection-container").show()
+				var items = ''
+                items += '<li><a href="#" class="filter-item" onclick="return setSize(5000, this)" oncontextmenu="setSize(5000, this)">'
+                items += trans('rankings.highest_size')
+                items += '</a></li>';
+				for (var j = 0; j < difficulties[i].sizes.length; j++) {
+					items += '<li><a href="#" class="filter-item" onclick="return setSize(' + difficulties[i].sizes[j] + ', this)" oncontextmenu="setSize(' + difficulties[i].sizes[j] + ', this)">'
+                    items +=  difficulties[i].sizes[j] + ' Player'
+                    items += '</a></li>';
+				}
+				$("#filter-size-items").html(items)
+				$("#filter-size-text").html(filterSize === 5000 ? trans('rankings.highest_size') : filterSize + " Player")
+			} else
+				$("#filter-size-selection-container").hide()
+			return;
+		}
+	}	
+}
+
+/*
+function updateSizeTabs()
+{
+	for (var i = 0; i < difficulties.length; ++i) {
+		if (difficulties[i].difficulty == filterDifficulty) {
+			if (difficulties[i].sizes.length > 1) {
+				$(".size-tabs").hide()
+				$("#size-tabs-" + filterDifficulty).show()
+				$(".size-tab-" + filterDifficulty).removeClass("selected")
+				$("#size-tab-" + filterDifficulty + "-" + filterSize).addClass("selected")
+			}
+		} else
+				$("#size-tabs-" + difficulties[i].difficulty).hide()
+	}	
+}
+
+function selectDifficulty(difficulty)
+{
+	$(".difficulty-tab").removeClass("selected")
+	$("#difficulty-tab-" + difficulty).addClass("selected")
+}
+*/
+
+function updateBossParams(params, boss)
+{
+	if (boss == 0)
+		delete params['boss']
+	else
+		params['boss'] = boss
+	
+	return params
+}
+
+function changeView(params)
+{
+	$.bbq.pushState(params, 2)
+	return false
+}
+
+function setBoss(boss, link)
+{
+	if (filterBoss == boss)
+		return false
+		
+	var params = $.deparam.fragment()
+
+	params = updateBossParams(params, boss)
+	
+	return changeLink(link, params)
+}
+
+function setZone(zone, link)
+{
+	if (filterZone == zone)
+		return false
+	
+	var params = $.deparam.fragment()
+	delete params['boss']
+	delete params['partition']
+	
+	if (zone == defaultZone)
+		delete params['zone']
+	else
+		params['zone'] = zone
+	
+	return changeLink(link, params)
+}
+
+function setPartitionExtra(extra, link)
+{
+	if (filterPartitionExtra == (extra - 1))
+		return false
+	
+	let delta = (extra - 1) - filterPartitionExtra
+	filterPartitionExtra = 0
+	
+	if (filterPartition < 0)
+		delta = -delta
+		
+	return setPartition(filterPartition + delta, link)
+}
+
+function setPartition(partition, link)
+{
+	let newPartition = partition + (partition < 0 ? -filterPartitionExtra : filterPartitionExtra)
+	if (filterPartition == newPartition)
+		return false
+	
+	var params = $.deparam.fragment()
+	delete params.page
+	if (newPartition == defaultPartition[filterZone])
+		delete params['partition']
+	else
+		params['partition'] = newPartition
+	
+	return changeLink(link, params)
+}
+
+function hideGearAndPortrait()
+{
+	$("#gear-and-talents-boxes").hide()
+	$("#character-stream-and-portrait").hide()
+	
+	$("#gear-and-portrait-toggler").removeClass("zmdi-window-maximize")
+	$("#gear-and-portrait-toggler").addClass("zmdi-window-restore")
+	
+	$("#character-contents-box").removeClass("has-gear-and-portrait")
+		
+	$("#right-vertical-banner").show()
+	
+	gearAndPortraitState = "hidden"
+}
+
+function showGearAndPortrait()
+{
+	$("#gear-and-talents-boxes").show()
+	$("#character-stream-and-portrait").show()
+	
+	$("#gear-and-portrait-toggler").addClass("zmdi-window-maximize")
+	$("#gear-and-portrait-toggler").removeClass("zmdi-window-restore")
+	
+	$("#character-contents-box").addClass("has-gear-and-portrait")
+		
+	gearAndPortraitState = "visible"
+}
+
+function toggleGearAndPortrait()
+{
+	if (filterBoss) {
+		var params = $.deparam.fragment()
+		delete params.boss
+		return changeView(params)
+	}
+
+	var gearAndPortraitVisibility = typeof gearAndPortraitState !== undefined ? gearAndPortraitState : 'visible';
+
+	if (gearAndPortraitVisibility === 'visible') {
+		hideGearAndPortrait()
+		try {
+            if (typeof (Storage) !== undefined)
+                localStorage.setItem("gear-and-portrait-state", "hidden")
+        } catch (e) {}
+	} else {
+		showGearAndPortrait()
+		try {
+            if (typeof (Storage) !== undefined)
+                localStorage.setItem("gear-and-portrait-state", "visible")
+        } catch (e) {}
+	}
+}
+
+</script>
+
+<script>
+window.onload = function(){
+	edgeSpriteFix()
+};
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://assets.rpglogs.com/libs/cookieconsent2@3.1.0/cookieconsent.min.css" />
+<script src="https://assets.rpglogs.com/libs/cookieconsent2@3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+if (!window.cookieconsent) return;
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#237afc"
+    },
+    "button": {
+      "background": "#fff",
+      "text": "#237afc"
+    }
+  }
+})});
+
+
+</script>
+
+</head>
+
+
+<body class="responsive
+ ff
+">
+
+
+    <div id="header-container"></div>
+    <script>
+                attachToDom(
+            '#header-container',
+            'Header',
+            {
+                initialData: {"topBar":{"pollsCount":0,"streamsCount":22,"gameToggles":null,"headerLinks":[{"title":"Statistics","url":"\/zone\/statistics\/49"},{"title":"Latest News","url":"https:\/\/articles.fflogs.com"},{"title":"Download Client","url":"\/client\/download"},{"title":"Recruitment","url":"\/recruitment"}],"availableLanguages":[{"title":"Deutsch","linkUrl":"de.fflogs.com"},{"title":"English","linkUrl":"www.fflogs.com"},{"title":"Fran\u00e7ais","linkUrl":"fr.fflogs.com"},{"title":"\u65e5\u672c\u8a9e","linkUrl":"ja.fflogs.com"},{"title":"\ud55c\uad6d\uc5b4","linkUrl":"ko.fflogs.com"},{"title":"\u7b80\u4f53\u4e2d\u6587","linkUrl":"cn.fflogs.com"}],"backgroundArtworkUrl":"https:\/\/assets.rpglogs.com\/img\/ff\/header-artwork.jpg?v=7","currentActiveRaceLink":null,"currentActiveRaceBackgroundImageUrl":null,"currentActiveRaceArtworkImageUrl":null},"gameContents":{"contents":[{"title":"Savage","id":"savage-content","expansions":[],"hasNewBadge":false},{"title":"Ultimates","id":"ultimate-content","expansions":[],"hasNewBadge":false},{"title":"Trials","id":"trials-content","expansions":[],"hasNewBadge":false},{"title":"Raids","id":"raid-content","expansions":[],"hasNewBadge":false},{"title":"Dungeons","id":"dungeons-content","expansions":[],"hasNewBadge":false}]},"characters":null,"guilds":null,"labels":{"expansionSelectLabel":"Expansions","contentTypeSelectLabel":"Content Type","guildsLabel":"FC \/ Static","charactersLabel":"Characters","signupLabel":"Sign Up","loginLabel":"Log In","streamsCountLabel":"22 Players Streaming","pollsCountLabel":"0 Poll Available!","updateCharactersLabel":"Import a Character","logoutLabel":"Log Out","createAGuildLabel":"Create a Free Company or Static","joinAGuildLabel":"Join a Free Company or Static","searchBarPlaceholder":"Enter a player, free company, or world","showMore":"Show More","showLess":"Show Less","noGuildDescription":"Join a free company or static and get quick access to reports, rankings, recruitment, calendar and more!","noGuildTitle":"You're not in a free company or static yet.","noCharactersTitle":"You have not claimed any characters yet","noCharactersDescription":"Learn how to claim characters","orSeparator":"or","accessibilityExpand":"Expand Dropdown","accessibilityCollapse":"Collapse Dropdown","newBadgeLabel":"New","followTheRaceLabel":"Follow the Race!"}}
+            },
+            {
+                game: {"id":2,"area":1,"locales":["de","en","fr","ja","ko","cn"],"fullName":"Final Fantasy XIV","lowercaseName":"ff","siteTitle":"FF Logs","siteLogoImageUrl":"https:\/\/assets.rpglogs.com\/img\/ff\/favicon.png?v=2","actorsSprite":"https:\/\/assets.rpglogs.com\/img\/ff\/icons\/actors.png?v=12","actorsSecondarySprite":"https:\/\/assets.rpglogs.com\/img\/ff\/icons\/secondary\/actors.png?v=1","articlesBaseUrl":"https:\/\/articles.fflogs.com","assetServerBaseUrl":"https:\/\/assets.rpglogs.com","abilityExternalSitePath":"\/\/www.garlandtools.org\/db\/#action\/","buffExternalSitePath":"\/\/www.garlandtools.org\/db\/#status\/","itemExternalSitePath":"","npcExternalSitePath":"","tooltipLibraryPath":null,"encounterIconExtension":"jpg"},
+            },
+            null,
+            true
+        );
+    </script>
+
+<div id="content-and-footer">
+
+<div id="top-banner">
+            <div id="top-banner-desktop">
+            <div id="top-banner-desktop__venatus-container"></div>
+<script async>
+    attachToDom(
+        '#top-banner-desktop__venatus-container',
+        'VenatusAd',
+        {"id":"top-banner-desktop__venatus","placement":"leaderboard_atf","placementId":"63ee269c7b6c4f748d309edf","fallbackImageUrl":"https:\/\/assets.rpglogs.com\/img\/ff\/fallback\/banner.png?v=1"},
+        null,
+        null,
+        true
+    );
+</script>
+        </div>
+        <div id="top-banner-mobile">
+            <div id="top-banner-mobile__venatus-container"></div>
+<script async>
+    attachToDom(
+        '#top-banner-mobile__venatus-container',
+        'VenatusAd',
+        {"id":"top-banner-mobile__venatus","placement":"mobile_leaderboard_atf","placementId":"63ee27159de8a93930474e0b","fallbackImageUrl":"https:\/\/assets.rpglogs.com\/img\/ff\/fallback\/banner.png?v=1"},
+        null,
+        null,
+        true
+    );
+</script>
+        </div>
+    </div>
+
+<style>
+
+.inform-text { font-size:10px; max-width:225px; line-height:normal; }
+
+#character-portrait-box {
+    padding: 5px;
+    position: relative;
+    border-bottom: 1px solid #555555;
+    background-color: rgba(0, 21, 32);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+
+    }
+#character-portrait-box.with-banner {
+    height: 130px;
+}
+#character-portrait-image { width: 80px; height:80px; display:block; border:1px solid #555555; }
+#character-portrait-image-box { float:left; margin-right:10px; position:relative; }
+
+#character-inset {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#character-level { position:absolute; bottom:1px; left:2px; font-weight: bold; font-family: 'Georgia'; font-size:20px; text-shadow: 5px 5px black; padding: 0 5px; background-color: rgba(0,21,32, 0.8);  }
+
+#character-name { font-size:32px; line-height:37px; font-weight:bold; }
+.character-name-link { display:block; color:white!important; }
+#guild-link, #server-link { color: white !important; }
+#guild-and-class { font-size:18px; line-height:25px }
+
+#character-ilvl { float:left; }
+
+#portrait-and-basics { display:flex; align-items:center }
+
+.slightly-transparent-box {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 7px 12px;
+    border-radius: 4px;
+}
+
+.header-zone-box { display:flex; white-space:nowrap; align-items:stretch; margin:5px; flex-direction: column; }
+
+.header-zone-icon-and-points { display:flex; margin-top:-1px; }
+
+.header-zone-icon { border:1px solid #555555; margin-right:-1px; position:relative; }
+.header-zone-img { width:48px; height:48px; display:block; }
+.header-zone-progress { text-align:center; font-size:13px; padding:2px; background-color:rgba(0,0,0,0.6); position:absolute;bottom:0; left:0; right:0; }
+
+.header-zone-progress-inset { margin:2px; position:absolute;left:0; right:0; top:0; bottom:0; opacity:0.75 }
+
+.header-zone-progress-inset.high { background: #1b9601; background: linear-gradient(to right, #0d4a00 0, #1b9601 100%); }
+.header-zone-progress-inset.medium { background: #c76700; background: linear-gradient(to right, #7b3f00 0, #c76700 100%) }
+.header-zone-progress-inset.low {  background: #99755c; background: linear-gradient(to right, #69503f 0, #99755c 100%) }
+
+.header-zone-progress-text { position:relative; }
+
+.header-zone-name { font-weight:bold; font-size:12px; text-align:center; background-color:#201020; border:1px solid #555555; padding:2px 10px; }
+.header-zone-ranks-container { display:flex; flex:1; align-items:stretch; border:1px solid #555555; background-color:black; padding-left: 5px; justify-content:center }
+.header-zone-ranks { display:flex; align-items:center }
+.header-zone-points { margin:0 5px 0 5px; text-align:center; min-width:60px }
+.header-zone-positions { align-self: stretch; display:flex; align-items:center; justify-content:center; padding-left:10px; padding-right:10px; min-width:50px; border-left:1px solid #555555; text-align:center }
+.header-rank { font-weight:bold; font-size:16px; }
+.header-zone-partition { background-color:black; padding:2px 11px; }
+
+#last-updated { font-size:11px; }
+#last-updated-caption { color: white }
+
+.time-distance { color: #a0a0a0; }
+
+#points-box > .centered-box { display: flex; }
+
+.character-header-actions {
+    display: grid;
+    grid-gap: 8px;
+}
+
+#update-box, #inform-box {
+    font-size: 16px;
+    line-height: 20px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+#inform-box {
+    line-height: 26px;
+}
+
+#update-text {
+    color: #a0a0a0;
+    text-align: right;
+}
+.with-banner #update-text {
+    text-align: center;
+}
+
+#character-inset { max-width:1800px; margin:auto; padding-left:10px; padding-right:10px; }
+
+.job-header-icon { border:1px solid #555555; width:16px; height:16px; float:left; margin-right:2px; margin-top:3px; --size:16; }
+.allstar-header-icon { border:1px solid #555555; width:36px; height:36px; float:left; margin-right:3px; margin-left:3px; --size:36; }
+
+#update-box > .centered-box { display:flex; justify-content: center }
+
+#character-header-customize-action-box {
+    font-size: 16px;
+    text-align: right;
+}
+.with-banner #character-header-customize-action-box {
+    text-align: center;
+}
+
+// #toggle-gear-alternate-container { display:none; flex-direction:column;justify-content:center }
+
+@media (max-width:1200px) {
+	#character-portrait-image {width:64px; height:64px }
+	#character-name { font-size:18px; line-height:21px; }
+	#guild-and-class { font-size:14px; line-height:18px }
+	.header-zone-img { width:48px; height:48px; }
+	.allstar-header-icon { width:24px; height:24px; --size:24 }
+	.header-zone-points.has-rank { display: none }
+	.header-zone-name { font-size:10px }
+	.header-zone-positions { border-left: none }
+	.header-zone-points, .header-zone-positions { font-size:11px; }
+	.header-rank { font-size: 14px }
+}
+
+@media (max-width:900px) {
+	#character-level { display:none }
+	
+	#character-portrait-image {width:53px; height:53px}
+	.header-zone-img { width:36px; height:36px; }
+	
+	#points-box { font-size:12px }
+	#links-box { visibility:hidden }
+	
+	.header-zone-positions { line-height:14px; font-size:10px }
+	.header-zone-rank, .header-zone-points { font-size:10px }
+}
+
+@media (max-width:750px) {
+    #character-portrait-box.with-banner { height: initial; }
+	#guild-and-class { font-size:12px }
+	#guild-and-server { display: none }
+	#jobs-header-icons { display:none }
+	#character-name { font-size:16px; line-height:20px }
+	#character-portrait-image {width:42px; height:42px}
+	.header-zone-icon, .header-zone-progress { display:none }
+	#update-text, #character-header-customize-action-box { font-size:12px; line-height:16px; }
+	.header-zone-box { display: none }
+//	#toggle-gear-alternate-container { display:flex }
+	#last-updated { display:none }
+}
+
+@media (max-width:400px) {
+	#character-portrait-image-box { display: none }
+}
+
+</style>
+<script>
+function updateSuccess(jsonData, status, xhr)
+{
+	window.location.reload();
+}
+
+function updateFail()
+{
+	alert("The update failed. It's possible the servers are down. Try again later.")
+	$("#update-text").html("Update Failed")
+	document.getElementById('update-link').style.display = 'inline';
+	document.getElementById('update-spinner').style.display = 'none';
+	
+}
+
+function updateNow()
+{
+	document.getElementById('update-link').style.display = 'none';
+	document.getElementById('update-spinner').style.display = 'inline';
+	
+	var updateString = '/character/update/' + characterID
+	$.getJSON(updateString, updateSuccess).fail(updateFail)
+}
+
+function setBanner(banner) {
+    window.previewedBanner = banner;
+
+    const characterPortraitBox = document.getElementById('character-portrait-box');
+    if (banner) {
+        characterPortraitBox.classList.add('with-banner');
+    } else {
+        characterPortraitBox.classList.remove('with-banner');
+    }
+    characterPortraitBox.style.backgroundImage = banner ? `url('${banner.url}')` : 'initial';
+
+    const slightlyTransparentBoxClassName = 'slightly-transparent-box';
+    [
+        document.getElementById('portrait-and-basics'),
+        document.getElementById('update-box'),
+        document.getElementById('character-header-customize-action-box'),
+        document.getElementById('inform-box')
+    ].forEach(element => {
+        if (!element) return;
+        if (banner) {
+            element.classList.add(slightlyTransparentBoxClassName);
+        } else {
+            element.classList.remove(slightlyTransparentBoxClassName);
+        }
+    });
+}
+
+function customize() {
+    if (window.customizing) {
+        stopCustomizing();
+    } else {
+        startCustomizing();
+    }
+}
+
+window.banner = null;
+window.previewedBanner = window.banner;
+
+function startCustomizing() {
+    window.customizing = true;
+
+    attachToDom(
+        '#character-profile-customize-tile-container',
+        'CharacterProfileCustomizeTile',
+        {
+            onBannerChange: setBanner,
+            onSuccessfulSave: () => {
+                window.banner = window.previewedBanner;
+                stopCustomizing();
+            },
+            onCancel: () => {
+                setBanner(window.banner);
+                stopCustomizing();
+            }
+        },
+        {
+            character: {
+                id: characterID
+            }
+        },
+        null,
+        false
+    );
+}
+
+function stopCustomizing() {
+    window.customizing = false;
+
+    removeFromDom('#character-profile-customize-tile-container');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const url = new URL(window.location.href);
+
+    if (url.searchParams.get('customize') === '' && !window.customizing) {
+        startCustomizing();
+    }
+});
+</script>
+
+<div id="character-portrait-box" class="">
+<div id="character-inset">
+<div id="portrait-and-basics" class="">
+
+
+<div id="character-portrait-image-box">
+<a class="character-name-link" href="#">
+<img id="character-portrait-image" src="https://img2.finalfantasyxiv.com/f/efc506417631cb91396a27c0c9b7a13f_5047bc596a4bab2dc7f7c120bb22dec5fc0_96x96.jpg?1673645023" alt="Chere Nityu">
+</a>
+
+
+</div>
+
+<div id="character-basics"><div id="character-name"><a class="character-name-link" href="#">Chere Nityu</a></div>
+
+<div id="guild-and-class">
+<div id="guild-and-server">
+<a id="server-link" 
+	href="/server/id/29">Phoenix (EU)</a>
+</div>
+
+<div id="jobs-header-icons">
+<a href="#" onclick="return setClassAndSpec('Global', 'Bard', null, this)" oncontextmenu="return setClassAndSpec('Global', 'Bard', null, this)">
+	<img class="job-header-icon sprite  actor-sprite-Bard" alt= "Bard" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12">
+</a>
+<a href="#" onclick="return setClassAndSpec('Global', 'Dancer', null, this)" oncontextmenu="return setClassAndSpec('Global', 'Dancer', null, this)">
+	<img class="job-header-icon sprite  actor-sprite-Dancer" alt= "Dancer" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12">
+</a>
+<a href="#" onclick="return setClassAndSpec('Global', 'Machinist', null, this)" oncontextmenu="return setClassAndSpec('Global', 'Machinist', null, this)">
+	<img class="job-header-icon sprite unkilled actor-sprite-Machinist" alt= "Machinist" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12">
+</a>
+<a href="#" onclick="return setClassAndSpec('Global', 'Paladin', null, this)" oncontextmenu="return setClassAndSpec('Global', 'Paladin', null, this)">
+	<img class="job-header-icon sprite  actor-sprite-Paladin" alt= "Paladin" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12">
+</a>
+<a href="#" onclick="return setClassAndSpec('Global', 'RedMage', null, this)" oncontextmenu="return setClassAndSpec('Global', 'RedMage', null, this)">
+	<img class="job-header-icon sprite unkilled actor-sprite-RedMage" alt= "RedMage" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12">
+</a>
+<a href="#" onclick="return setClassAndSpec('Global', 'Scholar', null, this)" oncontextmenu="return setClassAndSpec('Global', 'Scholar', null, this)">
+	<img class="job-header-icon sprite unkilled actor-sprite-Scholar" alt= "Scholar" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12">
+</a>
+<a href="#" onclick="return setClassAndSpec('Global', 'Summoner', null, this)" oncontextmenu="return setClassAndSpec('Global', 'Summoner', null, this)">
+	<img class="job-header-icon sprite unkilled actor-sprite-Summoner" alt= "Summoner" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12">
+</a>
+<a href="#" onclick="return setClassAndSpec('Global', 'WhiteMage', null, this)" oncontextmenu="return setClassAndSpec('Global', 'WhiteMage', null, this)">
+	<img class="job-header-icon sprite unkilled actor-sprite-WhiteMage" alt= "WhiteMage" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12">
+</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!--
+<div id="toggle-gear-alternate-container">
+	<div class="toggle-gear" onclick="toggleGear()">Toggle Armory</div>
+</div>
+-->
+
+<div class="header-zone-box">
+	<div class="header-zone-name">Abyssos
+	Savage
+	</div>
+	<div class="header-zone-icon-and-points">
+		<div class="header-zone-icon">
+			<img class="header-zone-img" src="https://assets.rpglogs.com/img/ff/zones/zone-49.png" alt="Abyssos">
+			
+			 <div class="header-zone-progress">
+				 <div class="header-zone-progress-inset high" style="right: 0%"></div>
+				 <div class="header-zone-progress-text">5  / 5</div>
+			 </div>
+	 
+		</div>
+
+		<div class="header-zone-ranks-container">
+			<div style="display:flex;flex-direction:column; justify-content:center">
+				<img style="float:left" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" class="allstar-header-icon sprite actor-sprite-Dancer" alt="Dancer">
+			</div>
+			<div class="header-zone-ranks">
+
+				<div class="header-zone-points has-rank">
+					
+	All Stars
+<br><span class="primary header-rank">523</span></div>
+				<div class="header-zone-positions  has-rank"><div  title="84.7%">Rank<br><span class="epic header-rank">3231</span></span></div></div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+			
+			
+			
+
+
+<div class="character-header-actions">
+        <div id="update-box" class="">
+        <div class="centered-box">
+            <div id="update-text">
+
+                                    <a id="update-link" href="#" onclick="updateNow(); return false">
+                        <i class="zmdi zmdi-refresh" aria-hidden="true" style="margin-right: 3px;"></i>
+                        Update
+                    </a>
+                    <span id="update-spinner" style="display: none;">
+                        <i class="zmdi zmdi-spinner zmdi-hc-spin" aria-hidden="true" style="margin-right: 3px;"></i>
+                        Updating...
+                    </span>
+                    <br>
+                                            <span id="last-updated">
+<span id="last-updated-caption">
+Last Update:
+</span>
+<span class="time-distance">
+        <script>
+document.write(moment(1673647016000).fromNow());
+</script>
+    </span>
+</span>
+                    
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<div id="content" class="not-subscribed uncapped">
+	
+<div id="content-box">
+
+    <div style="max-width: 1800px; margin: 8px auto 4px auto;">
+        <div id="character-profile-customize-tile-container" style="margin: 0 15px"></div>
+    </div>
+
+	<div id="character-contents-box" class="compact has-gear-and-portrait">
+
+		<div id="logs-and-gear-container">
+			
+			
+			
+
+			<div id="logs-box"
+			
+					>
+
+
+<div id="logs-box-contents">
+			
+	<div class="raid-type-box">
+		<ul id="metric-menubar" class="metrics-menubar raid-type-caption sm sm-black filter-bar-menu">
+	<li class="filter-expansions-container" id="filter-expansions-selection-container"><a style="padding-left:10px!important;" class="filter-item" href="#"><span id="filter-expansion-text"></span></a>
+			
+			<ul>
+		<li><a id="expansion-4" class="Boss" href="?zone=49">Endwalker</a>
+	</li>
+			<li><a id="expansion-3" class="Boss" href="?zone=38">Shadowbringers</a>
+	</li>
+			<li><a id="expansion-2" class="Boss" href="?zone=25">Stormblood</a>
+	</li>
+			<li><a id="expansion-1" class="Boss" href="?zone=13">Heavensward</a>
+	</li>
+		</ul>
+	
+		
+	
+			<li class="right"><span id="gear-and-portrait-toggler" class="zmdi zmdi-window-maximize" onclick="toggleGearAndPortrait()"</span></li>
+				<li id="filter-zone-selection-container" class="right"><a class="filter-item" href="#"><span id="filter-zone-text"></span></a>
+							<ul>
+																																												<li><a id="zone-49" class="Boss" href="#" defaultmetric="dps" onclick="return setZone(49, this)" oncontextmenu="setZone(49, this)">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-49.png" alt="Abyssos" class="lazyload zone-menu-icon">
+																						<span class="zone-text">Abyssos</span></a></li>
+																																							<li><a id="zone-44" class="Boss" href="#" defaultmetric="dps" onclick="return setZone(44, this)" oncontextmenu="setZone(44, this)">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-44.png" alt="Asphodelos" class="lazyload zone-menu-icon">
+																						<span class="zone-text">Asphodelos</span></a></li>
+																																							<li><a id="zone-53" class="Boss" href="#" defaultmetric="dps" onclick="return setZone(53, this)" oncontextmenu="setZone(53, this)">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-53.png" alt="The Omega Protocol" class="lazyload zone-menu-icon">
+																						<span class="zone-text">The Omega Protocol</span></a></li>
+																																							<li><a id="zone-45" class="Boss" href="#" defaultmetric="dps" onclick="return setZone(45, this)" oncontextmenu="setZone(45, this)">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-45.png" alt="Dragonsong&#039;s Reprise" class="lazyload zone-menu-icon">
+																						<span class="zone-text">Dragonsong&#039;s Reprise</span></a></li>
+																																							<li><a id="zone-43" class="Boss" href="#" defaultmetric="dps" onclick="return setZone(43, this)" oncontextmenu="setZone(43, this)">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-43.png" alt="Ultimates (Legacy)" class="lazyload zone-menu-icon">
+																						<span class="zone-text">Ultimates (Legacy)</span></a></li>
+																																							<li><a id="zone-50" class="Boss" href="#" defaultmetric="dps" onclick="return setZone(50, this)" oncontextmenu="setZone(50, this)">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-50.png" alt="Trials II (Extreme)" class="lazyload zone-menu-icon">
+																						<span class="zone-text">Trials II (Extreme)</span></a></li>
+																																							<li><a id="zone-42" class="Boss" href="#" defaultmetric="dps" onclick="return setZone(42, this)" oncontextmenu="setZone(42, this)">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-42.png" alt="Trials I (Extreme)" class="lazyload zone-menu-icon">
+																						<span class="zone-text">Trials I (Extreme)</span></a></li>
+																																							<li><a id="zone-46" class="Boss" href="#" defaultmetric="dps" onclick="return setZone(46, this)" oncontextmenu="setZone(46, this)">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-46.png" alt="Trials (Unreal)" class="lazyload zone-menu-icon">
+																						<span class="zone-text">Trials (Unreal)</span></a></li>
+																					
+															
+																																												<li><a id="zone-51" class="Boss" href="?zone=51">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-51.png" alt="Dungeons (Criterion)" class="lazyload zone-menu-icon">
+																						<span class="zone-text">Dungeons (Criterion)</span></a></li>
+																				
+								
+															
+																																												<li><a id="zone-41" class="Boss" href="?zone=41">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-41.png" alt="Dungeons (Endgame)" class="lazyload zone-menu-icon">
+																						<span class="zone-text">Dungeons (Endgame)</span></a></li>
+																				
+								
+															
+																																												<li><a id="zone-52" class="Boss" href="?zone=52">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-52.png" alt="Euphrosyne" class="lazyload zone-menu-icon">
+																						<span class="zone-text">Euphrosyne</span></a></li>
+																																							<li><a id="zone-47" class="Boss" href="?zone=47">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-47.png" alt="Aglaia" class="lazyload zone-menu-icon">
+																						<span class="zone-text">Aglaia</span></a></li>
+																				
+								
+															
+																																												<li><a id="zone-48" class="Boss" href="?zone=48">
+																						<img data-src="https://assets.rpglogs.com/img/ff/zones/zone-48.png" alt="Delubrum Reginae" class="lazyload zone-menu-icon">
+																						<span class="zone-text">Delubrum Reginae</span></a></li>
+																				
+								
+															
+														
+							</ul>
+				</li>	
+				
+				
+		</ul>
+
+<!--
+		<div class="difficulty-bar">
+			<div class="difficulty-tabs">
+				<a id="difficulty-tab-5000" class="difficulty-tab" onclick="return setDifficulty(5000, this)" oncontextmenu="setDifficulty(5000, this)">
+					Highest Difficulty
+				</a>
+				<a id="difficulty-tab-101" class="difficulty-tab" onclick="return setDifficulty(101, this)" oncontextmenu="setDifficulty(101, this)">
+					Savage
+				</a>
+				<a id="difficulty-tab-100" class="difficulty-tab" onclick="return setDifficulty(100, this)" oncontextmenu="setDifficulty(100, this)">
+					Normal
+				</a>
+			</div>
+
+			
+		</div>
+		-->	
+		<div class="raid-type-contents">
+				
+			<div class="raids-and-zones-container">
+				<div id="zone-select-and-table-container" class="zone-select-and-table-container">
+					<ul id="zones-menubar" class="sm sm-black filter-bar-menu zones-menubar">
+						
+			
+	
+			
+			<li class="filter-metric-container" id="filter-metric-selection-container"><a class="filter-item" href="#"><span id="filter-metric-text"></span></a>
+				<ul>
+				<li><a href="#" id="metric-playerspeed" class="filter-item" onclick="return setMetric('playerspeed', this)" oncontextmenu="setMetric('playerspeed', this)"><span class="metric-text">Speed</span> </a></li><li><a href="#" id="metric-dps" class="filter-item" onclick="return setMetric('dps', this)" oncontextmenu="setMetric('dps', this)"><span class="metric-text">Damage</span> </a></li><li><a href="#" id="metric-hps" class="filter-item" onclick="return setMetric('hps', this)" oncontextmenu="setMetric('hps', this)"><span class="metric-text">Healing</span> </a></li><li class="separator"></li><li><a href="#" id="metric-healercombineddps" class="filter-item" onclick="return setMetric('healercombineddps', this)" oncontextmenu="setMetric('healercombineddps', this)"><span class="metric-text">Healer Combined Damage</span> </a></li><li><a href="#" id="metric-tankcombineddps" class="filter-item" onclick="return setMetric('tankcombineddps', this)" oncontextmenu="setMetric('tankcombineddps', this)"><span class="metric-text">Tank Combined Damage</span> </a></li><li class="separator"></li><li><a href="#" id="metric-bossdps" class="filter-item" onclick="return setMetric('bossdps', this)" oncontextmenu="setMetric('bossdps', this)"><span class="metric-text">Damage To Bosses</span> </a></li><li class="separator"></li><li><a href="#" id="metric-healercombinedbossdps" class="filter-item" onclick="return setMetric('healercombinedbossdps', this)" oncontextmenu="setMetric('healercombinedbossdps', this)"><span class="metric-text">Healer Combined Damage To Bosses</span> </a></li><li><a href="#" id="metric-tankcombinedbossdps" class="filter-item" onclick="return setMetric('tankcombinedbossdps', this)" oncontextmenu="setMetric('tankcombinedbossdps', this)"><span class="metric-text">Tank Combined Damage To Bosses</span> </a></li>				</ul>
+
+			</li>
+			
+
+
+							
+							
+																		<li class="filter-boss-selection-container" id="filter-boss-selection-container-49"><a class="filter-item" href="#"><span id="filter-boss-text-49"></span></a>
+							<ul>
+							<li><a id="boss-0-49" href="#" class="Boss" onclick="return setBoss(0, this)" oncontextmenu="setBoss(0, this)"><span class="boss-text">All Bosses</span></a></li>
+							<li class="separator"></li>
+							<div style="overflow:hidden; white-space:nowrap; margin:2px"><table cellspacing=0 cellpadding=0 style="display:inline-table;"><tbody><tr><td><li><a id="boss-83-49"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(83, this)" oncontextmenu="setBoss(83, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/83-icon.jpg" class="lazyload menu-boss-icon" alt="Proto-Carbuncle"><span class="boss-text">Proto-Carbuncle</span></a></li><tr><td><li><a id="boss-84-49"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(84, this)" oncontextmenu="setBoss(84, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/84-icon.jpg" class="lazyload menu-boss-icon" alt="Hegemone"><span class="boss-text">Hegemone</span></a></li><tr><td><li><a id="boss-85-49"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(85, this)" oncontextmenu="setBoss(85, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/85-icon.jpg" class="lazyload menu-boss-icon" alt="Agdistis"><span class="boss-text">Agdistis</span></a></li><tr><td><li><a id="boss-86-49"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(86, this)" oncontextmenu="setBoss(86, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/86-icon.jpg" class="lazyload menu-boss-icon" alt="Hephaistos"><span class="boss-text">Hephaistos</span></a></li><tr><td><li><a id="boss-87-49"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(87, this)" oncontextmenu="setBoss(87, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/87-icon.jpg" class="lazyload menu-boss-icon" alt="Hephaistos II"><span class="boss-text">Hephaistos II</span></a></li></tbody></table></div>
+							
+							
+
+							</ul>
+																								<li class="filter-boss-selection-container" id="filter-boss-selection-container-44"><a class="filter-item" href="#"><span id="filter-boss-text-44"></span></a>
+							<ul>
+							<li><a id="boss-0-44" href="#" class="Boss" onclick="return setBoss(0, this)" oncontextmenu="setBoss(0, this)"><span class="boss-text">All Bosses</span></a></li>
+							<li class="separator"></li>
+							<div style="overflow:hidden; white-space:nowrap; margin:2px"><table cellspacing=0 cellpadding=0 style="display:inline-table;"><tbody><tr><td><li><a id="boss-78-44"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(78, this)" oncontextmenu="setBoss(78, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/78-icon.jpg" class="lazyload menu-boss-icon" alt="Erichthonios"><span class="boss-text">Erichthonios</span></a></li><tr><td><li><a id="boss-79-44"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(79, this)" oncontextmenu="setBoss(79, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/79-icon.jpg" class="lazyload menu-boss-icon" alt="Hippokampos"><span class="boss-text">Hippokampos</span></a></li><tr><td><li><a id="boss-80-44"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(80, this)" oncontextmenu="setBoss(80, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/80-icon.jpg" class="lazyload menu-boss-icon" alt="Phoinix"><span class="boss-text">Phoinix</span></a></li><tr><td><li><a id="boss-81-44"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(81, this)" oncontextmenu="setBoss(81, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/81-icon.jpg" class="lazyload menu-boss-icon" alt="Hesperos"><span class="boss-text">Hesperos</span></a></li><tr><td><li><a id="boss-82-44"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(82, this)" oncontextmenu="setBoss(82, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/82-icon.jpg" class="lazyload menu-boss-icon" alt="Hesperos II"><span class="boss-text">Hesperos II</span></a></li></tbody></table></div>
+							
+							
+
+							</ul>
+																								<li class="filter-boss-selection-container" id="filter-boss-selection-container-53"><a class="filter-item" href="#"><span id="filter-boss-text-53"></span></a>
+							<ul>
+							<li><a id="boss-0-53" href="#" class="Boss" onclick="return setBoss(0, this)" oncontextmenu="setBoss(0, this)"><span class="boss-text">All Bosses</span></a></li>
+							<li class="separator"></li>
+							<div style="overflow:hidden; white-space:nowrap; margin:2px"><table cellspacing=0 cellpadding=0 style="display:inline-table;"><tbody><tr><td><li><a id="boss-1068-53"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(1068, this)" oncontextmenu="setBoss(1068, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/1068-icon.jpg" class="lazyload menu-boss-icon" alt="The Omega Protocol"><span class="boss-text">The Omega Protocol</span></a></li></tbody></table></div>
+							
+							
+
+							</ul>
+																								<li class="filter-boss-selection-container" id="filter-boss-selection-container-45"><a class="filter-item" href="#"><span id="filter-boss-text-45"></span></a>
+							<ul>
+							<li><a id="boss-0-45" href="#" class="Boss" onclick="return setBoss(0, this)" oncontextmenu="setBoss(0, this)"><span class="boss-text">All Bosses</span></a></li>
+							<li class="separator"></li>
+							<div style="overflow:hidden; white-space:nowrap; margin:2px"><table cellspacing=0 cellpadding=0 style="display:inline-table;"><tbody><tr><td><li><a id="boss-1065-45"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(1065, this)" oncontextmenu="setBoss(1065, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/1065-icon.jpg" class="lazyload menu-boss-icon" alt="Dragonsong's Reprise"><span class="boss-text">Dragonsong's Reprise</span></a></li></tbody></table></div>
+							
+							
+
+							</ul>
+																								<li class="filter-boss-selection-container" id="filter-boss-selection-container-43"><a class="filter-item" href="#"><span id="filter-boss-text-43"></span></a>
+							<ul>
+							<li><a id="boss-0-43" href="#" class="Boss" onclick="return setBoss(0, this)" oncontextmenu="setBoss(0, this)"><span class="boss-text">All Bosses</span></a></li>
+							<li class="separator"></li>
+							<div style="overflow:hidden; white-space:nowrap; margin:2px"><table cellspacing=0 cellpadding=0 style="display:inline-table;"><tbody><tr><td><li><a id="boss-1060-43"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(1060, this)" oncontextmenu="setBoss(1060, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/1060-icon.jpg" class="lazyload menu-boss-icon" alt="The Unending Coil of Bahamut"><span class="boss-text">The Unending Coil of Bahamut</span></a></li><tr><td><li><a id="boss-1061-43"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(1061, this)" oncontextmenu="setBoss(1061, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/1061-icon.jpg" class="lazyload menu-boss-icon" alt="The Weapon's Refrain"><span class="boss-text">The Weapon's Refrain</span></a></li><tr><td><li><a id="boss-1062-43"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(1062, this)" oncontextmenu="setBoss(1062, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/1062-icon.jpg" class="lazyload menu-boss-icon" alt="The Epic of Alexander"><span class="boss-text">The Epic of Alexander</span></a></li></tbody></table></div>
+							
+							
+
+							</ul>
+																								<li class="filter-boss-selection-container" id="filter-boss-selection-container-50"><a class="filter-item" href="#"><span id="filter-boss-text-50"></span></a>
+							<ul>
+							<li><a id="boss-0-50" href="#" class="Boss" onclick="return setBoss(0, this)" oncontextmenu="setBoss(0, this)"><span class="boss-text">All Bosses</span></a></li>
+							<li class="separator"></li>
+							<div style="overflow:hidden; white-space:nowrap; margin:2px"><table cellspacing=0 cellpadding=0 style="display:inline-table;"><tbody><tr><td><li><a id="boss-1066-50"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(1066, this)" oncontextmenu="setBoss(1066, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/1066-icon.jpg" class="lazyload menu-boss-icon" alt="Barbariccia"><span class="boss-text">Barbariccia</span></a></li><tr><td><li><a id="boss-1067-50"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(1067, this)" oncontextmenu="setBoss(1067, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/1067-icon.jpg" class="lazyload menu-boss-icon" alt="Rubicante"><span class="boss-text">Rubicante</span></a></li></tbody></table></div>
+							
+							
+
+							</ul>
+																								<li class="filter-boss-selection-container" id="filter-boss-selection-container-42"><a class="filter-item" href="#"><span id="filter-boss-text-42"></span></a>
+							<ul>
+							<li><a id="boss-0-42" href="#" class="Boss" onclick="return setBoss(0, this)" oncontextmenu="setBoss(0, this)"><span class="boss-text">All Bosses</span></a></li>
+							<li class="separator"></li>
+							<div style="overflow:hidden; white-space:nowrap; margin:2px"><table cellspacing=0 cellpadding=0 style="display:inline-table;"><tbody><tr><td><li><a id="boss-1058-42"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(1058, this)" oncontextmenu="setBoss(1058, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/1058-icon.jpg" class="lazyload menu-boss-icon" alt="Zodiark"><span class="boss-text">Zodiark</span></a></li><tr><td><li><a id="boss-1059-42"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(1059, this)" oncontextmenu="setBoss(1059, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/1059-icon.jpg" class="lazyload menu-boss-icon" alt="Hydaelyn"><span class="boss-text">Hydaelyn</span></a></li><tr><td><li><a id="boss-1063-42"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(1063, this)" oncontextmenu="setBoss(1063, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/1063-icon.jpg" class="lazyload menu-boss-icon" alt="Endsinger"><span class="boss-text">Endsinger</span></a></li></tbody></table></div>
+							
+							
+
+							</ul>
+																								<li class="filter-boss-selection-container" id="filter-boss-selection-container-46"><a class="filter-item" href="#"><span id="filter-boss-text-46"></span></a>
+							<ul>
+							<li><a id="boss-0-46" href="#" class="Boss" onclick="return setBoss(0, this)" oncontextmenu="setBoss(0, this)"><span class="boss-text">All Bosses</span></a></li>
+							<li class="separator"></li>
+							<div style="overflow:hidden; white-space:nowrap; margin:2px"><table cellspacing=0 cellpadding=0 style="display:inline-table;"><tbody><tr><td><li><a id="boss-3004-46"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(3004, this)" oncontextmenu="setBoss(3004, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/3004-icon.jpg" class="lazyload menu-boss-icon" alt="Ultima's Bane"><span class="boss-text">Ultima's Bane</span></a></li><tr><td><li><a id="boss-3005-46"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(3005, this)" oncontextmenu="setBoss(3005, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/3005-icon.jpg" class="lazyload menu-boss-icon" alt="Sephirot"><span class="boss-text">Sephirot</span></a></li><tr><td><li><a id="boss-3006-46"class="Boss" style="white-space:nowrap;" href="#" onclick="return setBoss(3006, this)" oncontextmenu="setBoss(3006, this)"><img data-src="https://assets.rpglogs.com/img/ff/bosses/3006-icon.jpg" class="lazyload menu-boss-icon" alt="Sophia"><span class="boss-text">Sophia</span></a></li></tbody></table></div>
+							
+							
+
+							</ul>
+																		
+											
+<li id="filter-class-selection-container"><a class="filter-item" href="#"><span id="filter-class-text"></span></a>
+<ul>
+	<li><a href="#" class="parent filter-item" onclick="return setClassAndSpec('Any', 'Any', null, this)" oncontextmenu="setClassAndSpec('Any', 'Any', null, this)">All Jobs</a>
+	<li class="separator">
+<li><a plural="Bards" href="#" id="class-Global-spec-Bard" class="Bard" onclick="return setClassAndSpec('Global', 'Bard', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Bard', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Bard" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Bard"><span class="actor=text">Bard</span></a><li><a plural="Paladins" href="#" id="class-Global-spec-Paladin" class="Paladin" onclick="return setClassAndSpec('Global', 'Paladin', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Paladin', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Paladin" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Paladin"><span class="actor=text">Paladin</span></a><li><a plural="Dancers" href="#" id="class-Global-spec-Dancer" class="Dancer" onclick="return setClassAndSpec('Global', 'Dancer', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Dancer', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Dancer" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Dancer"><span class="actor=text">Dancer</span></a><li class="separator"></li><li><a plural="Astrologians" href="#" id="class-Global-spec-Astrologian" class="unkilled" onclick="return setClassAndSpec('Global', 'Astrologian', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Astrologian', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Astrologian" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Astrologian"><span class="actor=text">Astrologian</span></a><li><a plural="Black Mages" href="#" id="class-Global-spec-BlackMage" class="unkilled" onclick="return setClassAndSpec('Global', 'BlackMage', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'BlackMage', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-BlackMage" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Black Mage"><span class="actor=text">Black Mage</span></a><li><a plural="Dark Knights" href="#" id="class-Global-spec-DarkKnight" class="unkilled" onclick="return setClassAndSpec('Global', 'DarkKnight', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'DarkKnight', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-DarkKnight" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Dark Knight"><span class="actor=text">Dark Knight</span></a><li><a plural="Dragoons" href="#" id="class-Global-spec-Dragoon" class="unkilled" onclick="return setClassAndSpec('Global', 'Dragoon', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Dragoon', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Dragoon" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Dragoon"><span class="actor=text">Dragoon</span></a><li><a plural="Machinists" href="#" id="class-Global-spec-Machinist" class="unkilled" onclick="return setClassAndSpec('Global', 'Machinist', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Machinist', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Machinist" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Machinist"><span class="actor=text">Machinist</span></a><li><a plural="Monks" href="#" id="class-Global-spec-Monk" class="unkilled" onclick="return setClassAndSpec('Global', 'Monk', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Monk', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Monk" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Monk"><span class="actor=text">Monk</span></a><li><a plural="Ninjas" href="#" id="class-Global-spec-Ninja" class="unkilled" onclick="return setClassAndSpec('Global', 'Ninja', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Ninja', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Ninja" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Ninja"><span class="actor=text">Ninja</span></a><li><a plural="Scholars" href="#" id="class-Global-spec-Scholar" class="unkilled" onclick="return setClassAndSpec('Global', 'Scholar', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Scholar', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Scholar" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Scholar"><span class="actor=text">Scholar</span></a><li><a plural="Summoners" href="#" id="class-Global-spec-Summoner" class="unkilled" onclick="return setClassAndSpec('Global', 'Summoner', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Summoner', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Summoner" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Summoner"><span class="actor=text">Summoner</span></a><li><a plural="Warriors" href="#" id="class-Global-spec-Warrior" class="unkilled" onclick="return setClassAndSpec('Global', 'Warrior', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Warrior', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Warrior" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Warrior"><span class="actor=text">Warrior</span></a><li><a plural="White Mages" href="#" id="class-Global-spec-WhiteMage" class="unkilled" onclick="return setClassAndSpec('Global', 'WhiteMage', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'WhiteMage', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-WhiteMage" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="White Mage"><span class="actor=text">White Mage</span></a><li><a plural="Red Mages" href="#" id="class-Global-spec-RedMage" class="unkilled" onclick="return setClassAndSpec('Global', 'RedMage', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'RedMage', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-RedMage" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Red Mage"><span class="actor=text">Red Mage</span></a><li><a plural="Samurai" href="#" id="class-Global-spec-Samurai" class="unkilled" onclick="return setClassAndSpec('Global', 'Samurai', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Samurai', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Samurai" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Samurai"><span class="actor=text">Samurai</span></a><li><a plural="Gunbreakers" href="#" id="class-Global-spec-Gunbreaker" class="unkilled" onclick="return setClassAndSpec('Global', 'Gunbreaker', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Gunbreaker', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Gunbreaker" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Gunbreaker"><span class="actor=text">Gunbreaker</span></a><li><a plural="Reapers" href="#" id="class-Global-spec-Reaper" class="unkilled" onclick="return setClassAndSpec('Global', 'Reaper', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Reaper', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Reaper" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Reaper"><span class="actor=text">Reaper</span></a><li><a plural="Sages" href="#" id="class-Global-spec-Sage" class="unkilled" onclick="return setClassAndSpec('Global', 'Sage', 'All', this)" oncontextmenu="setClassAndSpec('Global', 'Sage', 'All', this)"><img class="menu-actor-icon sprite actor-sprite-Sage" src="https://assets.rpglogs.com/img/ff/icons/actors.png?v=12" alt="Sage"><span class="actor=text">Sage</span></a></ul>
+
+<li id="filter-difficulty-selection-container"><a class="filter-item" href="#"><span id="filter-difficulty-text"></span></a>
+<ul>
+<li><a href="#" id="difficulty-5000" class="filter-item" onclick="return setDifficulty(5000, this)" oncontextmenu="setDifficulty(5000, this)">Highest Difficulty</a></li>
+<li><a href="#" id="difficulty-101" class="filter-item" onclick="return setDifficulty(101, this)" oncontextmenu="setDifficulty(101, this)">Savage</a></li>
+<li><a href="#" id="difficulty-100" class="filter-item" onclick="return setDifficulty(100, this)" oncontextmenu="setDifficulty(100, this)">Normal</a></li>
+</ul>
+
+
+</li>
+	
+	
+	<div class="expansion-options-tabs">
+
+<!--
+<a id="compare-tab" class="private-tab" onclick="toggleCompareAgainst(this)" title="Toggle Limiting Comparison Range To Two Weeks">
+			<img class="expansion-bar-icon" src="https://assets.rpglogs.com/img/warcraft/abilities/inv_scroll_10.jpg">
+</a>
+-->
+
+<a id="bracket-tab" class="private-tab" onclick="toggleByBracket(this)" title="Toggle Ranking By Patch">
+			<img class="expansion-bar-icon" src="https://assets.rpglogs.com/img/warcraft/abilities/achievement_arena_3v3_4.jpg" alt="Toggle Ranking By Patch">
+		</a>
+
+<a id="private-tab" class="private-tab" onclick="togglePrivacy(this)" title="Toggle Private Logs Inclusion">
+	<img class="expansion-bar-icon" src="https://assets.rpglogs.com/img/warcraft/abilities/inv_misc_key_15.jpg" alt="Toggle Private Logs Inclusion">
+</a>
+
+</div>
+
+					</ul>
+					
+					<div class="zone-table-and-loading-container">
+						<div id="zone-table-loading" class="graph-loading zone-loading" style='display:none;'><p><span class="zmdi zmdi-spinner zmdi-hc-spin" style="color:white; font-size:36px"></span></p></div>
+						<div id="zone-table-container" class="zone-table-container">
+						</div>	
+					</div>
+				</div>
+				<div id="raids-table-and-ad-container" class="raids-table-and-ad-container">
+					<div id="raids-table-loading" class="graph-loading" style='display:none;'><p><span class="zmdi zmdi-spinner zmdi-hc-spin" style="color:white; font-size:36px"></span></p></div>
+			
+					<div id="raids-table-container" class="raids-table-container">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+			
+				</div>
+				
+				
+			</div>
+			
+<style>
+	#character-tall-portrait { 
+		background-image: url("https://img2.finalfantasyxiv.com/f/efc506417631cb91396a27c0c9b7a13f_5047bc596a4bab2dc7f7c120bb22dec5fl0_640x873.jpg?1673645023") !important; 
+ 	}
+	#gear-and-talents-boxes { display:flex; flex-direction: column; margin:0 15px 0 15px;  }
+	.gear-img-cell img { width:32px; height:32px }
+	.gear-img-cell img {  margin-left:1px }
+	
+	#gear-box { font-size:13px; border:1px solid #555555; min-height:100px; margin-bottom:15px; }
+	.gear-ilvl-cell { font-size:11px }
+	.gear-name-cell { font-weight:bold }
+	.gear-row { display:flex; padding:3px; border-bottom:1px solid #555555; border-right:1px solid #555555; margin-right:-1px; break-inside:avoid; white-space:nowrap; overflow:hidden }
+	#gear-box-caption { display:flex; align-items:center; justify-content:space-between }
+	#gear-box-ilvl-text { font-weight:normal; font-size:11px; font-style: italic; }
+	
+	#gear-box-contents { column-width:350px; column-gap:0; margin-bottom:-1px }
+	#gear-box.no-items #gear-box-contents { column-width: auto; }
+	
+	.error-inset { padding:10px 20px; }
+	
+	#gear-box-contents { flex: 1}
+	#gear-box-contents-and-ad { display:flex; align-items; flex-direction:column;}
+ 	
+ 	#stats-box { border:1px solid #555555; }
+ 	 	
+ 	#materia-box { display:flex; justify-content:center; flex-wrap:wrap; }
+ 	.materia-item { display:flex; justify-content: center; font-size:11px; margin:3px 6px }
+ 	.materia-text { align-self: center }
+ 	.materia-icon { border:1px solid #555555; width:20px; height:20px; display:block; margin:3px }
+ 
+ 	.stat-entry { display:flex; flex-direction:column; margin: 5px 10px; align-items:center; white-space:nowrap; font-size:11px }
+ 	.stat-value { color: #c0c0c0 }
+ 	.stat-caption { font-weight:bold; }
+ 	
+ 	#stats-box-contents { display:flex; justify-content:space-around; padding:5px; flex-wrap: wrap; align-content:center }
+
+	@media (max-width:900px) {
+		 .gear-img-cell img { width:24px; height:24px; }
+		 .gear-row { font-size:11px; line-height:12px; }
+		 .gear-ilvl-cell { font-size:9px; line-height:10px }
+	}
+		
+</style>
+<script defer type="text/javascript" src="//wow.zamimg.com/widgets/power.js"></script><script>var wowhead_tooltips = { "iconizelinks": false }</script>
+
+		
+		
+	<div id="gear-and-talents-boxes"
+>
+
+
+	<div id="gear-box" class="no-items">
+		<div id="gear-box-caption" class="box-caption">
+			
+			<div id="gear-box-gear-text">Gear</div>
+				
+			
+
+			
+		</div>
+		
+		<div id="gear-box-contents-and-ad">
+		<div id="gear-box-contents">
+
+<div class="error-inset">No items found.</div>
+
+</div>
+
+</div>
+
+<div id="materia-box">
+</div>
+
+</div>
+
+
+</div>
+
+		
+
+		</div>
+		
+	
+
+<div id="right-vertical-banner">
+    <div class="side-rail-ads">
+        <div id="ad-side-rail-atf">
+            <div id="ad-side-rail-atf__venatus-container"></div>
+<script async>
+    attachToDom(
+        '#ad-side-rail-atf__venatus-container',
+        'VenatusAd',
+        {"id":"ad-side-rail-atf__venatus","placement":"side_rail_atf","placementId":"63ee26cb9de8a93930474e09","fallbackImageUrl":"https:\/\/assets.rpglogs.com\/img\/ff\/fallback\/sidebar-wide.png?v=1"},
+        null,
+        null,
+        true
+    );
+</script>
+    </div>
+    </div>
+</div>
+	
+<div id="character-stream-and-portrait">
+		<div id="character-tall-portrait">
+
+
+		</div>
+
+	</div>
+</div>
+</div>
+
+<script>
+
+
+var gearAndPortraitState = "visible"
+if (typeof(Storage) !== undefined) {
+	let state = localStorage.getItem("gear-and-portrait-state")
+	if (state == "hidden")
+		hideGearAndPortrait()
+}
+
+window.googleAnalyticsViewModel.sendPageViewOnContentLoaded = false;
+window.displayAdsOnContentLoaded = false;
+$(window).trigger('hashchange')
+</script>
+
+<div id="footer-box">
+
+<p style="font-size:11px; margin-left:30px; margin-right:30px">
+To learn more about how rankings work on the site, you can read the <a href="https://articles.fflogs.com/help/rankings-and-parses">rankings guide</a>. A rank with a <span class="exploit-fg">dark gold background</span>
+is considered "at risk", since it is using tricks that will likely be hotfixed at some point in the future. If an in-game hotfix is released, then the rank will be removed. Removed ranks have a
+<span class="banned-fg">dark red background</span>.
+</p>
+
+<p style="font-size:11px; margin-left:30px; margin-right:30px">
+If you are the owner of this character, you can request that parses involving your character be hidden. More info on <a href="https://articles.fflogs.com/help/characters">this page</a>.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div id="footer-spacer" class="unsubscribed"></div>
+
+<div id="footer">
+
+    
+        <div id="rich-media">
+            <div id="rich-media__venatus-container"></div>
+<script async>
+    attachToDom(
+        '#rich-media__venatus-container',
+        'VenatusAd',
+        {"id":"rich-media__venatus","placement":"rich_media","placementId":"63ee273e7b6c4f748d309ee5","fallbackImageUrl":""},
+        null,
+        null,
+        true
+    );
+</script>
+    </div>
+    <div id="bottom-banner">
+            <div id="bottom-banner-desktop">
+            <div id="bottom-banner-desktop__venatus-container"></div>
+<script async>
+    attachToDom(
+        '#bottom-banner-desktop__venatus-container',
+        'VenatusAd',
+        {"id":"bottom-banner-desktop__venatus","placement":"leaderboard_btf","placementId":"63ee26ae9de8a93930474e07","fallbackImageUrl":"https:\/\/assets.rpglogs.com\/img\/ff\/fallback\/banner.png?v=1"},
+        null,
+        null,
+        true
+    );
+</script>
+        </div>
+        <div id="bottom-banner-mobile">
+            <div id="bottom-banner-mobile__venatus-container"></div>
+<script async>
+    attachToDom(
+        '#bottom-banner-mobile__venatus-container',
+        'VenatusAd',
+        {"id":"bottom-banner-mobile__venatus","placement":"mobile_content","placementId":"63ee272c7b6c4f748d309ee3","fallbackImageUrl":""},
+        null,
+        null,
+        true
+    );
+</script>
+        </div>
+    </div>
+    
+<div id="footer-container"></div>
+<script>
+    attachToDom(
+        '#footer-container',
+        'Footer',
+        {"backgroundImageUrl":"https:\/\/assets.rpglogs.com\/img\/ff\/footer-bg.jpg?v=4","headerTitleViewModel":{"backgroundImageUrl":"","logoImageUrl":"https:\/\/assets.rpglogs.com\/img\/ff\/header-logo.png","logoIsRounded":false,"isSlim":false,"faction":null,"textPartOne":"","textPartTwo":"","textPartOneTopColor":"rgb(230,230,230)","textPartOneBottomColor":"rgb(190,190,190)","textPartTwoTopColor":"rgb(45,170,200)","textPartTwoBottomColor":"rgb(0,140,195)","partTwoOverflowCutUnder380px":"","isFooterSize":true,"href":"\/","logoVerticalOffsetInPx":0},"contactUsText":"Contact Us","privacyPolicyText":"Privacy Policy","privacyPolicyUrl":"https:\/\/www.fflogs.com\/help\/privacy","careersText":"Careers","careersUrl":"https:\/\/www.fflogs.com\/careers","latestArticles":"[{\"id\":108,\"url\":\"https:\\\/\\\/articles.fflogs.com\\\/news\\\/recruitment-update\",\"imageUrl\":\"https:\\\/\\\/assets.rpglogs.com\\\/img\\\/ff\\\/featured-article-fallback.jpg\",\"thumbnailUrl\":\"https:\\\/\\\/assets.rpglogs.com\\\/img\\\/ff\\\/thumbnail_featured-article-fallback.jpg\",\"title\":\"Recruitment Update\",\"description\":\"A short update on the newest recruitment updates.\",\"categoryName\":\"News\",\"categoryUrl\":\"https:\\\/\\\/articles.fflogs.com\\\/news\",\"timestamp\":1675788630000,\"isPinned\":false,\"status\":null},{\"id\":81,\"url\":\"https:\\\/\\\/articles.fflogs.com\\\/news\\\/criterion-dungeon-ui-features\",\"imageUrl\":\"https:\\\/\\\/assets.rpglogs.com\\\/img\\\/ff\\\/featured-article-fallback.jpg\",\"thumbnailUrl\":\"https:\\\/\\\/assets.rpglogs.com\\\/img\\\/ff\\\/thumbnail_featured-article-fallback.jpg\",\"title\":\"Criterion Dungeon UI Features!\",\"description\":\"Changes to our report UI!\",\"categoryName\":\"News\",\"categoryUrl\":\"https:\\\/\\\/articles.fflogs.com\\\/news\",\"timestamp\":1666460709000,\"isPinned\":false,\"status\":null},{\"id\":77,\"url\":\"https:\\\/\\\/articles.fflogs.com\\\/news\\\/fey-s-temperance-charity-event\",\"imageUrl\":\"https:\\\/\\\/assets.rpglogs.com\\\/cms\\\/unknown_85c198d704.png\",\"thumbnailUrl\":\"https:\\\/\\\/assets.rpglogs.com\\\/cms\\\/thumbnail_unknown_85c198d704.png\",\"title\":\"Fey's Temperance Charity Event!\",\"description\":\"Defeat bosses and cancer at the same time!\",\"categoryName\":\"News\",\"categoryUrl\":\"https:\\\/\\\/articles.fflogs.com\\\/news\",\"timestamp\":1664906464000,\"isPinned\":false,\"status\":null},{\"id\":71,\"url\":\"https:\\\/\\\/articles.fflogs.com\\\/news\\\/new-mechanics-pane-features\",\"imageUrl\":\"https:\\\/\\\/assets.rpglogs.com\\\/img\\\/ff\\\/featured-article-fallback.jpg\",\"thumbnailUrl\":\"https:\\\/\\\/assets.rpglogs.com\\\/img\\\/ff\\\/thumbnail_featured-article-fallback.jpg\",\"title\":\"New Mechanics Pane Features\",\"description\":\"Analysis at a quick glance!\",\"categoryName\":\"News\",\"categoryUrl\":\"https:\\\/\\\/articles.fflogs.com\\\/news\",\"timestamp\":1663693692000,\"isPinned\":false,\"status\":null},{\"id\":60,\"url\":\"https:\\\/\\\/articles.fflogs.com\\\/news\\\/multiple-report-analysis\",\"imageUrl\":\"https:\\\/\\\/assets.rpglogs.com\\\/cms\\\/mra5_0b78669997.jpg\",\"thumbnailUrl\":\"https:\\\/\\\/assets.rpglogs.com\\\/cms\\\/thumbnail_mra5_0b78669997.jpg\",\"title\":\"Multiple Report Analysis\",\"description\":\"Find out how to analyze several hundred pulls from different reports with the new <SiteTitle>' Multiple Report Analysis subscriber feature.\",\"categoryName\":\"News\",\"categoryUrl\":\"https:\\\/\\\/articles.fflogs.com\\\/news\",\"timestamp\":1658242273000,\"isPinned\":true,\"status\":\"Featured\"},{\"id\":54,\"url\":\"https:\\\/\\\/articles.fflogs.com\\\/news\\\/new-subscriber-customization-guild-banners\",\"imageUrl\":\"https:\\\/\\\/assets.rpglogs.com\\\/cms\\\/newbannersguild_e5d02275e8.jpg\",\"thumbnailUrl\":\"https:\\\/\\\/assets.rpglogs.com\\\/cms\\\/thumbnail_newbannersguild_e5d02275e8.jpg\",\"title\":\"New Subscriber Customization: Guild Banners\",\"description\":\"Guild banners are now available for subscribed users, and we've added many new banner images to choose from!\",\"categoryName\":\"News\",\"categoryUrl\":\"https:\\\/\\\/articles.fflogs.com\\\/news\",\"timestamp\":1654193114000,\"isPinned\":false,\"status\":null}]","toolLinks":[{"url":"\/client\/download","title":"Download Client","iconType":"font","iconSrc":"download","openInNewTab":false},{"url":"\/zone\/statistics\/49","title":"Job Balance","iconType":"font","iconSrc":"trending-up","openInNewTab":false},{"url":"\/recruitment","title":"Recruitment","iconType":"font","iconSrc":"accounts","openInNewTab":false}],"raidLinks":[{"url":"\/zone\/statistics\/49","title":"Statistics","iconType":null,"iconSrc":null,"openInNewTab":false},{"url":"\/zone\/rankings\/49","title":"Rankings","iconType":null,"iconSrc":null,"openInNewTab":false},{"url":"\/zone\/rankings\/49#metric=progress","title":"Progress","iconType":null,"iconSrc":null,"openInNewTab":false},{"url":"\/zone\/reports?zone=49","title":"All Reports","iconType":null,"iconSrc":null,"openInNewTab":false}],"ourWebsiteLinks":[{"url":"https:\/\/warcraftlogs.com\/","title":"WoW Retail","iconType":null,"iconSrc":null,"openInNewTab":false},{"url":"https:\/\/classic.warcraftlogs.com\/","title":"WoW Classic","iconType":null,"iconSrc":null,"openInNewTab":false},{"url":"https:\/\/vanilla.warcraftlogs.com\/","title":"WoW Vanilla","iconType":null,"iconSrc":null,"openInNewTab":false},{"url":"https:\/\/www.fflogs.com\/","title":"Final Fantasy XIV","iconType":null,"iconSrc":null,"openInNewTab":false},{"url":"https:\/\/www.esologs.com\/","title":"Elder Scrolls Online","iconType":null,"iconSrc":null,"openInNewTab":false},{"url":"https:\/\/www.swtorlogs.com\/","title":"SWTOR","iconType":null,"iconSrc":null,"openInNewTab":false}],"resourceLinks":[{"url":"https:\/\/forums.combatlogforums.com\/","title":"Forums","iconType":null,"iconSrc":null,"openInNewTab":false},{"url":"https:\/\/www.patreon.com\/warcraftlogs","title":"Subscribe","iconType":null,"iconSrc":null,"openInNewTab":false},{"url":"https:\/\/articles.fflogs.com\/help\/getting-started","title":"Help and Info","iconType":null,"iconSrc":null,"openInNewTab":false},{"url":"https:\/\/articles.fflogs.com\/help\/rpg-logs-branding-information","title":"Brand","iconType":null,"iconSrc":null,"openInNewTab":false}],"copyrightText":"\u00a9 2013-2023 FF Logs","twitterUrl":"FFLogs","discordUrl":"https:\/\/discord.gg\/smQp6Acbjt","patreonUrl":"https:\/\/www.patreon.com\/warcraftlogs","pageWidth":"fill-width","extraSpaceUnderLogo":0},
+        {
+            game: {"id":2,"area":1,"locales":["de","en","fr","ja","ko","cn"],"fullName":"Final Fantasy XIV","lowercaseName":"ff","siteTitle":"FF Logs","siteLogoImageUrl":"https:\/\/assets.rpglogs.com\/img\/ff\/favicon.png?v=2","actorsSprite":"https:\/\/assets.rpglogs.com\/img\/ff\/icons\/actors.png?v=12","actorsSecondarySprite":"https:\/\/assets.rpglogs.com\/img\/ff\/icons\/secondary\/actors.png?v=1","articlesBaseUrl":"https:\/\/articles.fflogs.com","assetServerBaseUrl":"https:\/\/assets.rpglogs.com","abilityExternalSitePath":"\/\/www.garlandtools.org\/db\/#action\/","buffExternalSitePath":"\/\/www.garlandtools.org\/db\/#status\/","itemExternalSitePath":"","npcExternalSitePath":"","tooltipLibraryPath":null,"encounterIconExtension":"jpg"},
+        },
+        null,
+        true
+    );
+</script>
+</div>
+</div>
+
+
+
+
+</body>
+</html>
+

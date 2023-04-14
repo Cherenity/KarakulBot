@@ -3,9 +3,10 @@ import token2 as tk
 import requests
 import random
 from bs4 import BeautifulSoup
-import messageMethods as mm
+import glamourMethods as mm
 from PIL import Image
 import emoji
+import fflogsMethods as ff
 
 token = tk.token()
 
@@ -92,6 +93,7 @@ write !glamour help specify
         await message.channel.send(file=file, embed=embed)
 
     if message.content.lower().startswith('!news'):
+        # methods on glamourMethods (might remove this feature)
         embed = mm.newsMethod()
         await message.channel.send(embed=embed)
 
@@ -120,7 +122,10 @@ write !glamour help specify
         
         # pageNumbers method checks how many pages of glamours
         # and returns a random page number 
-        url1 = f"{url1}?page={mm.pageNumbers(url1)}"
+        if "?"  in url1:
+            url1 = f"{url1}&page={mm.pageNumbers(url1)}"
+        else:
+            url1 = f"{url1}?page={mm.pageNumbers(url1)}"
        
         print(url1)
 
@@ -182,13 +187,37 @@ write !glamour help specify
         await message.channel.send(file=discord.File(image_path))
 
     if message.content.startswith('!fflogs'):
-        variable = message.content.lower()[7:]
+        fflogsCharacterUrl = "https://www.fflogs.com/character/eu/server/fName%20lName"
+        try:
+            variable = message.content.lower()[7:].strip()
+            variableList = variable.split(" ")
+            print(variableList)
+            fName, lName, server = variableList[0], variableList[1], variableList[2]
+            print(fName, lName, server)
 
-        variable = variable.strip()
-        print(f"Variable is {variable}")
+            if server in ff.getLightDataCenterList():
+                fflogsCharacterUrl = ff.urlReplaceServerfNamelName(fflogsCharacterUrl, server, fName, lName)
+                print(fflogsCharacterUrl)
+                fflogsCharacterUrl += ff.checkIfExpansionParameter(variable)
+                #bestPerfAvgTxT = f"**Best Perf Avg:** {ff.returnLogs(fflogsCharacterUrl)}"
+                characterImage = ff.getCharacterImage(fflogsCharacterUrl)
+                embed = discord.Embed(title=f"{fName.capitalize()} {lName.capitalize()}", url = fflogsCharacterUrl)
+                                     # description=f"{bestPerfAvgTxT}")
+                embed.set_image(url=characterImage[0]['src'])
+                await message.channel.send(embed=embed)
 
-        if not variable:
-            print("Variable is empty")       
+            else:
+                await message.channel.send('Server not found.\n"Note that **player search** works only for light data center."')
+
+
+
+            # print(variable)
+            print(f"Variable is {fName} {lName}")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            await message.channel.send("**Error** / Invalid request!.")
+
+     
 
 
 def main():
