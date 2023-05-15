@@ -7,6 +7,7 @@ import glamourMethods as mm
 from PIL import Image
 import emoji
 import fflogsMethods as ff
+import frontlineMethods as fm
 
 token = tk.token()
 
@@ -199,16 +200,15 @@ write !glamour help specify
                 fflogsCharacterUrl = ff.urlReplaceServerfNamelName(fflogsCharacterUrl, server, fName, lName)
                 print(fflogsCharacterUrl)
                 fflogsCharacterUrl += ff.checkIfExpansionParameter(variable)
-                #bestPerfAvgTxT = f"**Best Perf Avg:** {ff.returnLogs(fflogsCharacterUrl)}"
+                bestPerfAvgTxT = f"**Best Perf Avg:** {ff.returnLogs(fflogsCharacterUrl)}"
                 characterImage = ff.getCharacterImage(fflogsCharacterUrl)
-                embed = discord.Embed(title=f"{fName.capitalize()} {lName.capitalize()}", url = fflogsCharacterUrl)
-                                     # description=f"{bestPerfAvgTxT}")
+                embed = discord.Embed(title=f"{fName.capitalize()} {lName.capitalize()}", url = fflogsCharacterUrl,
+                                     description=f"{bestPerfAvgTxT}")
                 embed.set_image(url=characterImage[0]['src'])
                 await message.channel.send(embed=embed)
 
             else:
                 await message.channel.send('Server not found.\n"Note that **player search** works only for light data center."')
-
 
 
             # print(variable)
@@ -217,7 +217,12 @@ write !glamour help specify
             print(f"An error occurred: {e}")
             await message.channel.send("**Error** / Invalid request!.")
 
-     
+    if message.content.startswith('!frontlines'):
+        currentMap = fm.currentFrontline()
+        upNext = fm.upNext()
+        await message.channel.send(f'Currently: ~**{currentMap}**~')
+        await message.channel.send(upNext)
+        print('In development')
 
 
 def main():
