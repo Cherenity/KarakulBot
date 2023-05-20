@@ -218,18 +218,30 @@ write !glamour help specify
             await message.channel.send("**Error** / Invalid request!.")
 
     if message.content.startswith('!frontlines'):
+        furl = fm.frontlinesLink()
         currentMap = fm.currentFrontline()
         upNext = fm.upNext()
         timeToNext = fm.untilReset()
-        await message.channel.send(f'Currently: ~**{currentMap}**~ {timeToNext}\n{upNext}')
-        print('In development')
+        emoji = fm.addEmoji()
+        firstMessage = f'**{currentMap}** {emoji}  ({timeToNext})\n{upNext}\n\n[More information about current PVP]({furl})'
+        secondMessage = f'{upNext}'
+
+        # Returns Image for current frontline
+        fImage = fm.frontlinesImg()
+
+        f = discord.File(f"frontlinesPictures\{fImage}", filename=fImage)
+        e = discord.Embed(title="PVP rotation: ", description=firstMessage)
+        e.set_image(url=f"attachment://{fImage}")
+
+    
+        await message.channel.send(file=f, embed=e)
+
 
 
 def main():
     print(emoji.emojize(":smiling_face_with_heart-eyes:"))
     print("~main program~")
     client.run(token)
-
 
 # Defining main program
 if __name__ == "__main__":
