@@ -50,12 +50,25 @@ def upNext():
         return upNext
     
     else:
-
         for i in onsalHakair:
-            upNext += " " + i
-            return upNext
+            upNext += " " + i           
+        return upNext
     
+def untilReset():
+    print("In development")
+    currentDay = datetime.datetime.today()
+    
+    reset = datetime.datetime(currentDay.year,currentDay.month, currentDay.day, 18, 0)
+
+    if currentDay.hour >= 18:
+        reset = reset + datetime.timedelta(days=1)
+
+    reset -= currentDay
+
+    hours = reset.seconds//3600
+    minutes = (reset.seconds//60)%60
+
+    return(f"({hours} hours and {minutes} minutes)")
 
 
-hello = upNext()
-print(hello)
+    

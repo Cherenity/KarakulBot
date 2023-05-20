@@ -220,8 +220,8 @@ write !glamour help specify
     if message.content.startswith('!frontlines'):
         currentMap = fm.currentFrontline()
         upNext = fm.upNext()
-        await message.channel.send(f'Currently: ~**{currentMap}**~')
-        await message.channel.send(upNext)
+        timeToNext = fm.untilReset()
+        await message.channel.send(f'Currently: ~**{currentMap}**~ {timeToNext}\n{upNext}')
         print('In development')
 
 
@@ -229,6 +229,7 @@ def main():
     print(emoji.emojize(":smiling_face_with_heart-eyes:"))
     print("~main program~")
     client.run(token)
+
 
 # Defining main program
 if __name__ == "__main__":
