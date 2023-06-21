@@ -3,9 +3,9 @@ import datetime
 
 def currentFrontline():
     # Creating dict that contains all 4 FFXIV frontlines maps
-    frontlineMaps = {0: "Borderland Ruins", 1: "Seal Rock", 2: "The Fields of Glory", 3: "Onsal Hakair"}
+    frontlineMaps = {0: "Seal Rock", 1: "The Fields of Glory", 2: "Onsal Hakair"}
 
-    givenDate = datetime.datetime(2023, 5, 10) 
+    givenDate = datetime.datetime(2023, 6, 16) 
 
     currentDay = datetime.datetime.today()
     delta = currentDay - givenDate
@@ -17,7 +17,7 @@ def currentFrontline():
     print(f"There are {deltaDays} resets between {givenDate.date()} and {currentDay.date()}")
 
     # % = modulo, delta (muutos)
-    value = deltaDays % 4
+    value = deltaDays % 3
 
     print(frontlineMaps[value])
 
@@ -25,21 +25,15 @@ def currentFrontline():
 
 def upNext():
     upNext = ""
-    borderlandRuins = ["Seal Rock", "\nThe Fields of Glory", "\nOnsal Hakair"]
-    sealRock = ["The Fields of Glory", "\nOnsal Hakair", "\nBorderland Ruins"]
-    theFieldsofGlory = ["Onsal Hakair", "\nBorderland Ruins", "\nSeal Rock"]
-    onsalHakair = ["Borderland Ruins [gonna be removed soon]", "\nSeal Rock :rock:", "\nThe Fields of Glory :ice_cube:"]
+    sealRock = ["The Fields of Glory", "\nOnsal Hakair"]
+    theFieldsofGlory = ["Onsal Hakair", "\nSeal Rock"]
+    onsalHakair = ["\nSeal Rock :rock:", "\nThe Fields of Glory :ice_cube:"]
     
     print("In development")
 
     currently = currentFrontline()
     
-    if currently == "Borderland Ruins":
-        for i in borderlandRuins:
-            upNext += " " + i
-        return upNext
-    
-    elif currently == "Seal Rock":
+    if currently == "Seal Rock":
         for i in sealRock:
             upNext += " " + i
         return upNext
@@ -114,3 +108,4 @@ def addEmoji():
 
 tas = frontlinesImg()
 print("tuleeks oikein", tas)
+currentFrontline()

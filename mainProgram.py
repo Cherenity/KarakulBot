@@ -235,6 +235,44 @@ write !glamour help specify
 
     
         await message.channel.send(file=f, embed=e)
+    
+    if message.content.startswith('!crabTime'):
+        imgUrls = []
+        urlCrab = "https://www.freeimages.com/search/crab"
+        responseCrab = requests.get(urlCrab)
+
+        # Create a BeautifulSoup object
+        soup = BeautifulSoup(responseCrab.content, "html.parser")
+
+        # Find all image tags in the HTML
+        image_tags = soup.find_all("img")
+        for img in image_tags:
+            img_url = img.get("src", "")
+            img_alt = img.get("alt", "").lower()
+            
+            if "jpg" in img_url.lower() and "crab" in img_alt:
+                img_url = str(img_url).lower().strip()
+                imgUrls.append(img_url[42:])
+                
+        randomNro = random.randint(0, len(imgUrls)-1)
+        crabImgUrl = imgUrls[randomNro]
+        print(crabImgUrl)
+        crabEmoji = ":crab:"
+        
+        crabImgUrl = "https://images.freeimages.com/images/large-previews" + crabImgUrl
+        photoContent = requests.get(crabImgUrl).content
+        with open('crabPhoto.jpg', 'wb') as handler:
+            handler.write(photoContent)
+        
+        crabImg = "crabPhoto.jpg"
+        crabText = f"{crabEmoji} Time for Crab {crabEmoji}"
+        await message.channel.send(file=discord.File(crabImg), content = crabText)
+        
+        #await message.channel.send(crabImgUrl)
+
+      
+
+
 
 
 
@@ -243,6 +281,9 @@ def main():
     print("~main program~")
     client.run(token)
 
-# Defining main program
+    # Facts about Azim Steppe 
+    # 
+
+    # Defining main program
 if __name__ == "__main__":
     main()
