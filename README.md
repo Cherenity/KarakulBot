@@ -1,5 +1,6 @@
 # KarakulBot
-My first python code project to create a simple discord bot.
 
+This bot was made for private discord server
+It is the first Discord bot that I have developed.
 
 
