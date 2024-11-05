@@ -8,5 +8,5 @@
 
 Example:
 <br>
-![Alt text](pictures2\botImage.png)
+![Alt text](botImage.png)
 

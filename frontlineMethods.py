@@ -19,7 +19,6 @@ def currentFrontline():
     # % = modulo, delta (muutos)
     value = deltaDays % 3
 
-    print(frontlineMaps[value])
 
     return frontlineMaps[value]
 
@@ -29,7 +28,6 @@ def upNext():
     theFieldsofGlory = ["Onsal Hakair", "\nSeal Rock"]
     onsalHakair = ["\nSeal Rock :rock:", "\nThe Fields of Glory :ice_cube:"]
     
-    print("In development")
 
     currently = currentFrontline()
     
@@ -66,7 +64,6 @@ def untilReset():
 
 def frontlinesImg():
     currentF = currentFrontline()
-    print(f"CURRENTLYYYYYYY {currentF}!")
     if currentF == "The Fields of Glory":
         return "fieldsof.png"
     elif currentF == "Onsal Hakair":
@@ -101,6 +98,3 @@ def addEmoji():
         return ":rock:"
 
 
-# tas = frontlinesImg()
-# print("tuleeks oikein", tas)
-# currentFrontline()
