@@ -7,5 +7,6 @@
 <br>Originally this was designed for a private Discord server and the bot responded to simple commands such as !glamour and !frontlines.
 
 Example:
+<bn>
 ![Alt text](botImage.png)
 
