@@ -1,4 +1,5 @@
 import discord
+from discord.ext import commands
 import token2 as tk
 import requests
 import random
@@ -16,6 +17,9 @@ intents.message_content = True
 
 # Connection to the discord:
 client = discord.Client(intents=intents)
+
+#Setting command prefix (Currently not in use)
+#client = commands.Bot(command_prefix='!')
 
 # Called when bot is ready for use:
 @client.event
@@ -49,7 +53,6 @@ roegadyn, aura, viera, hrothgar
 mnk, drg, rpr, nin, sam, blm, smn, brd, dnc,
 mch, blu      
         '''
-
         await message.channel.send(help_commands)
         return
 
@@ -189,6 +192,7 @@ write !glamour help specify
 
     if message.content.startswith('!fflogs'):
         fflogsCharacterUrl = "https://www.fflogs.com/character/eu/server/fName%20lName"
+        print("fflogsCharacterUrl")
         try:
             variable = message.content.lower()[7:].strip()
             variableList = variable.split(" ")
@@ -209,7 +213,6 @@ write !glamour help specify
 
             else:
                 await message.channel.send('Server not found.\n"Note that **player search** works only for light data center."')
-
 
             # print(variable)
             print(f"Variable is {fName} {lName}")
@@ -233,7 +236,6 @@ write !glamour help specify
         e = discord.Embed(title="PVP rotation: ", description=firstMessage)
         e.set_image(url=f"attachment://{fImage}")
 
-    
         await message.channel.send(file=f, embed=e)
     
     if message.content.startswith('!crabTime'):
@@ -270,12 +272,11 @@ write !glamour help specify
         
         #await message.channel.send(crabImgUrl)
 
+    if message.content.startswith('!test'):
+        print("--In Progress")
+        await message.channel.send('Hello! I am a karakul Bot. ')
+
       
-
-
-
-
-
 def main():
     print(emoji.emojize(":smiling_face_with_heart-eyes:"))
     print("~main program~")

@@ -1,8 +1,8 @@
 import datetime
-
+from datetime import timedelta
 
 def currentFrontline():
-    # Creating dict that contains all 4 FFXIV frontlines maps
+    #Organising all frontline map names in dictionary
     frontlineMaps = {0: "Seal Rock", 1: "The Fields of Glory", 2: "Onsal Hakair"}
 
     givenDate = datetime.datetime(2023, 6, 16) 
@@ -79,7 +79,7 @@ def frontlinesImg():
 def frontlinesLink():
 
     currentF = currentFrontline()
-    print(f"CURRENTLYYYYYYY {currentF}!")
+    print(f"--ongoing-- {currentF}!")
     if currentF == "The Fields of Glory":
         return "https://na.finalfantasyxiv.com/lodestone/playguide/contentsguide/frontline/4/"
     elif currentF == "Onsal Hakair":
@@ -90,22 +90,17 @@ def frontlinesLink():
         return "https://na.finalfantasyxiv.com/lodestone/playguide/contentsguide/frontline/1/"
 
 def addEmoji():
-    print("Moi")
-
+    print("--add pvpEmoji Function--")
     currentF = currentFrontline()
-    print(f"CURRENTLYYYYYYY {currentF}!")
+    print(f"--ongoingEmoji-- {currentF}!")
     if currentF == "The Fields of Glory":
         return ":ice_cube:"
     elif currentF == "Onsal Hakair":
         return ":monkey:"
-    elif currentF == "Seal Rock":
-        return ":rock:"
     else:
-        return "[gonna be removed soon]"
+        return ":rock:"
 
 
-
-
-tas = frontlinesImg()
-print("tuleeks oikein", tas)
-currentFrontline()
+# tas = frontlinesImg()
+# print("tuleeks oikein", tas)
+# currentFrontline()
